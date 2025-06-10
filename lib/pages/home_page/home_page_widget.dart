@@ -89,7 +89,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       FFAppState().quizIndex != 0,
                       true,
                     ) &&
-                    (FFAppState().quizIndex != 19))
+                    (FFAppState().quizIndex != 19) &&
+                    (FFAppState().quizIndex != 14))
                   wrapWithModel(
                     model: _model.headerWithProgressBarModel,
                     updateCallback: () => safeSetState(() {}),
@@ -1329,7 +1330,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             'problemDescription_1consistent'
                                           ],
                                         ))) {
-                                  return 'your scalp environment is hostile to healthy hair follicle function. All their energy goes to managing the inflammation (itchiness), overproducing oils, skin (flakes) hindering healthy hair production.';
+                                  return 'Your scalp environment is hostile to healthy hair growth. All your hair follicles\' energy goes to managing the inflammation (itchiness), overproducing oil and skin (flakes), which hinders healthy hair production.';
                                 } else if (FFAppState()
                                         .quizProfile
                                         .qaPairs

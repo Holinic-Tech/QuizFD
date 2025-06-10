@@ -649,7 +649,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Vous êtes la personne idéale pour le Haircare Challenge 😍',
     },
     '26c1jnac': {
-      'en': 'Your ',
+      'en': 'Your matching score is:',
       'de': 'Ihr Matching-Score ist',
       'es': 'Tu puntuación de coincidencia es',
       'fr': 'Votre score de correspondance est',

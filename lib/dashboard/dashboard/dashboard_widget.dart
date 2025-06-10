@@ -243,29 +243,27 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 10.0, 0.0),
-                                child: Container(
-                                  width: MediaQuery.sizeOf(context).width * 0.6,
-                                  height: 30.0,
-                                  constraints: BoxConstraints(
-                                    maxWidth: 300.0,
-                                  ),
-                                  decoration: BoxDecoration(),
-                                  child: LinearPercentIndicator(
-                                    percent: 0.9,
-                                    lineHeight: 30.0,
-                                    animation: true,
-                                    animateFromLastPercent: true,
-                                    progressColor: Color(0xFF2AA331),
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                    barRadius: Radius.circular(50.0),
-                                    padding: EdgeInsets.zero,
-                                  ),
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  '26c1jnac' /* Your matching score is: */,
                                 ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FontWeight.w600,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                      color: Color(0xFF1E191D),
+                                      fontSize: 18.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w600,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -273,29 +271,30 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      '26c1jnac' /* Your  */,
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 10.0, 0.0),
+                                    child: Container(
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.6,
+                                      height: 30.0,
+                                      constraints: BoxConstraints(
+                                        maxWidth: 300.0,
+                                      ),
+                                      decoration: BoxDecoration(),
+                                      child: LinearPercentIndicator(
+                                        percent: 0.9,
+                                        lineHeight: 30.0,
+                                        animation: true,
+                                        animateFromLastPercent: true,
+                                        progressColor: Color(0xFF2AA331),
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                        barRadius: Radius.circular(50.0),
+                                        padding: EdgeInsets.zero,
+                                      ),
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight: FontWeight.w600,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                          color: Color(0xFF1E191D),
-                                          fontSize: 18.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
                                   ),
                                   Text(
                                     valueOrDefault<String>(
@@ -815,7 +814,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                           'concern_hairloss'
                                                         ],
                                                       ))) {
-                                                    return 'Stop all hidden stressors. Deliver targeted care that actually reaches the follicle level to kick-start the hair production again.';
+                                                    return 'Reduce all hidden stressors. Deliver targeted care that actually reaches the follicle level to kick-start the hair production again.';
                                                   } else if (FFAppState()
                                                       .quizProfile
                                                       .qaPairs
@@ -827,7 +826,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                           'concern_splitends'
                                                         ],
                                                       ))) {
-                                                    return 'Stop all hidden stressors. Fix your hair growth process at the follicle level with targeted products and practices.';
+                                                    return 'Reduce all hidden stressors. Fix your hair growth process at the follicle level with targeted products and practices.';
                                                   } else if (FFAppState()
                                                       .quizProfile
                                                       .qaPairs
@@ -839,7 +838,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                           'concern_scalp'
                                                         ],
                                                       ))) {
-                                                    return 'Stop all hidden inflammatory stressors. Provide targeted care to balance the environment and restore healthy hair growth.';
+                                                    return 'Reduce all hidden inflammatory stressors. Provide targeted care to balance the environment and restore healthy hair growth.';
                                                   } else if (FFAppState()
                                                       .quizProfile
                                                       .qaPairs
@@ -851,12 +850,12 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                           'concern_damage'
                                                         ],
                                                       ))) {
-                                                    return 'Stop all hidden stressors. Fix your hair growth process at the follicle level with targeted products and practices.';
+                                                    return 'Reduce all hidden stressors. Fix your hair growth process at the follicle level with targeted products and practices.';
                                                   } else {
-                                                    return 'Stop all hidden stressors. Reboot hair growth process at the follicle level with targeted products and practices.';
+                                                    return 'Reduce all hidden stressors. Reboot hair growth process at the follicle level with targeted products and practices.';
                                                   }
                                                 }(),
-                                                'To get strong beautiful hair, easy to care for:  Stop all hidden stressors. Fix your hair growth process at the follicle level with targeted products and practices.',
+                                                'Reduce all hidden stressors. Reboot hair growth process at the follicle level with targeted products and practices.',
                                               ),
                                               textAlign: TextAlign.start,
                                               style:

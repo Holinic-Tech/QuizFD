@@ -192,41 +192,49 @@ class _PitchBodySimpleTextImagesBodyWidgetState
                                     ),
                               ),
                             ),
-                            LinearPercentIndicator(
-                              percent: random_data.randomDouble(0.79, 0.87),
-                              width: MediaQuery.sizeOf(context).width * 0.9,
-                              lineHeight: 30.0,
-                              animation: true,
-                              animateFromLastPercent: true,
-                              progressColor:
-                                  FlutterFlowTheme.of(context).button,
-                              backgroundColor:
-                                  FlutterFlowTheme.of(context).alternate,
-                              center: Text(
-                                FFLocalizations.of(context).getText(
-                                  'qgq1r05e' /* High  */,
-                                ),
-                                textAlign: TextAlign.start,
-                                style: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      font: GoogleFonts.inter(
+                            Container(
+                              constraints: BoxConstraints(
+                                maxWidth:
+                                    MediaQuery.sizeOf(context).width * 0.9,
+                              ),
+                              decoration: BoxDecoration(),
+                              child: LinearPercentIndicator(
+                                percent: random_data.randomDouble(0.79, 0.87),
+                                width: MediaQuery.sizeOf(context).width * 0.9,
+                                lineHeight: 30.0,
+                                animation: true,
+                                animateFromLastPercent: true,
+                                progressColor:
+                                    FlutterFlowTheme.of(context).button,
+                                backgroundColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                center: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'qgq1r05e' /* High  */,
+                                  ),
+                                  textAlign: TextAlign.start,
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w300,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
+                                        ),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w300,
                                         fontStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .fontStyle,
                                       ),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w300,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontStyle,
-                                    ),
+                                ),
+                                barRadius: Radius.circular(100.0),
+                                padding: EdgeInsets.zero,
                               ),
-                              barRadius: Radius.circular(100.0),
-                              padding: EdgeInsets.zero,
                             ),
                           ],
                         ),
@@ -272,7 +280,7 @@ class _PitchBodySimpleTextImagesBodyWidgetState
                                       .qaPairs
                                       .contains(QuestionAnswerPairStruct(
                                         questionId: 'currentRoutine',
-                                        answerIds: ['concern_scalp'],
+                                        answerIds: ['routine_intermediete'],
                                       ))) {
                                     return 'When follicles are functioning properly, simple care & occasional pampering should be MORE than enough to get beautiful hair. ';
                                   } else if (FFAppState()

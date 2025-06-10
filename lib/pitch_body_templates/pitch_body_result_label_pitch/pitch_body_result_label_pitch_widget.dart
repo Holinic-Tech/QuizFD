@@ -122,7 +122,7 @@ class _PitchBodyResultLabelPitchWidgetState
           child: Stack(
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 80.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 30.0, 16.0, 80.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -212,6 +212,7 @@ class _PitchBodyResultLabelPitchWidgetState
                                             .labelLarge
                                             .fontStyle,
                                       ),
+                                      fontSize: 14.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .labelLarge
@@ -226,7 +227,6 @@ class _PitchBodyResultLabelPitchWidgetState
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 25.0),
                               child: Container(
-                                width: 250.0,
                                 constraints: BoxConstraints(
                                   maxWidth:
                                       MediaQuery.sizeOf(context).width * 0.9,
@@ -241,7 +241,7 @@ class _PitchBodyResultLabelPitchWidgetState
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 10.0, 0.0, 10.0),
+                                      10.0, 10.0, 10.0, 10.0),
                                   child: Text(
                                     valueOrDefault<String>(
                                       widget.typeLabel,
@@ -262,6 +262,25 @@ class _PitchBodyResultLabelPitchWidgetState
                                                     .fontStyle,
                                           ),
                                           color: Color(0xFF4114E1),
+                                          fontSize: () {
+                                            if (MediaQuery.sizeOf(context)
+                                                    .width <
+                                                kBreakpointSmall) {
+                                              return 20.0;
+                                            } else if (MediaQuery.sizeOf(
+                                                        context)
+                                                    .width <
+                                                kBreakpointMedium) {
+                                              return 22.0;
+                                            } else if (MediaQuery.sizeOf(
+                                                        context)
+                                                    .width <
+                                                kBreakpointLarge) {
+                                              return 24.0;
+                                            } else {
+                                              return 22.0;
+                                            }
+                                          }(),
                                           letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
@@ -381,7 +400,7 @@ Here is what is happening:
                         decoration: BoxDecoration(),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 20.0, 0.0, 30.0),
+                              0.0, 20.0, 0.0, 20.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
