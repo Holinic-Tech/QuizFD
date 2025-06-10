@@ -1,0 +1,35 @@
+{
+  "instructions": "Add new strings found in the Flutter app here",
+  "example_entry": {
+    "id": "unique_string_id",
+    "english": "Original English text",
+    "german": "German translation",
+    "spanish": "Spanish translation",
+    "location": "Where this string appears (file:line)",
+    "type": "ui_element|dashboard|conditional|rich_text|etc",
+    "context": "Additional context about usage"
+  },
+  "strings": {
+    "continue_button": {
+      "english": "Continue",
+      "german": "Weiter",
+      "spanish": "Continuar",
+      "location": "Multiple locations",
+      "type": "ui_element"
+    },
+    "dashboard_score": {
+      "english": "That's an outstanding score!",
+      "german": "Das ist ein hervorragender Wert!",
+      "spanish": "\u00a1Es una puntuaci\u00f3n excelente!",
+      "location": "Dashboard result display",
+      "type": "dashboard"
+    },
+    "conditional_damage": {
+      "english": "91.2% of women who struggle with damaged hair and breakage in their thirties, experience less breakage and more density within 14 days",
+      "german": "91,2% der Frauen, die mit gesch\u00e4digtem Haar und Haarbruch in ihren Drei\u00dfigern k\u00e4mpfen, erleben weniger Haarbruch und mehr Dichte innerhalb von 14 Tagen",
+      "spanish": "El 91.2% de las mujeres que luchan con el cabello da\u00f1ado y la rotura en sus treinta, experimentan menos rotura y m\u00e1s densidad en 14 d\u00edas",
+      "location": "Rich text conditional block",
+      "type": "conditional_content"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "description": "Conditional and dynamic strings that need translation",
+  "patterns": {
+    "percentage": [
+      "\\d+(?:\\.\\d+)?%\\s+of\\s+(?:women|men|people|users)",
+      "(?:shows?|indicates?|proves?)\\s+that\\s+\\d+(?:\\.\\d+)?%"
+    ],
+    "time_based": [
+      "in\\s+(?:their|your|my)\\s+(?:twenties|thirties|forties|fifties|60s|70s)",
+      "within\\s+\\d+\\s+(?:days?|weeks?|months?)",
+      "after\\s+(?:the\\s+)?(?:challenge|program|routine)"
+    ],
+    "score_based": [
+      "That's\\s+an?\\s+(?:outstanding|excellent|good|average|poor)\\s+score",
+      "Your?\\s+(?:score|result|match)\\s+is\\s+\\d+",
+      "\\d+\\s+out\\s+of\\s+\\d+\\s+(?:women|men|people)"
+    ],
+    "personal": [
+      "You\\s+deserve",
+      "(?:Hello|Hi|Welcome),?\\s+\\w+",
+      "Join\\s+the\\s+\\d+-Day",
+      "Only\\s+\\d+\\s+\\w+\\s+remaining"
+    ],
+    "advice": [
+      "With\\s+the\\s+right\\s+(?:routine|approach|method)",
+      "But\\s+if\\s+you\\s+(?:are\\s+)?still",
+      "you're\\s+missing\\s+(?:important|crucial|key)",
+      "That's\\s+why\\s+(?:nothing|it)"
+    ]
+  },
+  "known_strings": [
+    "damaged hair and breakage",
+    "in their thirties",
+    "experience less",
+    "within 14 days",
+    "That's an outstanding score!",
+    "9 out of 10 women",
+    "Only 6 seats remaining",
+    "You deserve this,",
+    "Probability to fix your damaged hair in 14 days:"
+  ],
+  "potential_strings": {
+    "in their twenties": "in ihren Zwanzigern",
+    "in their forties": "in ihren Vierzigern",
+    "in their fifties": "in ihren Fünfzigern",
+    "in your 20s": "in deinen 20ern",
+    "in your 40s": "in deinen 40ern",
+    "That's an excellent score!": "Das ist ein ausgezeichneter Wert!",
+    "That's a good score!": "Das ist ein guter Wert!",
+    "That's an average score.": "Das ist ein durchschnittlicher Wert.",
+    "85% of women": "85% der Frauen",
+    "95% of women": "95% der Frauen",
+    "research shows that": "Untersuchungen zeigen, dass",
+    "within 7 days": "innerhalb von 7 Tagen",
+    "within 21 days": "innerhalb von 21 Tagen",
+    "within 30 days": "innerhalb von 30 Tagen",
+    "after the program": "nach dem Programm",
+    "Only 3 seats remaining": "Nur noch 3 Plätze verfügbar",
+    "Only 10 seats remaining": "Nur noch 10 Plätze verfügbar",
+    "Limited time offer": "Zeitlich begrenztes Angebot",
+    "You deserve this, [Name]": "Du hast das verdient, [Name]",
+    "Welcome, [Name]": "Willkommen, [Name]",
+    "Hello [Name]": "Hallo [Name]",
+    "said their hair improved": "sagten, dass sich ihr Haar verbesserte",
+    "noticed less breakage": "bemerkten weniger Haarbruch",
+    "saw new growth": "sahen neues Wachstum"
+  },
+  "instructions": "Add any new conditional strings found in the app to this file"
+}

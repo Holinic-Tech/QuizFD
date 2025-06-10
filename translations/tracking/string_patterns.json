@@ -1,0 +1,119 @@
+{
+  "english_patterns": [
+    "damaged hair and breakage",
+    "in their\\s+(?:twenties|thirties|forties)",
+    "experience less",
+    "within \\d+ days",
+    "Continue",
+    "Join the .* Challenge",
+    "Hurry Up",
+    "Only \\d+ seats? remaining",
+    "That's an? \\w+ score",
+    "\\d+ out of \\d+ women",
+    "said their .* stopped",
+    "Probability to fix",
+    "You deserve",
+    "say goodbye to",
+    "No more frustration",
+    "With the right routine",
+    "if you are still struggling",
+    "you're missing important",
+    "Stronger, more resilient",
+    "style daily without guilt",
+    "damaged hair",
+    "breakage",
+    "density",
+    "hair loss",
+    "split ends"
+  ],
+  "categories": {
+    "ui_elements": {
+      "patterns": [
+        "Continue",
+        "Next",
+        "Back",
+        "Submit",
+        "Cancel",
+        "Save"
+      ],
+      "strings": []
+    },
+    "dashboard": {
+      "patterns": [
+        "score",
+        "result",
+        "probability",
+        "congratulation"
+      ],
+      "strings": []
+    },
+    "conditional_content": {
+      "patterns": [
+        "if ",
+        "when ",
+        "while ",
+        "but "
+      ],
+      "strings": []
+    },
+    "rich_text": {
+      "patterns": [
+        "RichText",
+        "TextSpan",
+        "text:"
+      ],
+      "strings": []
+    },
+    "statistics": {
+      "patterns": [
+        "\\d+%",
+        "\\d+ out of \\d+",
+        "\\d+ days?",
+        "within \\d+"
+      ],
+      "strings": []
+    },
+    "motivational": {
+      "patterns": [
+        "deserve",
+        "congrat",
+        "excellent",
+        "outstanding",
+        "amazing"
+      ],
+      "strings": []
+    },
+    "hair_specific": {
+      "patterns": [
+        "hair",
+        "scalp",
+        "damage",
+        "breakage",
+        "split ends"
+      ],
+      "strings": []
+    }
+  },
+  "extraction_rules": {
+    "flutter_widgets": [
+      "Text widgets",
+      "RichText",
+      "TextSpan",
+      "Conditional",
+      "String interpolation",
+      "Button text",
+      "AppBar title",
+      "Tooltip",
+      "SnackBar"
+    ],
+    "conditional_blocks": [
+      "ternary operators",
+      "if statements",
+      "switch cases"
+    ],
+    "rich_text": [
+      "TextSpan with conditions",
+      "RichText with multiple spans"
+    ]
+  }
+}
