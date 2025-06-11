@@ -8,7 +8,6 @@ import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'floating_timer_dialog_box_model.dart';
 export 'floating_timer_dialog_box_model.dart';
 
@@ -207,9 +206,7 @@ class _FloatingTimerDialogBoxWidgetState
                               backgroundColor: Colors.transparent,
                               alignment: AlignmentDirectional(0.0, 0.0)
                                   .resolve(Directionality.of(context)),
-                              child: WebViewAware(
-                                child: PitchPlanDialogWidget(),
-                              ),
+                              child: PitchPlanDialogWidget(),
                             );
                           },
                         );

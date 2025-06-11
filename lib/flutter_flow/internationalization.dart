@@ -359,7 +359,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'xgrtm968': {
       'en':
-          'Here is what you can achieve in 14 days of following the right routine for your hair:',
+          'Here is what you can achieve in 5 days of following the right routine for your hair:',
       'de':
           'Folgendes können Sie in 14 Tagen erreichen, wenn Sie die richtige Routine für Ihr Haar befolgen:',
       'es':
@@ -474,21 +474,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
   },
-  // MultiChoiceQuestion_CheckBox
-  {
-    'nbepcvyq': {
-      'en': 'Our hair remembers everything',
-      'de': '(Wählen Sie alle zutreffenden Antworten aus)',
-      'es': '(Seleccione todas las que correspondan)',
-      'fr': '(Sélectionnez tout ce qui s\'applique)',
-    },
-    'vzfmsa5z': {
-      'en': 'None of the above',
-      'de': 'Nichts des oben Genannten',
-      'es': 'Ninguna de las anteriores',
-      'fr': 'Aucune des réponses ci-dessus',
-    },
-  },
   // RatingQuestion_Options
   {
     '09emjmhf': {
@@ -534,19 +519,80 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Totalement',
     },
   },
-  // ImageBackground_QuesBody
+  // ImageBackground_QuesBodyV3
   {
-    'ixew8z9q': {
-      'en': 'DO YOU KNOW IF YOU HAVE FOLLICLE DYSFUNCTION?',
+    'y2h1wino': {
+      'en': '4.8 out of 5',
+      'de': '4,8 von 5',
+      'es': '4,8 de 5',
+      'fr': '4,8 sur 5',
+    },
+    '31eabgmc': {
+      'en': '|',
+      'de': '|',
+      'es': '|',
+      'fr': '|',
+    },
+    'oy280vcm': {
+      'en': 'Start by selecting your goal:',
       'de': 'Beginnen Sie mit der Auswahl Ihres Ziels:',
       'es': 'Comience seleccionando su objetivo:',
       'fr': 'Commencez par sélectionner votre objectif :',
     },
-    'r3fmpz9h': {
-      'en': 'Skip the Quiz',
+    'tvid18z0': {
+      'en': 'Skip the quiz',
       'de': 'Überspringen Sie das Quiz',
       'es': 'Saltar el cuestionario',
       'fr': 'Passer le quiz',
+    },
+  },
+  // FloatingTimerDialogBox
+  {
+    'zrvb3vg4': {
+      'en': ' 85% OFF valid for:',
+      'de': '85 % Rabatt gültig für:',
+      'es': '85% de descuento válido para:',
+      'fr': '85% de réduction valable pour :',
+    },
+    'so2q35wf': {
+      'en': 'Start Now',
+      'de': 'Jetzt starten',
+      'es': 'Empieza ahora',
+      'fr': 'Commencer maintenant',
+    },
+  },
+  // PitchBody_textImagesBodySimilar
+  {
+    '2uhvkbd6': {
+      'en': 'Profile Summary',
+      'de': 'Profilzusammenfassung',
+      'es': 'Resumen del perfil',
+      'fr': 'Résumé du profil',
+    },
+    'z41mds6x': {
+      'en': 'Hair Potential',
+      'de': 'Haarpotenzial',
+      'es': 'Potencial del cabello',
+      'fr': 'Potentiel capillaire',
+    },
+    'yhkzc0dh': {
+      'en':
+          'Based on your answers, your hair has HIGH improvement potential. Awesome! This means your hair can be improved significantly with the right routine. While spending less time and money than you currently are.',
+      'de':
+          'Basierend auf Ihren Antworten haben Ihre Haare ein hohes Verbesserungspotenzial. Fantastisch! Das bedeutet, dass Ihr Haar mit der richtigen Pflege deutlich verbessert werden kann. Und das bei geringerem Zeit- und Kostenaufwand als bisher.',
+      'es':
+          'Según tus respuestas, tu cabello tiene un gran potencial de mejora. ¡Genial! Esto significa que puedes mejorar significativamente con la rutina adecuada, invirtiendo menos tiempo y dinero que ahora.',
+      'fr':
+          'D\'après vos réponses, vos cheveux ont un fort potentiel d\'amélioration. Génial ! Cela signifie que vos cheveux peuvent être considérablement améliorés avec une routine adaptée, tout en dépensant moins de temps et d\'argent qu\'actuellement.',
+    },
+  },
+  // FloatingTimerCheckout
+  {
+    'mtbfmoax': {
+      'en': ' 85% OFF valid for:',
+      'de': '85 % Rabatt gültig für:',
+      'es': '85% de descuento válido para:',
+      'fr': '85% de réduction valable pour :',
     },
   },
   // StartLoadingComponent
@@ -566,13 +612,38 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Chargement de l\'espace personnel',
     },
   },
-  // LoadingScreen_beforeResult
+  // ImageBackground_QuesBody
   {
-    'thdd4opu': {
-      'en': 'Restore your hair follicle health within days.',
-      'de': 'Das einzige Haarpflegeprogramm, das Sie jemals brauchen werden',
-      'es': 'El único programa de cuidado del cabello que necesitarás',
-      'fr': 'Le seul programme de soins capillaires dont vous aurez besoin',
+    'ixew8z9q': {
+      'en': 'DO YOU KNOW IF YOU HAVE FOLLICLE DYSFUNCTION?',
+      'de': 'Beginnen Sie mit der Auswahl Ihres Ziels:',
+      'es': 'Comience seleccionando su objetivo:',
+      'fr': 'Commencez par sélectionner votre objectif :',
+    },
+    'r3fmpz9h': {
+      'en': 'Skip the Quiz',
+      'de': 'Überspringen Sie das Quiz',
+      'es': 'Saltar el cuestionario',
+      'fr': 'Passer le quiz',
+    },
+  },
+  // ManualCarusell
+  {
+    'kyv3grhb': {
+      'en':
+          'Fully recommend this routine to every woman out there! The knowledge you learn from this course sets you up to healthier and better hair! The community is with you every step of the way, the videos are full of information, and the workbook helps you put things into practice. I enjoyed my experience and the change I’ve noticed in my hair. Worth every penny!',
+      'de':
+          'Ich kann diese Routine jeder Frau nur wärmstens empfehlen! Das Wissen aus diesem Kurs verhilft dir zu gesünderem und schönerem Haar! Die Community begleitet dich bei jedem Schritt, die Videos sind voller Informationen und das Arbeitsbuch hilft dir, die Dinge in die Praxis umzusetzen. Ich habe meine Erfahrung und die Veränderung, die ich an meinem Haar bemerkt habe, sehr genossen. Jeden Cent wert!',
+      'es':
+          '¡Recomiendo totalmente esta rutina a todas las mujeres! ¡Los conocimientos que aprendes en este curso te ayudarán a tener un cabello más sano y saludable! La comunidad te acompaña en cada paso del proceso, los videos están llenos de información y el manual te ayuda a poner en práctica. Disfruté mucho de la experiencia y del cambio que he notado en mi cabello. ¡Vale cada centavo!',
+      'fr':
+          'Je recommande vivement cette routine à toutes les femmes ! Les connaissances acquises lors de ce cours vous permettront d\'avoir des cheveux plus sains et plus beaux ! La communauté vous accompagne à chaque étape, les vidéos sont riches en informations et le cahier d\'exercices vous aide à mettre les choses en pratique. J\'ai adoré mon expérience et les changements que j\'ai constatés sur mes cheveux. Ça vaut vraiment le coup !',
+    },
+    '1dec8sii': {
+      'en': 'Melissa Klinefelter',
+      'de': 'Melissa Klinefelter',
+      'es': 'Melissa Klinefelter',
+      'fr': 'Melissa Klinefelter',
     },
   },
   // LoginComponent
@@ -638,6 +709,226 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Su información es 100% segura y nunca se comparte con terceros.',
       'fr':
           'Vos informations sont 100% sécurisées et ne sont jamais partagées avec des tiers.',
+    },
+  },
+  // Final_PitchCopy
+  {
+    'ectisdy6': {
+      'en': 'Previous discount: ',
+      'de': 'Vorheriger Rabatt:',
+      'es': 'Descuento anterior:',
+      'fr': 'Remise précédente :',
+    },
+    'xqojkbzp': {
+      'en': 'Get your personal plan with up to ',
+      'de': 'Sichern Sie sich Ihren persönlichen Plan mit bis zu',
+      'es': 'Consigue tu plan personal con hasta',
+      'fr': 'Obtenez votre forfait personnel avec jusqu\'à',
+    },
+    '8ieqkqa5': {
+      'en': ' discount',
+      'de': 'Rabatt',
+      'es': 'descuento',
+      'fr': 'rabais',
+    },
+    'oj6tcmfd': {
+      'en': 'Your ',
+      'de': 'Dein',
+      'es': 'Su',
+      'fr': 'Ton',
+    },
+    'cf7zz2ef': {
+      'en': 'Vagus Nerve Reset ',
+      'de': 'Vagusnerv-Reset',
+      'es': 'Restablecimiento del nervio vago',
+      'fr': 'Réinitialisation du nerf vague',
+    },
+    'oycp2jqg': {
+      'en': 'plan is ready!',
+      'de': 'Plan ist fertig!',
+      'es': '¡El plan está listo!',
+      'fr': 'le plan est prêt !',
+    },
+    'zm5fkvnr': {
+      'en': 'Main trigger: ',
+      'de': 'Hauptauslöser:',
+      'es': 'Desencadenante principal:',
+      'fr': 'Déclencheur principal :',
+    },
+    'vpdapk4a': {
+      'en': 'Wrong routine',
+      'de': 'Falsche Routine',
+      'es': 'Rutina equivocada',
+      'fr': 'Mauvaise routine',
+    },
+    '8nm2ndrh': {
+      'en': 'Plan focus:',
+      'de': 'Planschwerpunkt:',
+      'es': 'Enfoque del plan:',
+      'fr': 'Objectif du plan :',
+    },
+    'ncal8jc0': {
+      'en': 'MOST POPULAR',
+      'de': 'AM POPULÄRSTEN',
+      'es': 'MÁS POPULAR',
+      'fr': 'LE PLUS POPULAIRE',
+    },
+    '4xbu1770': {
+      'en': '\$',
+      'de': '\$',
+      'es': '\$',
+      'fr': '\$',
+    },
+    'lhtbg9hr': {
+      'en': '0',
+      'de': '0',
+      'es': '0',
+      'fr': '0',
+    },
+    '91z902ra': {
+      'en':
+          'People using our plan for 12 weeks achieve twice as many results as for 4 weeks',
+      'de':
+          'Menschen, die unseren Plan 12 Wochen lang anwenden, erzielen doppelt so viele Ergebnisse wie Menschen, die ihn 4 Wochen lang anwenden.',
+      'es':
+          'Las personas que utilizan nuestro plan durante 12 semanas obtienen el doble de resultados que durante 4 semanas.',
+      'fr':
+          'Les personnes qui utilisent notre plan pendant 12 semaines obtiennent deux fois plus de résultats que pendant 4 semaines',
+    },
+    '92uxjegs': {
+      'en': 'GET MY PLAN',
+      'de': 'MEINEN PLAN ERHALTEN',
+      'es': 'OBTENGA MI PLAN',
+      'fr': 'OBTENIR MON PLAN',
+    },
+  },
+  // skip_dialog
+  {
+    '0cja6uh2': {
+      'en': '⚠️ Before you continue...',
+      'de': '⚠️ Bevor Sie fortfahren …',
+      'es': '⚠️ Antes de continuar...',
+      'fr': '⚠️ Avant de continuer...',
+    },
+    'biuiym7a': {
+      'en':
+          'Only skip the quiz if you\'ve previously completed it, as it\'s required to create a personalized routine based on your hair condition, lifestyle, and other key factors.',
+      'de':
+          'Überspringen Sie das Quiz nur, wenn Sie es bereits abgeschlossen haben, da es erforderlich ist, eine personalisierte Routine basierend auf Ihrem Haarzustand, Ihrem Lebensstil und anderen wichtigen Faktoren zu erstellen.',
+      'es':
+          'Omite el cuestionario solo si ya lo has completado previamente, ya que es necesario para crear una rutina personalizada en función de la condición de tu cabello, tu estilo de vida y otros factores clave.',
+      'fr':
+          'Ne sautez le quiz que si vous l\'avez déjà terminé, car il est nécessaire de créer une routine personnalisée en fonction de l\'état de vos cheveux, de votre style de vie et d\'autres facteurs clés.',
+    },
+    '6x7g4z0e': {
+      'en': 'BACK TO QUIZ',
+      'de': 'ZURÜCK ZUM QUIZ',
+      'es': 'VOLVER AL CUESTIONARIO',
+      'fr': 'RETOUR AU QUIZ',
+    },
+    'jn6yshoa': {
+      'en': 'SKIP QUIZ',
+      'de': 'QUIZ ÜBERSPRINGEN',
+      'es': 'SALTAR LA PRUEBA',
+      'fr': 'SAUTER LE QUIZ',
+    },
+  },
+  // LoadingScreen_beforeResult
+  {
+    'thdd4opu': {
+      'en': 'Restore your hair follicle health within days.',
+      'de': 'Das einzige Haarpflegeprogramm, das Sie jemals brauchen werden',
+      'es': 'El único programa de cuidado del cabello que necesitarás',
+      'fr': 'Le seul programme de soins capillaires dont vous aurez besoin',
+    },
+  },
+  // PitchBody_simpleTextImagesBody
+  {
+    'u7c6uom7': {
+      'en': 'Follicle dysfunction probability:',
+      'de': '',
+      'es': '',
+      'fr': '',
+    },
+    'qgq1r05e': {
+      'en': 'High ',
+      'de': '',
+      'es': '',
+      'fr': '',
+    },
+    'h3j1paw8': {
+      'en': '\n\nThe fact that ',
+      'de': 'von Frauen, die mit',
+      'es': 'de mujeres, luchando con',
+      'fr': 'des femmes aux prises avec',
+    },
+  },
+  // pitch_plan_dialogCopy
+  {
+    'tdwe6nzm': {
+      'en': 'Your Haircare Challenge Plan',
+      'de': 'Ihr Haarpflege-Challenge-Plan',
+      'es': 'Tu plan de desafío para el cuidado del cabello',
+      'fr': 'Votre plan de défi de soins capillaires',
+    },
+    'dovft1qw': {
+      'en': 'YOUR DISCOUNT',
+      'de': 'IHR RABATT',
+      'es': 'TU DESCUENTO',
+      'fr': 'VOTRE REMISE',
+    },
+    'tb5ex1i2': {
+      'en': ' RESERVED FOR',
+      'de': 'RESERVIERT FÜR',
+      'es': 'RESERVADO PARA',
+      'fr': 'RÉSERVÉ À',
+    },
+    '7ngdtn9t': {
+      'en': '14 Day Plan',
+      'de': '14-Tage-Plan',
+      'es': 'Plan de 14 días',
+      'fr': 'Plan de 14 jours',
+    },
+    'h0etcavm': {
+      'en': 'Full Access',
+      'de': 'Vollzugriff',
+      'es': 'Acceso completo',
+      'fr': 'Accès complet',
+    },
+    'oqk57yfn': {
+      'en': 'Based on your profile, we\'ve added these modules to your plan ',
+      'de':
+          'Basierend auf Ihrem Profil haben wir diese Module zu Ihrem Plan hinzugefügt',
+      'es': 'En función de tu perfil, hemos añadido estos módulos a tu plan',
+      'fr':
+          'En fonction de votre profil, nous avons ajouté ces modules à votre plan',
+    },
+    'fw80v5mn': {
+      'en': 'to ensure success:',
+      'de': 'um den Erfolg sicherzustellen:',
+      'es': 'Para garantizar el éxito:',
+      'fr': 'pour assurer le succès :',
+    },
+    'jnsh4y8d': {
+      'en': 'START NOW →',
+      'de': 'JETZT STARTEN →',
+      'es': 'COMIENZA AHORA →',
+      'fr': 'COMMENCEZ MAINTENANT →',
+    },
+  },
+  // MultiChoiceWithImageQuestion_CheckBoxPractices
+  {
+    '907jgrxi': {
+      'en': '(Select all that apply)',
+      'de': '(Wählen Sie alle zutreffenden Antworten aus)',
+      'es': '(Seleccione todas las que correspondan)',
+      'fr': '(Sélectionnez tout ce qui s\'applique)',
+    },
+    'ig7rz0ud': {
+      'en': 'None of the above',
+      'de': 'Nichts des oben Genannten',
+      'es': 'Ninguna de las anteriores',
+      'fr': 'Aucune des réponses ci-dessus',
     },
   },
   // Dashboard
@@ -747,7 +1038,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'En fonction de vos réponses, il vous suffit de',
     },
     'u03zkhmn': {
-      'en': '\n10 min a day, for 14 days\n',
+      'en': '\n10 min a day, for 5 days\n',
       'de': '10 Minuten pro Tag, 14 Tage lang',
       'es': '10 minutos al día, durante 14 días',
       'fr': '10 minutes par jour, pendant 14 jours',
@@ -829,42 +1120,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '100% Geld-zurück-Garantie | Keine Fragen gestellt',
       'es': 'Garantía de reembolso del 100 % | Sin preguntas',
       'fr': 'Garantie de remboursement à 100 % | Aucune question posée',
-    },
-  },
-  // MultiChoiceWithImageQuestion_CheckBoxPractices
-  {
-    '907jgrxi': {
-      'en': '(Select all that apply)',
-      'de': '(Wählen Sie alle zutreffenden Antworten aus)',
-      'es': '(Seleccione todas las que correspondan)',
-      'fr': '(Sélectionnez tout ce qui s\'applique)',
-    },
-    'ig7rz0ud': {
-      'en': 'None of the above',
-      'de': 'Nichts des oben Genannten',
-      'es': 'Ninguna de las anteriores',
-      'fr': 'Aucune des réponses ci-dessus',
-    },
-  },
-  // ImageBackground_QuesBodyV2
-  {
-    'rvqxeq7r': {
-      'en': 'Start by selecting your goal:',
-      'de': 'Beginnen Sie mit der Auswahl Ihres Ziels:',
-      'es': 'Comience seleccionando su objetivo:',
-      'fr': 'Commencez par sélectionner votre objectif :',
-    },
-    'fi8xv3qb': {
-      'en': 'I want BOTH',
-      'de': 'Ich will BEIDES',
-      'es': 'Quiero AMBOS',
-      'fr': 'Je veux les DEUX',
-    },
-    '6laxeb4h': {
-      'en': 'Skip',
-      'de': 'Überspringen',
-      'es': 'Saltar',
-      'fr': 'Sauter',
     },
   },
   // Final_Pitch
@@ -1006,56 +1261,49 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'COMMENCEZ MAINTENANT →',
     },
   },
-  // PitchBody_textImagesBodySimilar
+  // ImageBackground_QuesBodyV2
   {
-    '2uhvkbd6': {
-      'en': 'Profile Summary',
-      'de': 'Profilzusammenfassung',
-      'es': 'Resumen del perfil',
-      'fr': 'Résumé du profil',
-    },
-    'z41mds6x': {
-      'en': 'Hair Potential',
-      'de': 'Haarpotenzial',
-      'es': 'Potencial del cabello',
-      'fr': 'Potentiel capillaire',
-    },
-    'yhkzc0dh': {
-      'en':
-          'Based on your answers, your hair has HIGH improvement potential. Awesome! This means your hair can be improved significantly with the right routine. While spending less time and money than you currently are.',
-      'de':
-          'Basierend auf Ihren Antworten haben Ihre Haare ein hohes Verbesserungspotenzial. Fantastisch! Das bedeutet, dass Ihr Haar mit der richtigen Pflege deutlich verbessert werden kann. Und das bei geringerem Zeit- und Kostenaufwand als bisher.',
-      'es':
-          'Según tus respuestas, tu cabello tiene un gran potencial de mejora. ¡Genial! Esto significa que puedes mejorar significativamente con la rutina adecuada, invirtiendo menos tiempo y dinero que ahora.',
-      'fr':
-          'D\'après vos réponses, vos cheveux ont un fort potentiel d\'amélioration. Génial ! Cela signifie que vos cheveux peuvent être considérablement améliorés avec une routine adaptée, tout en dépensant moins de temps et d\'argent qu\'actuellement.',
-    },
-  },
-  // ImageBackground_QuesBodyV3
-  {
-    'y2h1wino': {
-      'en': '4.8 out of 5',
-      'de': '4,8 von 5',
-      'es': '4,8 de 5',
-      'fr': '4,8 sur 5',
-    },
-    '31eabgmc': {
-      'en': '|',
-      'de': '|',
-      'es': '|',
-      'fr': '|',
-    },
-    'oy280vcm': {
+    'rvqxeq7r': {
       'en': 'Start by selecting your goal:',
       'de': 'Beginnen Sie mit der Auswahl Ihres Ziels:',
       'es': 'Comience seleccionando su objetivo:',
       'fr': 'Commencez par sélectionner votre objectif :',
     },
-    'tvid18z0': {
-      'en': 'Skip the quiz',
-      'de': 'Überspringen Sie das Quiz',
-      'es': 'Saltar el cuestionario',
-      'fr': 'Passer le quiz',
+    'fi8xv3qb': {
+      'en': 'I want BOTH',
+      'de': 'Ich will BEIDES',
+      'es': 'Quiero AMBOS',
+      'fr': 'Je veux les DEUX',
+    },
+    '6laxeb4h': {
+      'en': 'Skip',
+      'de': 'Überspringen',
+      'es': 'Saltar',
+      'fr': 'Sauter',
+    },
+  },
+  // MultiChoiceQuestion_CheckBox
+  {
+    'nbepcvyq': {
+      'en': 'Our hair remembers everything',
+      'de': '(Wählen Sie alle zutreffenden Antworten aus)',
+      'es': '(Seleccione todas las que correspondan)',
+      'fr': '(Sélectionnez tout ce qui s\'applique)',
+    },
+    'vzfmsa5z': {
+      'en': 'None of the above',
+      'de': 'Nichts des oben Genannten',
+      'es': 'Ninguna de las anteriores',
+      'fr': 'Aucune des réponses ci-dessus',
+    },
+  },
+  // PitchBody_resultLabelPitch
+  {
+    'oc18k0vv': {
+      'en': '\n\nHere is what is happening:\n\n',
+      'de': '',
+      'es': '',
+      'fr': '',
     },
   },
   // MultiChoiceWithImageQuestion_CheckBox
@@ -1071,254 +1319,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Nichts des oben Genannten',
       'es': 'Ninguna de las anteriores',
       'fr': 'Aucune des réponses ci-dessus',
-    },
-  },
-  // ManualCarusell
-  {
-    'kyv3grhb': {
-      'en':
-          'Fully recommend this routine to every woman out there! The knowledge you learn from this course sets you up to healthier and better hair! The community is with you every step of the way, the videos are full of information, and the workbook helps you put things into practice. I enjoyed my experience and the change I’ve noticed in my hair. Worth every penny!',
-      'de':
-          'Ich kann diese Routine jeder Frau nur wärmstens empfehlen! Das Wissen aus diesem Kurs verhilft dir zu gesünderem und schönerem Haar! Die Community begleitet dich bei jedem Schritt, die Videos sind voller Informationen und das Arbeitsbuch hilft dir, die Dinge in die Praxis umzusetzen. Ich habe meine Erfahrung und die Veränderung, die ich an meinem Haar bemerkt habe, sehr genossen. Jeden Cent wert!',
-      'es':
-          '¡Recomiendo totalmente esta rutina a todas las mujeres! ¡Los conocimientos que aprendes en este curso te ayudarán a tener un cabello más sano y saludable! La comunidad te acompaña en cada paso del proceso, los videos están llenos de información y el manual te ayuda a poner en práctica. Disfruté mucho de la experiencia y del cambio que he notado en mi cabello. ¡Vale cada centavo!',
-      'fr':
-          'Je recommande vivement cette routine à toutes les femmes ! Les connaissances acquises lors de ce cours vous permettront d\'avoir des cheveux plus sains et plus beaux ! La communauté vous accompagne à chaque étape, les vidéos sont riches en informations et le cahier d\'exercices vous aide à mettre les choses en pratique. J\'ai adoré mon expérience et les changements que j\'ai constatés sur mes cheveux. Ça vaut vraiment le coup !',
-    },
-    '1dec8sii': {
-      'en': 'Melissa Klinefelter',
-      'de': 'Melissa Klinefelter',
-      'es': 'Melissa Klinefelter',
-      'fr': 'Melissa Klinefelter',
-    },
-  },
-  // PitchBody_simpleTextImagesBody
-  {
-    'u7c6uom7': {
-      'en': 'Follicle dysfunction probability:',
-      'de': '',
-      'es': '',
-      'fr': '',
-    },
-    'qgq1r05e': {
-      'en': 'High ',
-      'de': '',
-      'es': '',
-      'fr': '',
-    },
-    'h3j1paw8': {
-      'en': '\n\nThe fact that ',
-      'de': 'von Frauen, die mit',
-      'es': 'de mujeres, luchando con',
-      'fr': 'des femmes aux prises avec',
-    },
-  },
-  // Final_PitchCopy
-  {
-    'ectisdy6': {
-      'en': 'Previous discount: ',
-      'de': 'Vorheriger Rabatt:',
-      'es': 'Descuento anterior:',
-      'fr': 'Remise précédente :',
-    },
-    'xqojkbzp': {
-      'en': 'Get your personal plan with up to ',
-      'de': 'Sichern Sie sich Ihren persönlichen Plan mit bis zu',
-      'es': 'Consigue tu plan personal con hasta',
-      'fr': 'Obtenez votre forfait personnel avec jusqu\'à',
-    },
-    '8ieqkqa5': {
-      'en': ' discount',
-      'de': 'Rabatt',
-      'es': 'descuento',
-      'fr': 'rabais',
-    },
-    'oj6tcmfd': {
-      'en': 'Your ',
-      'de': 'Dein',
-      'es': 'Su',
-      'fr': 'Ton',
-    },
-    'cf7zz2ef': {
-      'en': 'Vagus Nerve Reset ',
-      'de': 'Vagusnerv-Reset',
-      'es': 'Restablecimiento del nervio vago',
-      'fr': 'Réinitialisation du nerf vague',
-    },
-    'oycp2jqg': {
-      'en': 'plan is ready!',
-      'de': 'Plan ist fertig!',
-      'es': '¡El plan está listo!',
-      'fr': 'le plan est prêt !',
-    },
-    'zm5fkvnr': {
-      'en': 'Main trigger: ',
-      'de': 'Hauptauslöser:',
-      'es': 'Desencadenante principal:',
-      'fr': 'Déclencheur principal :',
-    },
-    'vpdapk4a': {
-      'en': 'Wrong routine',
-      'de': 'Falsche Routine',
-      'es': 'Rutina equivocada',
-      'fr': 'Mauvaise routine',
-    },
-    '8nm2ndrh': {
-      'en': 'Plan focus:',
-      'de': 'Planschwerpunkt:',
-      'es': 'Enfoque del plan:',
-      'fr': 'Objectif du plan :',
-    },
-    'ncal8jc0': {
-      'en': 'MOST POPULAR',
-      'de': 'AM POPULÄRSTEN',
-      'es': 'MÁS POPULAR',
-      'fr': 'LE PLUS POPULAIRE',
-    },
-    '4xbu1770': {
-      'en': '\$',
-      'de': '\$',
-      'es': '\$',
-      'fr': '\$',
-    },
-    'lhtbg9hr': {
-      'en': '0',
-      'de': '0',
-      'es': '0',
-      'fr': '0',
-    },
-    '91z902ra': {
-      'en':
-          'People using our plan for 12 weeks achieve twice as many results as for 4 weeks',
-      'de':
-          'Menschen, die unseren Plan 12 Wochen lang anwenden, erzielen doppelt so viele Ergebnisse wie Menschen, die ihn 4 Wochen lang anwenden.',
-      'es':
-          'Las personas que utilizan nuestro plan durante 12 semanas obtienen el doble de resultados que durante 4 semanas.',
-      'fr':
-          'Les personnes qui utilisent notre plan pendant 12 semaines obtiennent deux fois plus de résultats que pendant 4 semaines',
-    },
-    '92uxjegs': {
-      'en': 'GET MY PLAN',
-      'de': 'MEINEN PLAN ERHALTEN',
-      'es': 'OBTENGA MI PLAN',
-      'fr': 'OBTENIR MON PLAN',
-    },
-  },
-  // pitch_plan_dialogCopy
-  {
-    'tdwe6nzm': {
-      'en': 'Your Haircare Challenge Plan',
-      'de': 'Ihr Haarpflege-Challenge-Plan',
-      'es': 'Tu plan de desafío para el cuidado del cabello',
-      'fr': 'Votre plan de défi de soins capillaires',
-    },
-    'dovft1qw': {
-      'en': 'YOUR DISCOUNT',
-      'de': 'IHR RABATT',
-      'es': 'TU DESCUENTO',
-      'fr': 'VOTRE REMISE',
-    },
-    'tb5ex1i2': {
-      'en': ' RESERVED FOR',
-      'de': 'RESERVIERT FÜR',
-      'es': 'RESERVADO PARA',
-      'fr': 'RÉSERVÉ À',
-    },
-    '7ngdtn9t': {
-      'en': '14 Day Plan',
-      'de': '14-Tage-Plan',
-      'es': 'Plan de 14 días',
-      'fr': 'Plan de 14 jours',
-    },
-    'h0etcavm': {
-      'en': 'Full Access',
-      'de': 'Vollzugriff',
-      'es': 'Acceso completo',
-      'fr': 'Accès complet',
-    },
-    'oqk57yfn': {
-      'en': 'Based on your profile, we\'ve added these modules to your plan ',
-      'de':
-          'Basierend auf Ihrem Profil haben wir diese Module zu Ihrem Plan hinzugefügt',
-      'es': 'En función de tu perfil, hemos añadido estos módulos a tu plan',
-      'fr':
-          'En fonction de votre profil, nous avons ajouté ces modules à votre plan',
-    },
-    'fw80v5mn': {
-      'en': 'to ensure success:',
-      'de': 'um den Erfolg sicherzustellen:',
-      'es': 'Para garantizar el éxito:',
-      'fr': 'pour assurer le succès :',
-    },
-    'jnsh4y8d': {
-      'en': 'START NOW →',
-      'de': 'JETZT STARTEN →',
-      'es': 'COMIENZA AHORA →',
-      'fr': 'COMMENCEZ MAINTENANT →',
-    },
-  },
-  // skip_dialog
-  {
-    '0cja6uh2': {
-      'en': '⚠️ Before you continue...',
-      'de': '⚠️ Bevor Sie fortfahren …',
-      'es': '⚠️ Antes de continuar...',
-      'fr': '⚠️ Avant de continuer...',
-    },
-    'biuiym7a': {
-      'en':
-          'Only skip the quiz if you\'ve previously completed it, as it\'s required to create a personalized routine based on your hair condition, lifestyle, and other key factors.',
-      'de':
-          'Überspringen Sie das Quiz nur, wenn Sie es bereits abgeschlossen haben, da es erforderlich ist, eine personalisierte Routine basierend auf Ihrem Haarzustand, Ihrem Lebensstil und anderen wichtigen Faktoren zu erstellen.',
-      'es':
-          'Omite el cuestionario solo si ya lo has completado previamente, ya que es necesario para crear una rutina personalizada en función de la condición de tu cabello, tu estilo de vida y otros factores clave.',
-      'fr':
-          'Ne sautez le quiz que si vous l\'avez déjà terminé, car il est nécessaire de créer une routine personnalisée en fonction de l\'état de vos cheveux, de votre style de vie et d\'autres facteurs clés.',
-    },
-    '6x7g4z0e': {
-      'en': 'BACK TO QUIZ',
-      'de': 'ZURÜCK ZUM QUIZ',
-      'es': 'VOLVER AL CUESTIONARIO',
-      'fr': 'RETOUR AU QUIZ',
-    },
-    'jn6yshoa': {
-      'en': 'SKIP QUIZ',
-      'de': 'QUIZ ÜBERSPRINGEN',
-      'es': 'SALTAR LA PRUEBA',
-      'fr': 'SAUTER LE QUIZ',
-    },
-  },
-  // FloatingTimerDialogBox
-  {
-    'zrvb3vg4': {
-      'en': ' 85% OFF valid for:',
-      'de': '85 % Rabatt gültig für:',
-      'es': '85% de descuento válido para:',
-      'fr': '85% de réduction valable pour :',
-    },
-    'so2q35wf': {
-      'en': 'Start Now',
-      'de': 'Jetzt starten',
-      'es': 'Empieza ahora',
-      'fr': 'Commencer maintenant',
-    },
-  },
-  // FloatingTimerCheckout
-  {
-    'mtbfmoax': {
-      'en': ' 85% OFF valid for:',
-      'de': '85 % Rabatt gültig für:',
-      'es': '85% de descuento válido para:',
-      'fr': '85% de réduction valable pour :',
-    },
-  },
-  // PitchBody_resultLabelPitch
-  {
-    'oc18k0vv': {
-      'en': '\n\nHere is what is happening:\n\n',
-      'de': '',
-      'es': '',
-      'fr': '',
     },
   },
   // Miscellaneous

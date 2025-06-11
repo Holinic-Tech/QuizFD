@@ -3,7 +3,6 @@ import '/components/floating_timer_checkout_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/flutter_flow_youtube_player.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:carousel_slider/carousel_slider.dart';
@@ -129,7 +128,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                       0.0,
                     ),
                     20.0,
-                    0.0),
+                    130.0),
                 child: ListView(
                   padding: EdgeInsets.zero,
                   shrinkWrap: true,
@@ -1011,7 +1010,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                               questionId: 'hairConcern',
                                               answerIds: ['concern_hairloss'],
                                             ))) {
-                                          return 'https://assets.hairqare.co/RP%20hairloss%20timeline.webp';
+                                          return 'https://assets.hairqare.co/5-Day_Result%20page_Hair%20Loss_Bottom_LD.webp';
                                         } else if (FFAppState()
                                             .quizProfile
                                             .qaPairs
@@ -1019,7 +1018,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                               questionId: 'hairConcern',
                                               answerIds: ['concern_splitends'],
                                             ))) {
-                                          return 'https://assets.hairqare.co/RP%20Split%20ends%20timeline.webp';
+                                          return 'https://assets.hairqare.co/5-Day_Result%20page_Frizzy%20Hair_Bottom_LD.webp';
                                         } else if (FFAppState()
                                             .quizProfile
                                             .qaPairs
@@ -1027,7 +1026,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                               questionId: 'hairConcern',
                                               answerIds: ['concern_scalp'],
                                             ))) {
-                                          return 'https://assets.hairqare.co/RP%20dandruff%20timeline.webp';
+                                          return 'https://assets.hairqare.co/5-Day_Result%20Page_Dandruff_Bottom_LD.webp';
                                         } else if (FFAppState()
                                             .quizProfile
                                             .qaPairs
@@ -1035,12 +1034,12 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                               questionId: 'hairConcern',
                                               answerIds: ['concern_damage'],
                                             ))) {
-                                          return 'https://assets.hairqare.co/RP%20damage%20timeline.webp';
+                                          return 'https://assets.hairqare.co/5-Day_Result%20page_Frizzy%20Hair_Bottom_LD.webp';
                                         } else {
-                                          return 'https://assets.hairqare.co/RP%20others%20timeline.webp';
+                                          return 'https://assets.hairqare.co/5-Day_Result%20page_Other%20Issues_Bottom_LD.webp';
                                         }
                                       }(),
-                                      'https://assets.hairqare.co/RP%20others%20timeline.webp',
+                                      'https://assets.hairqare.co/5-Day_Result%20page_Frizzy%20Hair_Bottom_LD.webp',
                                     ),
                                     width: double.infinity,
                                     height: () {
@@ -1104,7 +1103,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                         child: Text(
-                          'Join the 14-Day Haircare Challenge  and  say goodbye to your ${valueOrDefault<String>(
+                          'Join the 5-Day Haircare Challenge  and  say goodbye to your ${valueOrDefault<String>(
                             () {
                               if (FFAppState()
                                   .quizProfile
@@ -1966,7 +1965,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                               TextSpan(
                                 text: FFLocalizations.of(context).getText(
                                   'u03zkhmn' /* 
-10 min a day, for 14 days
+10 min a day, for 5 days
  */
                                   ,
                                 ),
@@ -2847,36 +2846,6 @@ Hassle */
                                         .bodyMedium
                                         .fontStyle,
                                   ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 100.0),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          await actions.trackGAEvent(
-                            'Played VSL',
-                            '',
-                            'Result Page',
-                            FFAppConstants.nonQuestionAnswerItem.toList(),
-                            '',
-                            '',
-                          );
-                        },
-                        child: FlutterFlowYoutubePlayer(
-                          url: 'https://youtube.com/watch?v=rul244vxNec',
-                          width: double.infinity,
-                          autoPlay: false,
-                          looping: true,
-                          mute: false,
-                          showControls: true,
-                          showFullScreen: true,
-                          strictRelatedVideos: true,
                         ),
                       ),
                     ),

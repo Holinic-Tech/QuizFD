@@ -18,11 +18,6 @@ double slideAnimationDuration(
   return double.parse(value.toString());
 }
 
-double getSliderValue(double percentage) {
-  double value = (percentage * 220) / 100;
-  return value;
-}
-
 String formatNumber(double value) {
   if (value % 1 == 0) {
     // If there's no decimal part, return as an integer
@@ -35,4 +30,9 @@ String formatNumber(double value) {
 
 String doubleToInt(double value) {
   return value.toInt().toString();
+}
+
+double getSliderValue(double percentage) {
+  double value = (percentage * 220) / 100;
+  return value;
 }

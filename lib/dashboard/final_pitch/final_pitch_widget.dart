@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'final_pitch_model.dart';
 export 'final_pitch_model.dart';
 
@@ -1906,9 +1905,7 @@ Haircar... */
                                   backgroundColor: Colors.transparent,
                                   alignment: AlignmentDirectional(0.0, 0.0)
                                       .resolve(Directionality.of(context)),
-                                  child: WebViewAware(
-                                    child: PitchPlanDialogWidget(),
-                                  ),
+                                  child: PitchPlanDialogWidget(),
                                 );
                               },
                             );
