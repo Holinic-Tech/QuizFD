@@ -595,6 +595,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '85% de réduction valable pour :',
     },
   },
+  // MultiChoiceQuestion_CheckBox
+  {
+    'nbepcvyq': {
+      'en': 'Our hair remembers everything',
+      'de': '(Wählen Sie alle zutreffenden Antworten aus)',
+      'es': '(Seleccione todas las que correspondan)',
+      'fr': '(Sélectionnez tout ce qui s\'applique)',
+    },
+    'vzfmsa5z': {
+      'en': 'None of the above',
+      'de': 'Nichts des oben Genannten',
+      'es': 'Ninguna de las anteriores',
+      'fr': 'Aucune des réponses ci-dessus',
+    },
+  },
   // StartLoadingComponent
   {
     '3t7mufqk': {
@@ -625,6 +640,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Überspringen Sie das Quiz',
       'es': 'Saltar el cuestionario',
       'fr': 'Passer le quiz',
+    },
+  },
+  // PitchBody_resultLabelPitch
+  {
+    'oc18k0vv': {
+      'en': '\n\nHere is what is happening:\n\n',
+      'de': '',
+      'es': '',
+      'fr': '',
     },
   },
   // ManualCarusell
@@ -914,6 +938,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'JETZT STARTEN →',
       'es': 'COMIENZA AHORA →',
       'fr': 'COMMENCEZ MAINTENANT →',
+    },
+  },
+  // MultiChoiceWithImageQuestion_CheckBox
+  {
+    '7o5y8tc0': {
+      'en': 'Select all that apply',
+      'de': 'Wählen Sie alle zutreffenden Antworten aus',
+      'es': 'Seleccione todas las que correspondan',
+      'fr': 'Sélectionnez tout ce qui s\'applique',
+    },
+    '7tkotzl5': {
+      'en': 'None of the above',
+      'de': 'Nichts des oben Genannten',
+      'es': 'Ninguna de las anteriores',
+      'fr': 'Aucune des réponses ci-dessus',
     },
   },
   // MultiChoiceWithImageQuestion_CheckBoxPractices
@@ -1280,45 +1319,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Überspringen',
       'es': 'Saltar',
       'fr': 'Sauter',
-    },
-  },
-  // MultiChoiceQuestion_CheckBox
-  {
-    'nbepcvyq': {
-      'en': 'Our hair remembers everything',
-      'de': '(Wählen Sie alle zutreffenden Antworten aus)',
-      'es': '(Seleccione todas las que correspondan)',
-      'fr': '(Sélectionnez tout ce qui s\'applique)',
-    },
-    'vzfmsa5z': {
-      'en': 'None of the above',
-      'de': 'Nichts des oben Genannten',
-      'es': 'Ninguna de las anteriores',
-      'fr': 'Aucune des réponses ci-dessus',
-    },
-  },
-  // PitchBody_resultLabelPitch
-  {
-    'oc18k0vv': {
-      'en': '\n\nHere is what is happening:\n\n',
-      'de': '',
-      'es': '',
-      'fr': '',
-    },
-  },
-  // MultiChoiceWithImageQuestion_CheckBox
-  {
-    '7o5y8tc0': {
-      'en': 'Select all that apply',
-      'de': 'Wählen Sie alle zutreffenden Antworten aus',
-      'es': 'Seleccione todas las que correspondan',
-      'fr': 'Sélectionnez tout ce qui s\'applique',
-    },
-    '7tkotzl5': {
-      'en': 'None of the above',
-      'de': 'Nichts des oben Genannten',
-      'es': 'Ninguna de las anteriores',
-      'fr': 'Aucune des réponses ci-dessus',
     },
   },
   // Miscellaneous
