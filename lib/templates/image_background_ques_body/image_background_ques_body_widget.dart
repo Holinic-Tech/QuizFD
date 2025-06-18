@@ -218,818 +218,675 @@ class _ImageBackgroundQuesBodyWidgetState
                 ).image,
               ),
             ),
-            child: Stack(
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(
-                      15.0,
-                      valueOrDefault<double>(
-                        () {
-                          if (MediaQuery.sizeOf(context).width <
-                              kBreakpointSmall) {
-                            return 40.0;
-                          } else if (MediaQuery.sizeOf(context).width <
-                              kBreakpointMedium) {
-                            return 60.0;
-                          } else if (MediaQuery.sizeOf(context).width <
-                              kBreakpointLarge) {
-                            return 60.0;
-                          } else {
-                            return 60.0;
-                          }
-                        }(),
-                        0.0,
-                      ),
-                      15.0,
-                      valueOrDefault<double>(
-                        () {
-                          if (MediaQuery.sizeOf(context).width <
-                              kBreakpointSmall) {
-                            return 40.0;
-                          } else if (MediaQuery.sizeOf(context).width <
-                              kBreakpointMedium) {
-                            return 60.0;
-                          } else if (MediaQuery.sizeOf(context).width <
-                              kBreakpointLarge) {
-                            return 60.0;
-                          } else {
-                            return 60.0;
-                          }
-                        }(),
-                        0.0,
-                      )),
-                  child: Column(
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(
+                  15.0,
+                  valueOrDefault<double>(
+                    () {
+                      if (MediaQuery.sizeOf(context).width < kBreakpointSmall) {
+                        return 40.0;
+                      } else if (MediaQuery.sizeOf(context).width <
+                          kBreakpointMedium) {
+                        return 60.0;
+                      } else if (MediaQuery.sizeOf(context).width <
+                          kBreakpointLarge) {
+                        return 60.0;
+                      } else {
+                        return 60.0;
+                      }
+                    }(),
+                    0.0,
+                  ),
+                  15.0,
+                  valueOrDefault<double>(
+                    () {
+                      if (MediaQuery.sizeOf(context).width < kBreakpointSmall) {
+                        return 40.0;
+                      } else if (MediaQuery.sizeOf(context).width <
+                          kBreakpointMedium) {
+                        return 60.0;
+                      } else if (MediaQuery.sizeOf(context).width <
+                          kBreakpointLarge) {
+                        return 60.0;
+                      } else {
+                        return 60.0;
+                      }
+                    }(),
+                    0.0,
+                  )),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          if (widget.logoShow == true)
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(0.0),
-                              child: Image.network(
-                                'https://assets.hairqare.co/Hairqare_white_logo_1.webp',
-                                width: () {
-                                  if (MediaQuery.sizeOf(context).width <
-                                      kBreakpointSmall) {
-                                    return 80.0;
-                                  } else if (MediaQuery.sizeOf(context).width <
-                                      kBreakpointMedium) {
-                                    return 100.0;
-                                  } else if (MediaQuery.sizeOf(context).width <
-                                      kBreakpointLarge) {
-                                    return 100.0;
-                                  } else {
-                                    return 100.0;
-                                  }
-                                }(),
-                                height: () {
-                                  if (MediaQuery.sizeOf(context).width <
-                                      kBreakpointSmall) {
-                                    return 18.0;
-                                  } else if (MediaQuery.sizeOf(context).width <
-                                      kBreakpointMedium) {
-                                    return 20.0;
-                                  } else if (MediaQuery.sizeOf(context).width <
-                                      kBreakpointLarge) {
-                                    return 20.0;
-                                  } else {
-                                    return 20.0;
-                                  }
-                                }(),
-                                fit: BoxFit.contain,
-                              ),
-                            ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 45.0, 0.0, 0.0),
-                            child: Text(
-                              widget.question!,
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FontWeight.w500,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryWhite,
-                                    fontSize: 27.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                            ),
+                      if (widget.logoShow == true)
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(0.0),
+                          child: Image.network(
+                            'https://assets.hairqare.co/Hairqare_white_logo_1.webp',
+                            width: () {
+                              if (MediaQuery.sizeOf(context).width <
+                                  kBreakpointSmall) {
+                                return 80.0;
+                              } else if (MediaQuery.sizeOf(context).width <
+                                  kBreakpointMedium) {
+                                return 100.0;
+                              } else if (MediaQuery.sizeOf(context).width <
+                                  kBreakpointLarge) {
+                                return 100.0;
+                              } else {
+                                return 100.0;
+                              }
+                            }(),
+                            height: () {
+                              if (MediaQuery.sizeOf(context).width <
+                                  kBreakpointSmall) {
+                                return 18.0;
+                              } else if (MediaQuery.sizeOf(context).width <
+                                  kBreakpointMedium) {
+                                return 20.0;
+                              } else if (MediaQuery.sizeOf(context).width <
+                                  kBreakpointLarge) {
+                                return 20.0;
+                              } else {
+                                return 20.0;
+                              }
+                            }(),
+                            fit: BoxFit.contain,
                           ),
-                        ],
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 45.0, 0.0, 0.0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                'ixew8z9q' /* DO YOU KNOW IF YOU HAVE FOLLIC... */,
-                              ),
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FontWeight.w500,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryWhite,
-                                    fontSize: 20.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                            ),
-                          ),
-                          Icon(
-                            Icons.keyboard_arrow_down_sharp,
-                            color: FlutterFlowTheme.of(context).primaryWhite,
-                            size: 30.0,
-                          ).animateOnPageLoad(
-                              animationsMap['iconOnPageLoadAnimation']!),
-                          Container(
-                            constraints: BoxConstraints(
-                              maxWidth: 650.0,
-                            ),
-                            decoration: BoxDecoration(),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 20.0, 0.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  Expanded(
-                                    child: Opacity(
-                                      opacity: 0.85,
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          _model.selectedAnswer = [];
-                                          _model.selectedAnswerId = [];
-                                          safeSetState(() {});
-                                          await actions.trackGAEvent(
-                                            'Quiz Started',
-                                            widget.questionId,
-                                            widget.question,
-                                            _model.selectedAnswerId.toList(),
-                                            '',
-                                            '',
-                                          );
-                                          await actions.trackGAEvent(
-                                            'Opened diagnosisFD_yes Dialog',
-                                            widget.questionId,
-                                            '',
-                                            FFAppConstants.nonQuestionAnswerItem
-                                                .toList(),
-                                            '',
-                                            '',
-                                          );
-                                          _model.diagnosisFDyesToggle = true;
-                                          safeSetState(() {});
-                                        },
-                                        child: AnimatedContainer(
-                                          duration: Duration(milliseconds: 200),
-                                          curve: Curves.easeIn,
-                                          height: () {
-                                            if (MediaQuery.sizeOf(context)
-                                                    .width <
-                                                kBreakpointSmall) {
-                                              return 60.0;
-                                            } else if (MediaQuery.sizeOf(
-                                                        context)
-                                                    .width <
-                                                kBreakpointMedium) {
-                                              return 80.0;
-                                            } else if (MediaQuery.sizeOf(
-                                                        context)
-                                                    .width <
-                                                kBreakpointLarge) {
-                                              return 80.0;
-                                            } else {
-                                              return 80.0;
-                                            }
-                                          }(),
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(5.0),
-                                          ),
-                                          child: Align(
-                                            alignment:
-                                                AlignmentDirectional(0.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 2.0, 5.0, 2.0),
-                                              child: AutoSizeText(
-                                                valueOrDefault<String>(
-                                                  FFAppState()
-                                                      .diagnosisFD
-                                                      .elementAtOrNull(0)
-                                                      ?.answer,
-                                                  'Yes',
-                                                ),
-                                                textAlign: TextAlign.center,
-                                                minFontSize: 10.0,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      font: GoogleFonts.inter(
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .textRichBlack,
-                                                      fontSize: () {
-                                                        if (MediaQuery.sizeOf(
-                                                                    context)
-                                                                .width <
-                                                            kBreakpointSmall) {
-                                                          return 17.0;
-                                                        } else if (MediaQuery
-                                                                    .sizeOf(
-                                                                        context)
-                                                                .width <
-                                                            kBreakpointMedium) {
-                                                          return 19.0;
-                                                        } else if (MediaQuery
-                                                                    .sizeOf(
-                                                                        context)
-                                                                .width <
-                                                            kBreakpointLarge) {
-                                                          return 19.0;
-                                                        } else {
-                                                          return 19.0;
-                                                        }
-                                                      }(),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Opacity(
-                                      opacity: 0.85,
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          _model.selectedAnswer = [];
-                                          _model.selectedAnswerId = [];
-                                          safeSetState(() {});
-                                          _model.addToSelectedAnswer(
-                                              FFAppState()
-                                                  .diagnosisFD
-                                                  .elementAtOrNull(2)!
-                                                  .answer);
-                                          _model.addToSelectedAnswerId(
-                                              FFAppState()
-                                                  .diagnosisFD
-                                                  .elementAtOrNull(2)!
-                                                  .id);
-                                          _model.questionId = FFAppState()
-                                              .diagnosisFD
-                                              .elementAtOrNull(2)
-                                              ?.type;
-                                          safeSetState(() {});
-                                          await actions.trackGAEvent(
-                                            'Quiz Started',
-                                            widget.questionId,
-                                            widget.question,
-                                            _model.selectedAnswerId.toList(),
-                                            '',
-                                            '',
-                                          );
-                                          await actions.trackGAEvent(
-                                            'Question Answered',
-                                            widget.questionId,
-                                            widget.question,
-                                            _model.selectedAnswerId.toList(),
-                                            '',
-                                            '',
-                                          );
-                                          await widget.answerAction3?.call();
-                                        },
-                                        child: AnimatedContainer(
-                                          duration: Duration(milliseconds: 200),
-                                          curve: Curves.easeIn,
-                                          height: () {
-                                            if (MediaQuery.sizeOf(context)
-                                                    .width <
-                                                kBreakpointSmall) {
-                                              return 60.0;
-                                            } else if (MediaQuery.sizeOf(
-                                                        context)
-                                                    .width <
-                                                kBreakpointMedium) {
-                                              return 80.0;
-                                            } else if (MediaQuery.sizeOf(
-                                                        context)
-                                                    .width <
-                                                kBreakpointLarge) {
-                                              return 80.0;
-                                            } else {
-                                              return 80.0;
-                                            }
-                                          }(),
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(5.0),
-                                          ),
-                                          child: Align(
-                                            alignment:
-                                                AlignmentDirectional(0.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 2.0, 5.0, 2.0),
-                                              child: AutoSizeText(
-                                                valueOrDefault<String>(
-                                                  FFAppState()
-                                                      .diagnosisFD
-                                                      .elementAtOrNull(2)
-                                                      ?.answer,
-                                                  'I don\'t know',
-                                                ),
-                                                textAlign: TextAlign.center,
-                                                minFontSize: 10.0,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      font: GoogleFonts.inter(
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .textRichBlack,
-                                                      fontSize: () {
-                                                        if (MediaQuery.sizeOf(
-                                                                    context)
-                                                                .width <
-                                                            kBreakpointSmall) {
-                                                          return 17.0;
-                                                        } else if (MediaQuery
-                                                                    .sizeOf(
-                                                                        context)
-                                                                .width <
-                                                            kBreakpointMedium) {
-                                                          return 19.0;
-                                                        } else if (MediaQuery
-                                                                    .sizeOf(
-                                                                        context)
-                                                                .width <
-                                                            kBreakpointLarge) {
-                                                          return 19.0;
-                                                        } else {
-                                                          return 19.0;
-                                                        }
-                                                      }(),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ]
-                                    .divide(SizedBox(width: () {
-                                      if (MediaQuery.sizeOf(context).width <
-                                          kBreakpointSmall) {
-                                        return 20.0;
-                                      } else if (MediaQuery.sizeOf(context)
-                                              .width <
-                                          kBreakpointMedium) {
-                                        return 22.0;
-                                      } else if (MediaQuery.sizeOf(context)
-                                              .width <
-                                          kBreakpointLarge) {
-                                        return 22.0;
-                                      } else {
-                                        return 22.0;
-                                      }
-                                    }()))
-                                    .addToStart(SizedBox(width: 10.0))
-                                    .addToEnd(SizedBox(width: 10.0)),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 20.0, 0.0, 20.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [],
-                            ),
-                          ),
-                          InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              await widget.skipAction?.call();
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 10.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'r3fmpz9h' /* Skip the Quiz */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
+                        ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 45.0, 0.0, 0.0),
+                        child: Text(
+                          widget.question!,
+                          textAlign: TextAlign.center,
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                font: GoogleFonts.inter(
+                                  fontWeight: FontWeight.w500,
+                                  fontStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryWhite,
-                                        fontSize: valueOrDefault<double>(
-                                          MediaQuery.sizeOf(context).height <
-                                                  649.0
-                                              ? 14.0
-                                              : 16.0,
-                                          16.0,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                        decoration: TextDecoration.underline,
-                                        lineHeight: 1.2,
-                                      ),
+                                      .fontStyle,
                                 ),
+                                color:
+                                    FlutterFlowTheme.of(context).primaryWhite,
+                                fontSize: 27.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w500,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontStyle,
                               ),
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
                     ],
                   ),
-                ),
-                if (_model.diagnosisFDyesToggle)
-                  Opacity(
-                    opacity: 0.7,
-                    child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
-                      height: MediaQuery.sizeOf(context).height * 1.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryText,
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 45.0, 0.0, 0.0),
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            'ixew8z9q' /* DO YOU KNOW IF YOU HAVE FOLLIC... */,
+                          ),
+                          textAlign: TextAlign.center,
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                font: GoogleFonts.inter(
+                                  fontWeight: FontWeight.w500,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                ),
+                                color:
+                                    FlutterFlowTheme.of(context).primaryWhite,
+                                fontSize: 20.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w500,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontStyle,
+                              ),
+                        ),
                       ),
-                    ),
-                  ),
-                Stack(
-                  children: [
-                    if (_model.diagnosisFDyesToggle)
-                      Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
-                        child: Container(
-                          width: valueOrDefault<double>(
-                            () {
-                              if (MediaQuery.sizeOf(context).width <
-                                  kBreakpointSmall) {
-                                return 500.0;
-                              } else if (MediaQuery.sizeOf(context).width <
-                                  kBreakpointMedium) {
-                                return 500.0;
-                              } else if (MediaQuery.sizeOf(context).width <
-                                  kBreakpointLarge) {
-                                return 500.0;
-                              } else {
-                                return 500.0;
-                              }
-                            }(),
-                            500.0,
-                          ),
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context).primaryWhite,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: SingleChildScrollView(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          await actions.trackGAEvent(
-                                            'Closed diagnosisFD_yes Dialog',
-                                            '',
-                                            '',
-                                            FFAppConstants.nonQuestionAnswerItem
-                                                .toList(),
-                                            '',
-                                            '',
-                                          );
-                                          _model.diagnosisFDyesToggle = false;
-                                          safeSetState(() {});
-                                        },
-                                        child: Container(
-                                          width: 25.0,
-                                          height: 25.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryViolet,
-                                            borderRadius:
-                                                BorderRadius.circular(5.0),
-                                          ),
-                                          child: Icon(
-                                            Icons.close,
-                                            color: Color(0x863A2D32),
-                                            size: 22.0,
+                      Icon(
+                        Icons.keyboard_arrow_down_sharp,
+                        color: FlutterFlowTheme.of(context).primaryWhite,
+                        size: 30.0,
+                      ).animateOnPageLoad(
+                          animationsMap['iconOnPageLoadAnimation']!),
+                      Container(
+                        constraints: BoxConstraints(
+                          maxWidth: 650.0,
+                        ),
+                        decoration: BoxDecoration(),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 20.0, 0.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Expanded(
+                                child: Opacity(
+                                  opacity: 0.85,
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      _model.selectedAnswer = [];
+                                      _model.selectedAnswerId = [];
+                                      safeSetState(() {});
+                                      _model.addToSelectedAnswer(FFAppState()
+                                          .diagnosisFD
+                                          .elementAtOrNull(0)!
+                                          .answer);
+                                      _model.addToSelectedAnswerId(FFAppState()
+                                          .diagnosisFD
+                                          .elementAtOrNull(0)!
+                                          .id);
+                                      _model.questionId = FFAppState()
+                                          .diagnosisFD
+                                          .elementAtOrNull(0)
+                                          ?.type;
+                                      safeSetState(() {});
+                                      await actions.trackGAEvent(
+                                        'Quiz Started',
+                                        widget.questionId,
+                                        widget.question,
+                                        _model.selectedAnswerId.toList(),
+                                        '',
+                                        '',
+                                      );
+                                      await actions.trackGAEvent(
+                                        'Question Answered',
+                                        widget.questionId,
+                                        widget.question,
+                                        _model.selectedAnswerId.toList(),
+                                        '',
+                                        '',
+                                      );
+                                      await widget.answerAction1?.call();
+                                    },
+                                    child: AnimatedContainer(
+                                      duration: Duration(milliseconds: 200),
+                                      curve: Curves.easeIn,
+                                      height: () {
+                                        if (MediaQuery.sizeOf(context).width <
+                                            kBreakpointSmall) {
+                                          return 60.0;
+                                        } else if (MediaQuery.sizeOf(context)
+                                                .width <
+                                            kBreakpointMedium) {
+                                          return 80.0;
+                                        } else if (MediaQuery.sizeOf(context)
+                                                .width <
+                                            kBreakpointLarge) {
+                                          return 80.0;
+                                        } else {
+                                          return 80.0;
+                                        }
+                                      }(),
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
+                                      ),
+                                      child: Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 2.0, 5.0, 2.0),
+                                          child: AutoSizeText(
+                                            valueOrDefault<String>(
+                                              FFAppState()
+                                                  .diagnosisFD
+                                                  .elementAtOrNull(0)
+                                                  ?.answer,
+                                              'Yes',
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            minFontSize: 10.0,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  font: GoogleFonts.inter(
+                                                    fontWeight: FontWeight.w500,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .textRichBlack,
+                                                  fontSize: () {
+                                                    if (MediaQuery.sizeOf(
+                                                                context)
+                                                            .width <
+                                                        kBreakpointSmall) {
+                                                      return 17.0;
+                                                    } else if (MediaQuery
+                                                                .sizeOf(context)
+                                                            .width <
+                                                        kBreakpointMedium) {
+                                                      return 19.0;
+                                                    } else if (MediaQuery
+                                                                .sizeOf(context)
+                                                            .width <
+                                                        kBreakpointLarge) {
+                                                      return 19.0;
+                                                    } else {
+                                                      return 19.0;
+                                                    }
+                                                  }(),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w500,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
                                           ),
                                         ),
                                       ),
-                                      Text(
-                                        FFLocalizations.of(context).getText(
-                                          'junjtekm' /* Excellent awareness!  */,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Opacity(
+                                  opacity: 0.85,
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      _model.selectedAnswer = [];
+                                      _model.selectedAnswerId = [];
+                                      safeSetState(() {});
+                                      _model.addToSelectedAnswer(FFAppState()
+                                          .diagnosisFD
+                                          .elementAtOrNull(1)!
+                                          .answer);
+                                      _model.addToSelectedAnswerId(FFAppState()
+                                          .diagnosisFD
+                                          .elementAtOrNull(1)!
+                                          .id);
+                                      _model.questionId = FFAppState()
+                                          .diagnosisFD
+                                          .elementAtOrNull(1)
+                                          ?.type;
+                                      safeSetState(() {});
+                                      await actions.trackGAEvent(
+                                        'Quiz Started',
+                                        widget.questionId,
+                                        widget.question,
+                                        _model.selectedAnswerId.toList(),
+                                        '',
+                                        '',
+                                      );
+                                      await actions.trackGAEvent(
+                                        'Question Answered',
+                                        widget.questionId,
+                                        widget.question,
+                                        _model.selectedAnswerId.toList(),
+                                        '',
+                                        '',
+                                      );
+                                      await widget.answerAction2?.call();
+                                    },
+                                    child: AnimatedContainer(
+                                      duration: Duration(milliseconds: 200),
+                                      curve: Curves.easeIn,
+                                      height: () {
+                                        if (MediaQuery.sizeOf(context).width <
+                                            kBreakpointSmall) {
+                                          return 60.0;
+                                        } else if (MediaQuery.sizeOf(context)
+                                                .width <
+                                            kBreakpointMedium) {
+                                          return 80.0;
+                                        } else if (MediaQuery.sizeOf(context)
+                                                .width <
+                                            kBreakpointLarge) {
+                                          return 80.0;
+                                        } else {
+                                          return 80.0;
+                                        }
+                                      }(),
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
+                                      ),
+                                      child: Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 2.0, 5.0, 2.0),
+                                          child: AutoSizeText(
+                                            valueOrDefault<String>(
+                                              FFAppState()
+                                                  .diagnosisFD
+                                                  .elementAtOrNull(1)
+                                                  ?.answer,
+                                              'No',
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            minFontSize: 10.0,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  font: GoogleFonts.inter(
+                                                    fontWeight: FontWeight.w500,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .textRichBlack,
+                                                  fontSize: () {
+                                                    if (MediaQuery.sizeOf(
+                                                                context)
+                                                            .width <
+                                                        kBreakpointSmall) {
+                                                      return 17.0;
+                                                    } else if (MediaQuery
+                                                                .sizeOf(context)
+                                                            .width <
+                                                        kBreakpointMedium) {
+                                                      return 19.0;
+                                                    } else if (MediaQuery
+                                                                .sizeOf(context)
+                                                            .width <
+                                                        kBreakpointLarge) {
+                                                      return 19.0;
+                                                    } else {
+                                                      return 19.0;
+                                                    }
+                                                  }(),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w500,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ]
+                                .divide(SizedBox(width: () {
+                                  if (MediaQuery.sizeOf(context).width <
+                                      kBreakpointSmall) {
+                                    return 20.0;
+                                  } else if (MediaQuery.sizeOf(context).width <
+                                      kBreakpointMedium) {
+                                    return 22.0;
+                                  } else if (MediaQuery.sizeOf(context).width <
+                                      kBreakpointLarge) {
+                                    return 22.0;
+                                  } else {
+                                    return 22.0;
+                                  }
+                                }()))
+                                .addToStart(SizedBox(width: 10.0))
+                                .addToEnd(SizedBox(width: 10.0)),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 20.0, 0.0, 20.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                _model.selectedAnswer = [];
+                                _model.selectedAnswerId = [];
+                                _model.checkBoxToggle = true;
+                                safeSetState(() {});
+                                _model.addToSelectedAnswer(FFAppState()
+                                    .diagnosisFD
+                                    .elementAtOrNull(2)!
+                                    .answer);
+                                _model.addToSelectedAnswerId(FFAppState()
+                                    .diagnosisFD
+                                    .elementAtOrNull(2)!
+                                    .id);
+                                _model.questionId = FFAppState()
+                                    .diagnosisFD
+                                    .elementAtOrNull(2)
+                                    ?.type;
+                                safeSetState(() {});
+                                await actions.trackGAEvent(
+                                  'Quiz Started',
+                                  widget.questionId,
+                                  widget.question,
+                                  _model.selectedAnswerId.toList(),
+                                  '',
+                                  '',
+                                );
+                                await actions.trackGAEvent(
+                                  'Question Answered',
+                                  widget.questionId,
+                                  widget.question,
+                                  _model.selectedAnswerId.toList(),
+                                  '',
+                                  '',
+                                );
+                                await widget.answerAction3?.call();
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Theme(
+                                      data: ThemeData(
+                                        checkboxTheme: CheckboxThemeData(
+                                          visualDensity: VisualDensity.compact,
+                                          materialTapTargetSize:
+                                              MaterialTapTargetSize.shrinkWrap,
+                                          shape: CircleBorder(),
+                                        ),
+                                        unselectedWidgetColor:
+                                            FlutterFlowTheme.of(context)
+                                                .backgroundDove,
+                                      ),
+                                      child: Checkbox(
+                                        value: _model.checkboxValue ??=
+                                            _model.checkBoxToggle!,
+                                        onChanged: (newValue) async {
+                                          safeSetState(() =>
+                                              _model.checkboxValue = newValue!);
+                                          if (newValue!) {
+                                            _model.selectedAnswer = [];
+                                            _model.selectedAnswerId = [];
+                                            _model.checkBoxToggle = true;
+                                            safeSetState(() {});
+                                            _model.addToSelectedAnswer(
+                                                FFAppState()
+                                                    .diagnosisFD
+                                                    .elementAtOrNull(2)!
+                                                    .answer);
+                                            _model.addToSelectedAnswerId(
+                                                FFAppState()
+                                                    .diagnosisFD
+                                                    .elementAtOrNull(2)!
+                                                    .id);
+                                            _model.questionId = FFAppState()
+                                                .diagnosisFD
+                                                .elementAtOrNull(2)
+                                                ?.type;
+                                            safeSetState(() {});
+                                            await actions.trackGAEvent(
+                                              'Quiz Started',
+                                              widget.questionId,
+                                              widget.question,
+                                              _model.selectedAnswerId.toList(),
+                                              '',
+                                              '',
+                                            );
+                                            await actions.trackGAEvent(
+                                              'Question Answered',
+                                              widget.questionId,
+                                              widget.question,
+                                              _model.selectedAnswerId.toList(),
+                                              '',
+                                              '',
+                                            );
+                                            await widget.answerAction3?.call();
+                                          }
+                                        },
+                                        side: (FlutterFlowTheme.of(context)
+                                                    .backgroundDove !=
+                                                null)
+                                            ? BorderSide(
+                                                width: 2,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .backgroundDove,
+                                              )
+                                            : null,
+                                        activeColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryPlum,
+                                        checkColor: FlutterFlowTheme.of(context)
+                                            .primaryWhite,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          5.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        valueOrDefault<String>(
+                                          FFAppState()
+                                              .diagnosisFD
+                                              .elementAtOrNull(2)
+                                              ?.answer,
+                                          'I don\'t know',
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
                                               font: GoogleFonts.inter(
-                                                fontWeight: FontWeight.w600,
+                                                fontWeight: FontWeight.w500,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .fontStyle,
                                               ),
-                                              fontSize: 16.0,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryWhite,
+                                              fontSize: 19.0,
                                               letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w600,
+                                              fontWeight: FontWeight.w500,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .fontStyle,
+                                              decoration:
+                                                  TextDecoration.underline,
+                                              lineHeight: 1.2,
                                             ),
                                       ),
-                                      Container(
-                                        width: 10.0,
-                                        height: 10.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        25.0, 20.0, 25.0, 0.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        '0b6flm9u' /* You're already ahead of most w... */,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight: FontWeight.normal,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            fontSize: 17.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.normal,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
                                     ),
-                                  ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 30.0, 0.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              _model.selectedAnswer = [];
-                                              _model.selectedAnswerId = [];
-                                              safeSetState(() {});
-                                              _model.addToSelectedAnswer(
-                                                  FFAppState()
-                                                      .diagnosisFD
-                                                      .elementAtOrNull(0)!
-                                                      .answer);
-                                              _model.addToSelectedAnswerId(
-                                                  FFAppState()
-                                                      .diagnosisFD
-                                                      .elementAtOrNull(0)!
-                                                      .id);
-                                              _model.questionId = FFAppState()
-                                                  .diagnosisFD
-                                                  .elementAtOrNull(0)
-                                                  ?.type;
-                                              safeSetState(() {});
-                                              await actions.trackGAEvent(
-                                                'Quiz Started',
-                                                widget.questionId,
-                                                widget.question,
-                                                _model.selectedAnswerId
-                                                    .toList(),
-                                                '',
-                                                '',
-                                              );
-                                              await actions.trackGAEvent(
-                                                'Question Answered',
-                                                widget.questionId,
-                                                widget.question,
-                                                _model.selectedAnswerId
-                                                    .toList(),
-                                                '',
-                                                '',
-                                              );
-                                              await widget.answerAction1
-                                                  ?.call();
-                                            },
-                                            child: Container(
-                                              width: MediaQuery.sizeOf(context)
-                                                      .width *
-                                                  0.7,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .orange,
-                                                borderRadius:
-                                                    BorderRadius.circular(10.0),
-                                              ),
-                                              child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Padding(
-                                                  padding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                              valueOrDefault<
-                                                                  double>(
-                                                                MediaQuery.sizeOf(context)
-                                                                            .width <
-                                                                        350.0
-                                                                    ? 5.0
-                                                                    : 20.0,
-                                                                20.0,
-                                                              ),
-                                                              15.0,
-                                                              valueOrDefault<
-                                                                  double>(
-                                                                MediaQuery.sizeOf(context)
-                                                                            .width <
-                                                                        350.0
-                                                                    ? 5.0
-                                                                    : 20.0,
-                                                                20.0,
-                                                              ),
-                                                              15.0),
-                                                  child: AutoSizeText(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '2csn4u9o' /* CONTINUE */,
-                                                    ),
-                                                    minFontSize: 14.0,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font:
-                                                              GoogleFonts.inter(
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          fontSize: 16.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ].divide(SizedBox(width: 20.0)),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          await widget.skipAction?.call();
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 10.0),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'r3fmpz9h' /* Skip the Quiz */,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryWhite,
+                                    fontSize: valueOrDefault<double>(
+                                      MediaQuery.sizeOf(context).height < 649.0
+                                          ? 14.0
+                                          : 16.0,
+                                      16.0,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                    decoration: TextDecoration.underline,
+                                    lineHeight: 1.2,
+                                  ),
                             ),
                           ),
                         ),
                       ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
           ).animateOnPageLoad(animationsMap['containerOnPageLoadAnimation']!),
         ),
