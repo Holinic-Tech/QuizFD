@@ -37,10 +37,7 @@ class ImageBackgroundQuesBodyModel
 
   bool? checkBoxToggle = false;
 
-  ///  State fields for stateful widgets in this component.
-
-  // State field(s) for Checkbox widget.
-  bool? checkboxValue;
+  bool diagnosisFDyesToggle = false;
 
   @override
   void initState(BuildContext context) {}

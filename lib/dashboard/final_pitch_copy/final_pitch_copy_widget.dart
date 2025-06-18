@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'final_pitch_copy_model.dart';
 export 'final_pitch_copy_model.dart';
 
@@ -1552,10 +1553,12 @@ class _FinalPitchCopyWidgetState extends State<FinalPitchCopyWidget> {
                               backgroundColor: Colors.transparent,
                               alignment: AlignmentDirectional(0.0, 0.0)
                                   .resolve(Directionality.of(context)),
-                              child: Container(
-                                height: 550.0,
-                                width: 360.0,
-                                child: PitchPlanDialogWidget(),
+                              child: WebViewAware(
+                                child: Container(
+                                  height: 550.0,
+                                  width: 360.0,
+                                  child: PitchPlanDialogWidget(),
+                                ),
                               ),
                             );
                           },

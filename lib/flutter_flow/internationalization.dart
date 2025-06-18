@@ -359,7 +359,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'xgrtm968': {
       'en':
-          'Here is what you can achieve in 5 days of following the right routine for your hair:',
+          'Here is what you can achieve in 14 days of following the right routine for your hair:',
       'de':
           'Folgendes können Sie in 14 Tagen erreichen, wenn Sie die richtige Routine für Ihr Haar befolgen:',
       'es':
@@ -625,21 +625,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Persönlicher Bereich wird geladen',
       'es': 'Carga de espacio personal',
       'fr': 'Chargement de l\'espace personnel',
-    },
-  },
-  // ImageBackground_QuesBody
-  {
-    'ixew8z9q': {
-      'en': 'DO YOU KNOW IF YOU HAVE FOLLICLE DYSFUNCTION?',
-      'de': 'Beginnen Sie mit der Auswahl Ihres Ziels:',
-      'es': 'Comience seleccionando su objetivo:',
-      'fr': 'Commencez par sélectionner votre objectif :',
-    },
-    'r3fmpz9h': {
-      'en': 'Skip the Quiz',
-      'de': 'Überspringen Sie das Quiz',
-      'es': 'Saltar el cuestionario',
-      'fr': 'Passer le quiz',
     },
   },
   // PitchBody_resultLabelPitch
@@ -1077,7 +1062,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'En fonction de vos réponses, il vous suffit de',
     },
     'u03zkhmn': {
-      'en': '\n10 min a day, for 5 days\n',
+      'en': '\n10 min a day, for 14 days\n',
       'de': '10 Minuten pro Tag, 14 Tage lang',
       'es': '10 minutos al día, durante 14 días',
       'fr': '10 minutes par jour, pendant 14 jours',
@@ -1319,6 +1304,71 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Überspringen',
       'es': 'Saltar',
       'fr': 'Sauter',
+    },
+  },
+  // ImageBackground_QuesBody
+  {
+    'ixew8z9q': {
+      'en': 'DO YOU KNOW IF YOU HAVE FOLLICLE DYSFUNCTION?',
+      'de': '',
+      'es': '',
+      'fr': '',
+    },
+    'r3fmpz9h': {
+      'en': 'Skip the Quiz',
+      'de': '',
+      'es': '',
+      'fr': '',
+    },
+    'junjtekm': {
+      'en': 'Excellent awareness! ',
+      'de': '',
+      'es': '',
+      'fr': '',
+    },
+    '0b6flm9u': {
+      'en':
+          'You\'re already ahead of most women. \n\nNow we need to identify your exact dysfunction type and the hidden triggers that keep sabotaging your efforts.',
+      'de': '',
+      'es': '',
+      'fr': '',
+    },
+    '2csn4u9o': {
+      'en': 'CONTINUE',
+      'de': '',
+      'es': '',
+      'fr': '',
+    },
+  },
+  // FD-yes_dialog
+  {
+    'nwsgpatn': {
+      'en': '⚠️ Are you sure?',
+      'de': '⚠️ Bevor Sie fortfahren …',
+      'es': '⚠️ Antes de continuar...',
+      'fr': '⚠️ Avant de continuer...',
+    },
+    '8qazjcwh': {
+      'en':
+          'some text about follicle dysfunction yes and if they click continue they go to question 1 and we accept their answer',
+      'de':
+          'Überspringen Sie das Quiz nur, wenn Sie es bereits abgeschlossen haben, da es erforderlich ist, eine personalisierte Routine basierend auf Ihrem Haarzustand, Ihrem Lebensstil und anderen wichtigen Faktoren zu erstellen.',
+      'es':
+          'Omite el cuestionario solo si ya lo has completado previamente, ya que es necesario para crear una rutina personalizada en función de la condición de tu cabello, tu estilo de vida y otros factores clave.',
+      'fr':
+          'Ne sautez le quiz que si vous l\'avez déjà terminé, car il est nécessaire de créer une routine personnalisée en fonction de l\'état de vos cheveux, de votre style de vie et d\'autres facteurs clés.',
+    },
+    '01k9emv9': {
+      'en': 'BACK',
+      'de': 'ZURÜCK ZUM QUIZ',
+      'es': 'VOLVER AL CUESTIONARIO',
+      'fr': 'RETOUR AU QUIZ',
+    },
+    '3f7zyu7g': {
+      'en': 'CONTINUE',
+      'de': 'QUIZ ÜBERSPRINGEN',
+      'es': 'SALTAR LA PRUEBA',
+      'fr': 'SAUTER LE QUIZ',
     },
   },
   // Miscellaneous
