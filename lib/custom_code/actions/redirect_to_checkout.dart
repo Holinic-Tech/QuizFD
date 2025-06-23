@@ -14,7 +14,7 @@ Future<void> redirectToCheckout() async {
   try {
     // Base URL for checkout
     String baseUrl =
-        "https://checkout.hairqare.co/buy/5d-hairqare-challenge-save-85/";
+        "https://checkout.hairqare.co/buy/hairqare-challenge-save-85-5/";
 
     // Get values from app state
     final contactDetails = FFAppState().submittedContactDetails;
@@ -101,7 +101,7 @@ Future<void> redirectToCheckout() async {
 
     // Fallback to base URL if something goes wrong
     js.context.callMethod('open', [
-      'https://checkout.hairqare.co/buy/5d-hairqare-challenge-save-85/',
+      'https://checkout.hairqare.co/buy/hairqare-challenge-save-85-5/',
       '_self'
     ]);
   }
