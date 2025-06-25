@@ -1362,4 +1362,11 @@ class FFAppState extends ChangeNotifier {
       int index, MultiChoiceWithImagesCheckBoxStruct value) {
     originProblem.insert(index, value);
   }
+
+  /// is true if we detected a webview browser to adjsut padding and viewport to
+  bool _isWebview = false;
+  bool get isWebview => _isWebview;
+  set isWebview(bool value) {
+    _isWebview = value;
+  }
 }

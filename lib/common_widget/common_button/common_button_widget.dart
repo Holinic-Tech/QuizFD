@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'common_button_model.dart';
 export 'common_button_model.dart';
 
@@ -55,8 +56,25 @@ class _CommonButtonWidgetState extends State<CommonButtonWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
+      padding: EdgeInsetsDirectional.fromSTEB(
+          20.0,
+          0.0,
+          20.0,
+          valueOrDefault<double>(
+            () {
+              if (FFAppState().isWebview == false) {
+                return 20.0;
+              } else if (FFAppState().isWebview == true) {
+                return 100.0;
+              } else {
+                return 20.0;
+              }
+            }(),
+            20.0,
+          )),
       child: FFButtonWidget(
         onPressed: () async {
           await widget.buttonOnTap?.call();

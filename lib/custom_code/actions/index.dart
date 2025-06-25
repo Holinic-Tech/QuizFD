@@ -5,3 +5,4 @@ export 'track_g_a_event.dart' show trackGAEvent;
 export 'unfocus_keyboard.dart' show unfocusKeyboard;
 export 'convert_to_title_case.dart' show convertToTitleCase;
 export 'redirect_to_checkout.dart' show redirectToCheckout;
+export 'is_facebook_web_view.dart' show isFacebookWebView;

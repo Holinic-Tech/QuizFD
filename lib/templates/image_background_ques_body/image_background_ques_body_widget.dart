@@ -240,19 +240,28 @@ class _ImageBackgroundQuesBodyWidgetState
                   15.0,
                   valueOrDefault<double>(
                     () {
-                      if (MediaQuery.sizeOf(context).width < kBreakpointSmall) {
-                        return 40.0;
-                      } else if (MediaQuery.sizeOf(context).width <
-                          kBreakpointMedium) {
-                        return 60.0;
-                      } else if (MediaQuery.sizeOf(context).width <
-                          kBreakpointLarge) {
-                        return 60.0;
+                      if (FFAppState().isWebview == false) {
+                        return () {
+                          if (MediaQuery.sizeOf(context).width <
+                              kBreakpointSmall) {
+                            return 40.0;
+                          } else if (MediaQuery.sizeOf(context).width <
+                              kBreakpointMedium) {
+                            return 60.0;
+                          } else if (MediaQuery.sizeOf(context).width <
+                              kBreakpointLarge) {
+                            return 60.0;
+                          } else {
+                            return 60.0;
+                          }
+                        }();
+                      } else if (FFAppState().isWebview == true) {
+                        return 120.0;
                       } else {
                         return 60.0;
                       }
                     }(),
-                    0.0,
+                    100.0,
                   )),
               child: Column(
                 mainAxisSize: MainAxisSize.max,

@@ -95,6 +95,7 @@ class _PitchBodySimpleTextImagesBodyWidgetState
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Align(
                       alignment: AlignmentDirectional(-1.0, 0.0),
@@ -200,7 +201,6 @@ class _PitchBodySimpleTextImagesBodyWidgetState
                               decoration: BoxDecoration(),
                               child: LinearPercentIndicator(
                                 percent: random_data.randomDouble(0.79, 0.87),
-                                width: MediaQuery.sizeOf(context).width * 0.9,
                                 lineHeight: 30.0,
                                 animation: true,
                                 animateFromLastPercent: true,

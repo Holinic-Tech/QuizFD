@@ -148,12 +148,6 @@ bool _isSupportedLocale(Locale locale) {
 final kTranslationsMap = <Map<String, Map<String, String>>>[
   // HomePage
   {
-    'nbe7i9d1': {
-      'en': 'See if the Challenge is a fit for you and your hair profile',
-      'de': 'Sehen Sie, ob die Challenge zu Ihnen und Ihrem Haarprofil passt',
-      'es': 'Descubre si el reto es adecuado para ti y tu perfil capilar.',
-      'fr': 'Voyez si le défi est adapté à vous et à votre profil capillaire',
-    },
     'x8ai5u31': {
       'en': '',
       'de': '',

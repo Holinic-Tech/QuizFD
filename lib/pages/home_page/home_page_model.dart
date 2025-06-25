@@ -24,6 +24,8 @@ import 'package:flutter/material.dart';
 class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Custom Action - isFacebookWebView] action in HomePage widget.
+  bool? isWebview;
   // Model for HeaderWithProgressBar component.
   late HeaderWithProgressBarModel headerWithProgressBarModel;
   // State field(s) for PageView widget.

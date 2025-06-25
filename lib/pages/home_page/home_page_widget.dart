@@ -54,7 +54,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      setAppLanguage(context, 'en');
+      _model.isWebview = await actions.isFacebookWebView();
+      FFAppState().isWebview = _model.isWebview!;
+      safeSetState(() {});
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -139,9 +141,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             model: _model.startGoalImageBackgroundQuesBodyModel,
                             updateCallback: () => safeSetState(() {}),
                             child: ImageBackgroundQuesBodyWidget(
-                              question: FFLocalizations.of(context).getText(
-                                'nbe7i9d1' /* See if the Challenge is a fit ... */,
-                              ),
+                              question:
+                                  'See if the Challenge is a fit for you and your hair profile ',
                               answer1: FFLocalizations.of(context).getText(
                                 'x8ai5u31' /*  */,
                               ),
