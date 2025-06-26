@@ -56,7 +56,22 @@ class _FloatingTimerCheckoutWidgetState
     return Align(
       alignment: AlignmentDirectional(0.0, 1.0),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 20.0),
+        padding: EdgeInsetsDirectional.fromSTEB(
+            10.0,
+            0.0,
+            10.0,
+            valueOrDefault<double>(
+              () {
+                if (FFAppState().isWebview == false) {
+                  return 20.0;
+                } else if (FFAppState().isWebview == true) {
+                  return 100.0;
+                } else {
+                  return 20.0;
+                }
+              }(),
+              20.0,
+            )),
         child: Container(
           width: 600.0,
           height: 55.0,

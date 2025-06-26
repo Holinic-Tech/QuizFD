@@ -5,7 +5,9 @@ import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'login_component_model.dart';
 export 'login_component_model.dart';
 
@@ -64,16 +66,29 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
     _model.nameTextFieldFocusNode!.addListener(
       () async {
         await Future.delayed(const Duration(milliseconds: 400));
-        await _model.listViewController?.animateTo(
-          _model.listViewController!.position.maxScrollExtent,
-          duration: Duration(milliseconds: 200),
-          curve: Curves.ease,
-        );
+        if (FFAppState().isWebview != true) {
+          await _model.listViewController?.animateTo(
+            _model.listViewController!.position.maxScrollExtent,
+            duration: Duration(milliseconds: 200),
+            curve: Curves.ease,
+          );
+        }
       },
     );
     _model.emailTextFieldTextController ??= TextEditingController();
     _model.emailTextFieldFocusNode ??= FocusNode();
-
+    _model.emailTextFieldFocusNode!.addListener(
+      () async {
+        await Future.delayed(const Duration(milliseconds: 400));
+        if (FFAppState().isWebview != true) {
+          await _model.listViewController?.animateTo(
+            _model.listViewController!.position.maxScrollExtent,
+            duration: Duration(milliseconds: 200),
+            curve: Curves.ease,
+          );
+        }
+      },
+    );
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -86,6 +101,8 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Align(
       alignment: AlignmentDirectional(0.0, -1.0),
       child: Container(
@@ -284,7 +301,9 @@ to unlock ... */
                                     controller:
                                         _model.nameTextFieldTextController,
                                     focusNode: _model.nameTextFieldFocusNode,
-                                    autofocus: false,
+                                    autofocus: true,
+                                    textCapitalization:
+                                        TextCapitalization.words,
                                     textInputAction: TextInputAction.next,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -408,6 +427,18 @@ to unlock ... */
                                     validator: _model
                                         .nameTextFieldTextControllerValidator
                                         .asValidator(context),
+                                    inputFormatters: [
+                                      if (!isAndroid && !isiOS)
+                                        TextInputFormatter.withFunction(
+                                            (oldValue, newValue) {
+                                          return TextEditingValue(
+                                            selection: newValue.selection,
+                                            text: newValue.text
+                                                .toCapitalization(
+                                                    TextCapitalization.words),
+                                          );
+                                        }),
+                                    ],
                                   ),
                                 ),
                               ),
@@ -423,15 +454,17 @@ to unlock ... */
                                     onFieldSubmitted: (_) async {
                                       await Future.delayed(
                                           const Duration(milliseconds: 400));
-                                      await _model.listViewController
-                                          ?.animateTo(
-                                        _model.listViewController!.position
-                                            .maxScrollExtent,
-                                        duration: Duration(milliseconds: 200),
-                                        curve: Curves.ease,
-                                      );
+                                      if (FFAppState().isWebview != true) {
+                                        await _model.listViewController
+                                            ?.animateTo(
+                                          _model.listViewController!.position
+                                              .maxScrollExtent,
+                                          duration: Duration(milliseconds: 200),
+                                          curve: Curves.ease,
+                                        );
+                                      }
                                     },
-                                    autofocus: false,
+                                    autofocus: true,
                                     textInputAction: TextInputAction.done,
                                     obscureText: false,
                                     decoration: InputDecoration(
