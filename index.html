@@ -80,6 +80,18 @@ function trackEvent(eventName, properties, eventId, profileProperties, aliases) 
   cvg({method:"track",eventName:"$page_load"});
 </script>
 
+<style>
+html { 
+  -webkit-text-size-adjust: 100% !important; 
+  -moz-text-size-adjust: 100% !important; 
+  -ms-text-size-adjust: 100% !important; 
+  text-size-adjust: 100% !important;
+}
+
+* { 
+  font-size: initial !important; /* Use your defined sizes only */
+}
+</style>
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
