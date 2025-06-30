@@ -14,23 +14,18 @@ Future<bool> isFacebookWebView() async {
   // Get the user agent string
   final userAgent = html.window.navigator.userAgent.toLowerCase();
 
-  // Check for Facebook WebView identifiers
+  // Check for Facebook WebView identifiers (excluding Instagram)
   // FBAN = Facebook Android
-  // FBAV = Facebook App Version
-  // FB_IAB = Facebook In-App Browser
   // FBIOS = Facebook iOS
-  // FBLC = Facebook Locale
-  // Instagram also uses similar WebView
-  final isFacebook = userAgent.contains('fban') ||
-      userAgent.contains('fbav') ||
-      userAgent.contains('fb_iab') ||
-      userAgent.contains('fbios') ||
-      userAgent.contains('fblc') ||
-      userAgent.contains('instagram');
+  // FB_IAB = Facebook In-App Browser (also check this for broader coverage)
+  final isFacebookOnly = (userAgent.contains('fban') ||
+          userAgent.contains('fbios') ||
+          userAgent.contains('fb_iab')) &&
+      !userAgent.contains('instagram');
 
   // Log for debugging
   print('User Agent: $userAgent');
-  print('Is Facebook WebView: $isFacebook');
+  print('Is Facebook WebView: $isFacebookOnly');
 
-  return isFacebook;
+  return isFacebookOnly;
 }
