@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 
@@ -42,6 +43,7 @@ class _MyAppState extends State<MyApp> {
   Locale? _locale;
 
   ThemeMode _themeMode = ThemeMode.system;
+  double _textScaleFactor = FlutterFlowTheme.textScaleFactor;
 
   late AppStateNotifier _appStateNotifier;
   late GoRouter _router;
@@ -74,6 +76,31 @@ class _MyAppState extends State<MyApp> {
         _themeMode = mode;
       });
 
+  void setTextScaleFactor(double updatedFactor) {
+    if (updatedFactor < FlutterFlowTheme.minTextScaleFactor ||
+        updatedFactor > FlutterFlowTheme.maxTextScaleFactor) {
+      return;
+    }
+    safeSetState(() {
+      _textScaleFactor = updatedFactor;
+    });
+
+    FlutterFlowTheme.saveTextScaleFactor(_textScaleFactor);
+  }
+
+  void incrementTextScaleFactor(double incrementValue) {
+    final updatedFactor = _textScaleFactor + incrementValue;
+    if (updatedFactor < FlutterFlowTheme.minTextScaleFactor ||
+        updatedFactor > FlutterFlowTheme.maxTextScaleFactor) {
+      return;
+    }
+    safeSetState(() {
+      _textScaleFactor = updatedFactor;
+    });
+
+    FlutterFlowTheme.saveTextScaleFactor(_textScaleFactor);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
@@ -101,6 +128,15 @@ class _MyAppState extends State<MyApp> {
       ),
       themeMode: _themeMode,
       routerConfig: _router,
+      builder: (_, child) => MediaQuery(
+        data: MediaQuery.of(context).copyWith(
+          textScaler: TextScaler.linear(_textScaleFactor).clamp(
+            minScaleFactor: FlutterFlowTheme.minTextScaleFactor,
+            maxScaleFactor: FlutterFlowTheme.maxTextScaleFactor,
+          ),
+        ),
+        child: child!,
+      ),
     );
   }
 }

@@ -324,7 +324,6 @@ class _ImageBackgroundQuesBodyWidgetState
                                 color:
                                     FlutterFlowTheme.of(context).primaryWhite,
                                 fontSize: 27.0,
-                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,
                                 fontStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium

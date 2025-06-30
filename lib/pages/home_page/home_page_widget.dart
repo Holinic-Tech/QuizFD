@@ -57,6 +57,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       _model.isWebview = await actions.isFacebookWebView();
       FFAppState().isWebview = _model.isWebview!;
       safeSetState(() {});
+      setAppLanguage(context, 'en');
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));

@@ -3,7 +3,27 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:shared_preferences/shared_preferences.dart';
+
+const kTextScaleFactorKey = '__text_scale_factor__';
+
+SharedPreferences? _prefs;
+
 abstract class FlutterFlowTheme {
+  static Future initialize() async =>
+      _prefs = await SharedPreferences.getInstance();
+
+  static const double minTextScaleFactor = 1.0;
+  static const double maxTextScaleFactor = 1.0;
+
+  static double get textScaleFactor {
+    final textScaleFactor = _prefs?.getDouble(kTextScaleFactorKey);
+    return textScaleFactor ?? 1.0;
+  }
+
+  static void saveTextScaleFactor(double scale) =>
+      _prefs?.setDouble(kTextScaleFactorKey, scale);
+
   static FlutterFlowTheme of(BuildContext context) {
     return LightModeTheme();
   }
