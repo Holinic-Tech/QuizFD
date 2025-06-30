@@ -301,7 +301,7 @@ to unlock ... */
                                     controller:
                                         _model.nameTextFieldTextController,
                                     focusNode: _model.nameTextFieldFocusNode,
-                                    autofocus: true,
+                                    autofocus: false,
                                     textCapitalization:
                                         TextCapitalization.words,
                                     textInputAction: TextInputAction.next,
@@ -464,7 +464,7 @@ to unlock ... */
                                         );
                                       }
                                     },
-                                    autofocus: true,
+                                    autofocus: false,
                                     textInputAction: TextInputAction.done,
                                     obscureText: false,
                                     decoration: InputDecoration(
