@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/footer/footer_button/footer_button_widget.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -337,11 +338,12 @@ class _PitchBodyDetailedTextImagesWidgetState
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
-                                        child: Text(
+                                        child: AutoSizeText(
                                           valueOrDefault<String>(
                                             widget.value1,
                                             'value1',
                                           ),
+                                          minFontSize: 10.0,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -381,11 +383,12 @@ class _PitchBodyDetailedTextImagesWidgetState
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
-                                        child: Text(
+                                        child: AutoSizeText(
                                           valueOrDefault<String>(
                                             widget.value3,
                                             'value3',
                                           ),
+                                          minFontSize: 10.0,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -431,11 +434,12 @@ class _PitchBodyDetailedTextImagesWidgetState
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
-                                        child: Text(
+                                        child: AutoSizeText(
                                           valueOrDefault<String>(
                                             widget.value2,
                                             'value2',
                                           ),
+                                          minFontSize: 10.0,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -475,11 +479,12 @@ class _PitchBodyDetailedTextImagesWidgetState
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
-                                        child: Text(
+                                        child: AutoSizeText(
                                           valueOrDefault<String>(
                                             widget.value4,
                                             'value4',
                                           ),
+                                          minFontSize: 10.0,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(

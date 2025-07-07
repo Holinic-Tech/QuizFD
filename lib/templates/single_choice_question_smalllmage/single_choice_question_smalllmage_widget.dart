@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -369,10 +370,11 @@ class _SingleChoiceQuestionSmalllmageWidgetState
                                   Expanded(
                                     child: Padding(
                                       padding: EdgeInsets.all(5.0),
-                                      child: Text(
+                                      child: AutoSizeText(
                                         answerDataItem.answer,
                                         textAlign: TextAlign.start,
-                                        maxLines: 3,
+                                        maxLines: 2,
+                                        minFontSize: 10.0,
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -383,7 +385,7 @@ class _SingleChoiceQuestionSmalllmageWidgetState
                                                         .bodyMedium
                                                         .fontStyle,
                                               ),
-                                              fontSize: 16.0,
+                                              fontSize: 15.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                               fontStyle:

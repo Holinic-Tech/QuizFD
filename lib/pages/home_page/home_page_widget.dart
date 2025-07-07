@@ -93,7 +93,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       true,
                     ) &&
                     (FFAppState().quizIndex != 19) &&
-                    (FFAppState().quizIndex != 14))
+                    (FFAppState().quizIndex != 14) &&
+                    (FFAppState().quizIndex != 21))
                   wrapWithModel(
                     model: _model.headerWithProgressBarModel,
                     updateCallback: () => safeSetState(() {}),

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:stop_watch_timer/stop_watch_timer.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -61,15 +62,7 @@ class _FloatingTimerCheckoutWidgetState
             0.0,
             10.0,
             valueOrDefault<double>(
-              () {
-                if (FFAppState().isWebview == false) {
-                  return 20.0;
-                } else if (FFAppState().isWebview == true) {
-                  return 100.0;
-                } else {
-                  return 20.0;
-                }
-              }(),
+              FFAppState().isWebview == false ? 20.0 : 20.0,
               20.0,
             )),
         child: Container(
@@ -118,10 +111,11 @@ class _FloatingTimerCheckoutWidgetState
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
-                                child: Text(
+                                child: AutoSizeText(
                                   FFLocalizations.of(context).getText(
                                     'mtbfmoax' /*  85% OFF valid for: */,
                                   ),
+                                  minFontSize: 10.0,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -211,8 +205,8 @@ class _FloatingTimerCheckoutWidgetState
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                Align(
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       FFAppState().showResultPageredirectLoader = true;
@@ -265,6 +259,20 @@ class _FloatingTimerCheckoutWidgetState
                                 ),
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
+                                fontSize: () {
+                                  if (MediaQuery.sizeOf(context).width <
+                                      kBreakpointSmall) {
+                                    return 14.0;
+                                  } else if (MediaQuery.sizeOf(context).width <
+                                      kBreakpointMedium) {
+                                    return 16.0;
+                                  } else if (MediaQuery.sizeOf(context).width <
+                                      kBreakpointLarge) {
+                                    return 16.0;
+                                  } else {
+                                    return 14.0;
+                                  }
+                                }(),
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,
                                 fontStyle: FlutterFlowTheme.of(context)

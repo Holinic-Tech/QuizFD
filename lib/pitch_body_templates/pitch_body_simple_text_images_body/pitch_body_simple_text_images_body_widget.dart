@@ -490,7 +490,9 @@ The fact that  */
                                     return 'clearly shows that your follicles are stuck in a bad cycle & don’t benefit properly from the care you’re giving.';
                                   }
                                 }(),
-                                style: TextStyle(),
+                                style: TextStyle(
+                                  fontSize: 16.0,
+                                ),
                               )
                             ],
                             style: FlutterFlowTheme.of(context)

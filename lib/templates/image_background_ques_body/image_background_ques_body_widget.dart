@@ -240,28 +240,19 @@ class _ImageBackgroundQuesBodyWidgetState
                   15.0,
                   valueOrDefault<double>(
                     () {
-                      if (FFAppState().isWebview == false) {
-                        return () {
-                          if (MediaQuery.sizeOf(context).width <
-                              kBreakpointSmall) {
-                            return 40.0;
-                          } else if (MediaQuery.sizeOf(context).width <
-                              kBreakpointMedium) {
-                            return 60.0;
-                          } else if (MediaQuery.sizeOf(context).width <
-                              kBreakpointLarge) {
-                            return 60.0;
-                          } else {
-                            return 60.0;
-                          }
-                        }();
-                      } else if (FFAppState().isWebview == true) {
-                        return 120.0;
+                      if (MediaQuery.sizeOf(context).width < kBreakpointSmall) {
+                        return 40.0;
+                      } else if (MediaQuery.sizeOf(context).width <
+                          kBreakpointMedium) {
+                        return 60.0;
+                      } else if (MediaQuery.sizeOf(context).width <
+                          kBreakpointLarge) {
+                        return 60.0;
                       } else {
                         return 60.0;
                       }
                     }(),
-                    100.0,
+                    0.0,
                   )),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -309,9 +300,10 @@ class _ImageBackgroundQuesBodyWidgetState
                       Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 45.0, 0.0, 0.0),
-                        child: Text(
+                        child: AutoSizeText(
                           widget.question!,
                           textAlign: TextAlign.center,
+                          minFontSize: 21.0,
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
@@ -339,11 +331,12 @@ class _ImageBackgroundQuesBodyWidgetState
                       Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 45.0, 0.0, 0.0),
-                        child: Text(
+                        child: AutoSizeText(
                           FFLocalizations.of(context).getText(
                             'ixew8z9q' /* DO YOU KNOW IF YOU HAVE FOLLIC... */,
                           ),
                           textAlign: TextAlign.center,
+                          minFontSize: 18.0,
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
@@ -800,7 +793,7 @@ class _ImageBackgroundQuesBodyWidgetState
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
-                                      child: Text(
+                                      child: AutoSizeText(
                                         valueOrDefault<String>(
                                           FFAppState()
                                               .diagnosisFD
@@ -808,6 +801,7 @@ class _ImageBackgroundQuesBodyWidgetState
                                               ?.answer,
                                           'I don\'t know',
                                         ),
+                                        minFontSize: 13.0,
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -854,10 +848,11 @@ class _ImageBackgroundQuesBodyWidgetState
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 10.0),
-                            child: Text(
+                            child: AutoSizeText(
                               FFLocalizations.of(context).getText(
                                 'r3fmpz9h' /* Skip the Quiz */,
                               ),
+                              minFontSize: 12.0,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

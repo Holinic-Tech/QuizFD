@@ -220,6 +220,10 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 180.0,
+                        constraints: BoxConstraints(
+                          minHeight: 150.0,
+                          maxHeight: 300.0,
+                        ),
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
