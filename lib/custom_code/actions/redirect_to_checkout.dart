@@ -8,7 +8,13 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'dart:js' as js;
+import 'dart:js_interop';
+
+@JS('eval')
+external JSAny jsEval(String code);
+
+@JS('window.location.href')
+external set windowLocationHref(String href);
 
 Future<void> redirectToCheckout() async {
   try {
@@ -22,59 +28,163 @@ Future<void> redirectToCheckout() async {
 
     String? firstName;
     String? lastName;
-    if (contactDetails.name != null && contactDetails.name.isNotEmpty) {
+    if (contactDetails.name.isNotEmpty) {
       final nameParts = contactDetails.name.split(' ');
       firstName = nameParts.isNotEmpty ? nameParts.first : null;
       lastName = nameParts.length > 1 ? nameParts.sublist(1).join(' ') : null;
     }
 
-    // Build URL parameters
-    List<String> queryParams = [];
+    // Build URL parameters - explicitly typed as List<String>
+    List<String> queryParams = <String>[];
 
     // Add contact details parameters
-    if (email != null && email.isNotEmpty) {
-      queryParams.add('billing_email=${Uri.encodeComponent(email)}');
+    if (email.isNotEmpty) {
+      String emailParam = 'billing_email=${Uri.encodeComponent(email)}';
+      queryParams.add(emailParam);
     }
 
     if (firstName != null && firstName.isNotEmpty) {
-      queryParams.add('billing_first_name=${Uri.encodeComponent(firstName)}');
+      String firstNameParam =
+          'billing_first_name=${Uri.encodeComponent(firstName)}';
+      queryParams.add(firstNameParam);
     }
 
     if (lastName != null && lastName.isNotEmpty) {
-      queryParams.add('billing_last_name=${Uri.encodeComponent(lastName)}');
+      String lastNameParam =
+          'billing_last_name=${Uri.encodeComponent(lastName)}';
+      queryParams.add(lastNameParam);
     }
 
-    // Get CVG cookie value directly (without relying on another action)
+    // === NEW SECTION: Process quiz-based conditional parameters ===
+    try {
+      final quizProfile = FFAppState().quizProfile;
+      List<String> aeroCoupons = <String>[];
+
+      // Helper function to check if a question contains specific answer(s)
+      bool hasAnswer(String questionId, List<String> checkAnswers) {
+        var questionPair = quizProfile.qaPairs
+            .where((pair) => pair.questionId == questionId)
+            .toList();
+        if (questionPair.isNotEmpty) {
+          var answers = questionPair.first.answerIds;
+          return checkAnswers.any((answer) => answers.contains(answer));
+        }
+        return false;
+      }
+
+      // Check hair concern first (for mutual exclusion)
+      bool hasHairLoss = hasAnswer('hairConcern', ['concern_hairloss']);
+      bool hasScalpConcern = hasAnswer('hairConcern', ['concern_scalp']);
+
+      print('Debug - Hair Loss: $hasHairLoss, Scalp Concern: $hasScalpConcern');
+
+      if (hasHairLoss) {
+        // Hair Loss Path - Category A
+        aeroCoupons.add('c_hl'); // Mandatory tag
+
+        // Create list of potential additional tags with priorities (WITHOUT o_df initially)
+        List<Map<String, dynamic>> potentialTags = [];
+
+        // A1. Origin Problem (Priority 1)
+        if (hasAnswer('originProblem', [
+          'originProblem_schedule',
+          'originProblem_majorstress',
+          'originProblem_hormones',
+          'originProblem_chronic-stress',
+          'originProblem_sleep'
+        ])) {
+          potentialTags.add({'tag': 'op_s', 'priority': 1});
+          print('Debug - Origin Problem condition met');
+        }
+
+        // A2. Concern Duration (Priority 2)
+        if (hasAnswer('concernDuration', ['concernDuration_2+years'])) {
+          potentialTags.add({'tag': 'd_2y', 'priority': 2});
+          print('Debug - Concern Duration condition met');
+        }
+
+        // A3. Current Routine (Priority 3)
+        if (hasAnswer(
+            'currentRoutine', ['routine_intermediate', 'routine_complex'])) {
+          potentialTags.add({'tag': 'r_ci', 'priority': 3});
+          print('Debug - Current Routine condition met');
+        }
+
+        // A4. Diet (Priority 4)
+        if (hasAnswer('diet', ['diet_custom', 'diet_balanced'])) {
+          potentialTags.add({'tag': 'd_bc', 'priority': 4});
+          print('Debug - Diet condition met');
+        }
+
+        print('Debug - Found ${potentialTags.length} condition-based tags');
+
+        // Sort by priority
+        potentialTags.sort((a, b) => a['priority'].compareTo(b['priority']));
+
+        // Add condition-based tags (up to 2, leaving room for o_df if needed)
+        for (int i = 0;
+            i < potentialTags.length && aeroCoupons.length < 3;
+            i++) {
+          String tag = potentialTags[i]['tag'] as String;
+          aeroCoupons.add(tag);
+          print('Debug - Added condition tag: $tag');
+        }
+
+        // If we have less than 3 tags total, add o_df to fill the remaining slot(s)
+        if (aeroCoupons.length < 3) {
+          aeroCoupons.add('o_df');
+          print(
+              'Debug - Added o_df to fill slot (total tags: ${aeroCoupons.length})');
+        }
+
+        print('Debug - Final hair loss tags: ${aeroCoupons.join(',')}');
+      } else if (hasScalpConcern) {
+        // Scalp Concern Path - Category B (mutually exclusive with hair loss)
+        aeroCoupons.add('c_si');
+        aeroCoupons.add('o_df'); // Always add o_df with scalp concern
+        print('Debug - Scalp concern tags: c_si,o_df');
+      } else {
+        // No hair or scalp concerns - just add default o_df
+        aeroCoupons.add('o_df');
+        print('Debug - No concerns found, adding default o_df tag');
+      }
+
+      // Add aero-coupons parameter if we have any tags
+      if (aeroCoupons.isNotEmpty) {
+        String aeroCouponsParam = 'aero-coupons=${aeroCoupons.join(',')}';
+        queryParams.add(aeroCouponsParam);
+        print('Debug - Aero coupons parameter: $aeroCouponsParam');
+      }
+    } catch (quizError) {
+      print('Error processing quiz parameters: $quizError');
+      // On error, add default o_df tag
+      String defaultParam = 'aero-coupons=o_df';
+      queryParams.add(defaultParam);
+    }
+    // === END NEW SECTION ===
+
+    // Get CVG cookie value
     String cvgUid = '';
     try {
-      // Define the JavaScript function to get cookie value
-      const jsFunctionDefinition = '''
-        if (typeof window.getCookieValue !== 'function') {
-          window.getCookieValue = function(cookieName) {
-            const name = cookieName + "=";
-            const decodedCookie = decodeURIComponent(document.cookie);
-            const cookieArray = decodedCookie.split(';');
-            
-            for (let i = 0; i < cookieArray.length; i++) {
-              let cookie = cookieArray[i].trim();
-              if (cookie.indexOf(name) === 0) {
-                return cookie.substring(name.length, cookie.length);
-              }
+      // Get cookie value using JavaScript
+      final cookieResult = jsEval('''
+        (function() {
+          const name = "__cvg_uid=";
+          const decodedCookie = decodeURIComponent(document.cookie);
+          const cookieArray = decodedCookie.split(';');
+          
+          for (let i = 0; i < cookieArray.length; i++) {
+            let cookie = cookieArray[i].trim();
+            if (cookie.indexOf(name) === 0) {
+              return cookie.substring(name.length, cookie.length);
             }
-            return "";
-          };
-        }
-      ''';
+          }
+          return "";
+        })()
+      ''');
 
-      // Ensure the function is defined
-      js.context.callMethod('eval', [jsFunctionDefinition]);
+      cvgUid = (cookieResult as JSString).toDart;
 
-      // Call the function to get the cookie value
-      final cookieName = '__cvg_uid';
-      final result = js.context.callMethod('getCookieValue', [cookieName]);
-
-      // Store the cookie value
-      cvgUid = result != null ? result.toString() : '';
       print('Retrieved CVG cookie: $cvgUid');
     } catch (cookieError) {
       print('Error getting cookie: $cookieError');
@@ -83,26 +193,25 @@ Future<void> redirectToCheckout() async {
 
     // Add the CVG UID if it exists
     if (cvgUid.isNotEmpty) {
-      queryParams.add('__cvg_uid=${Uri.encodeComponent(cvgUid)}');
+      String cvgParam = '__cvg_uid=${Uri.encodeComponent(cvgUid)}';
+      queryParams.add(cvgParam);
     }
 
     // Construct final URL with all parameters
     if (queryParams.isNotEmpty) {
-      baseUrl += '?' + queryParams.join('&');
+      baseUrl = baseUrl + '?' + queryParams.join('&');
     }
 
     // Log for debugging
     print('Redirecting to checkout: $baseUrl');
 
     // Redirect to the checkout URL
-    js.context.callMethod('open', [baseUrl, '_self']);
+    windowLocationHref = baseUrl;
   } catch (e) {
     print('Error redirecting to checkout: $e');
 
-    // Fallback to base URL if something goes wrong
-    js.context.callMethod('open', [
-      'https://checkout.hairqare.co/buy/hairqare-challenge-save-85-5-37/',
-      '_self'
-    ]);
+    // Fallback to base URL with default o_df tag if something goes wrong
+    windowLocationHref =
+        "https://checkout.hairqare.co/buy/hairqare-challenge-save-85-5-37/?aero-coupons=o_df";
   }
 }

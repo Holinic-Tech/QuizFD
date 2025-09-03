@@ -455,6 +455,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'prueba',
       'fr': 'test',
     },
+    'iid43xdb': {
+      'en': 'You are a perfect fit for the Haircare Challenge 😍',
+      'de': 'Du bist perfekt für die Haircare Challenge 😍',
+      'es': 'Eres perfecto para el reto del cuidado del cabello 😍',
+      'fr': 'Vous êtes la personne idéale pour le Haircare Challenge 😍',
+    },
     'f1qq20i3': {
       'en': '🤓 🫧 🧖‍♀️ 🌿🤷‍♀️🙌😢😥🔒🔐😌☺️🤗😣😟😯😵‍💫',
       'de': '🤓 🫧 🧖‍♀️ 🌿🤷‍♀️🙌😢😥🔒🔐😌☺️🤗',
@@ -966,12 +972,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Dashboard
   {
-    'qm88njuv': {
-      'en': 'You are a perfect fit for the Haircare Challenge 😍',
-      'de': 'Du bist perfekt für die Haircare Challenge 😍',
-      'es': 'Eres perfecto para el reto del cuidado del cabello 😍',
-      'fr': 'Vous êtes la personne idéale pour le Haircare Challenge 😍',
-    },
     '26c1jnac': {
       'en': 'Your matching score is:',
       'de': 'Ihr Matching-Score ist',
@@ -983,6 +983,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Zeitplan für Ihre Haartransformation:',
       'es': 'Cronología de tu transformación capilar:',
       'fr': 'Chronologie de votre transformation capillaire :',
+    },
+    '7pj5156l': {
+      'en': ' No more frustration or disappointments!',
+      'de': '',
+      'es': '',
+      'fr': '',
     },
     'unnguajk': {
       'en': '✅',

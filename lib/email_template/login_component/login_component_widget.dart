@@ -64,7 +64,11 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
     _model.nameTextFieldFocusNode ??= FocusNode();
     _model.nameTextFieldFocusNode!.addListener(
       () async {
-        await Future.delayed(const Duration(milliseconds: 400));
+        await Future.delayed(
+          Duration(
+            milliseconds: 400,
+          ),
+        );
         await _model.listViewController?.animateTo(
           _model.listViewController!.position.maxScrollExtent,
           duration: Duration(milliseconds: 200),
@@ -437,7 +441,10 @@ to unlock ... */
                                     focusNode: _model.emailTextFieldFocusNode,
                                     onFieldSubmitted: (_) async {
                                       await Future.delayed(
-                                          const Duration(milliseconds: 400));
+                                        Duration(
+                                          milliseconds: 400,
+                                        ),
+                                      );
                                       await _model.listViewController
                                           ?.animateTo(
                                         _model.listViewController!.position
@@ -587,7 +594,10 @@ to unlock ... */
                                       FlutterFlowTheme.of(context).transparent,
                                   buttonOnTap: () async {
                                     await Future.delayed(
-                                        const Duration(milliseconds: 300));
+                                      Duration(
+                                        milliseconds: 300,
+                                      ),
+                                    );
                                     await _model.listViewController?.animateTo(
                                       _model.listViewController!.position
                                           .maxScrollExtent,

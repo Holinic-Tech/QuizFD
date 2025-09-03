@@ -28,7 +28,9 @@ class DashboardWidget extends StatefulWidget {
     required this.startMyChallengeAction,
     required this.startDate,
     required this.reserveMySeatAction,
-  });
+    String? subHeading,
+  }) : this.subHeading =
+            subHeading ?? 'You are a perfect fit for the Haircare Challenge 😍';
 
   final String? name;
   final int? percentage;
@@ -43,6 +45,8 @@ class DashboardWidget extends StatefulWidget {
 
   /// Button on tap of the Reserve My Action
   final Future Function()? reserveMySeatAction;
+
+  final String subHeading;
 
   @override
   State<DashboardWidget> createState() => _DashboardWidgetState();
@@ -144,7 +148,15 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Text(
-                            'Congratulations, ${valueOrDefault<String>(
+                            '${valueOrDefault<String>(
+                              FFLocalizations.of(context).getVariableText(
+                                enText: 'Congratulations, ',
+                                esText: '',
+                                deText: '',
+                                frText: '',
+                              ),
+                              'Congratulations, ',
+                            )}${valueOrDefault<String>(
                               FFAppState().submittedContactDetails.name,
                               '🎉',
                             )}!',
@@ -184,9 +196,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 25.0, 0.0, 25.0),
                         child: Text(
-                          FFLocalizations.of(context).getText(
-                            'qm88njuv' /* You are a perfect fit for the ... */,
-                          ),
+                          widget.subHeading,
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -341,26 +351,34 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                         .quizProfile
                                         .qaPairs
                                         .contains(QuestionAnswerPairStruct(
-                                          questionId: 'hairGoal',
-                                          answerIds: ['goal_hairloss'],
+                                          questionId: 'hairConcern',
+                                          answerIds: ['concern_hairloss'],
                                         ))) {
                                       return '9 out of 10 women with this score said their shedding stopped, and they started seeing new baby hairs after the challenge.';
                                     } else if (FFAppState()
                                         .quizProfile
                                         .qaPairs
                                         .contains(QuestionAnswerPairStruct(
-                                          questionId: 'hairGoal',
-                                          answerIds: ['goal_betterhair'],
+                                          questionId: 'hairConcern',
+                                          answerIds: ['concern_splitends'],
                                         ))) {
                                       return '9 out of 10 women with this score said their hair felt softer, healthier, and looked better after the challenge. ';
                                     } else if (FFAppState()
                                         .quizProfile
                                         .qaPairs
                                         .contains(QuestionAnswerPairStruct(
-                                          questionId: 'hairGoal',
-                                          answerIds: ['goal_both'],
+                                          questionId: 'hairConcern',
+                                          answerIds: ['concern_mixed'],
                                         ))) {
                                       return '9 out of 10 women with this score said their shedding stopped, and their hair looked and felt better after the challenge.';
+                                    } else if (FFAppState()
+                                        .quizProfile
+                                        .qaPairs
+                                        .contains(QuestionAnswerPairStruct(
+                                          questionId: 'hairConcern',
+                                          answerIds: ['concern_damage'],
+                                        ))) {
+                                      return '9 out of 10 women with this score said their hair felt softer, healthier, and looked better after the challenge. ';
                                     } else {
                                       return '9 out of 10 women with this score said their shedding stopped, and their hair looked and felt better after the challenge.';
                                     }
@@ -1175,7 +1193,9 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 10.0, 0.0, 20.0),
                         child: Text(
-                          ' No more frustration or disappointments!',
+                          FFLocalizations.of(context).getText(
+                            '7pj5156l' /*  No more frustration or disapp... */,
+                          ),
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(

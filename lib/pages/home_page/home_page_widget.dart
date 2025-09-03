@@ -1282,7 +1282,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             'problemDescription_keep-changing'
                                           ],
                                         ))) {
-                                  return 'your follicles are like a factory with broken machinery - they\'re still producing hair, but it\'s coming out fragile and defective. Each new strand is weaker than the last because the follicle can\'t build proper hair structure anymore.';
+                                  return 'Your follicles are like a factory with broken machinery - they\'re still producing hair, but it\'s coming out fragile and defective. Each new strand is weaker than the last because the follicle can\'t build proper hair structure anymore.';
                                 } else if (FFAppState()
                                         .quizProfile
                                         .qaPairs
@@ -1299,7 +1299,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             'problemDescription_come&go'
                                           ],
                                         ))) {
-                                  return 'your follicles are like a factory with broken machinery - they\'re still producing hair, but it\'s coming out fragile and defective. Sometimes the machinery works better than others, giving you good hair days mixed with bad ones.';
+                                  return 'Your follicles are like a factory with broken machinery - they\'re still producing hair, but it\'s coming out fragile and defective. Sometimes the machinery works better than others, giving you good hair days mixed with bad ones.';
                                 } else if (FFAppState()
                                         .quizProfile
                                         .qaPairs
@@ -1316,7 +1316,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             'problemDescription_multiply'
                                           ],
                                         ))) {
-                                  return 'your follicles are like a factory with broken machinery - they\'re still producing hair, but it\'s coming out fragile and defective. As more parts of the production process fail, you get more types of damaged hair piling up.';
+                                  return 'Your follicles are like a factory with broken machinery - they\'re still producing hair, but it\'s coming out fragile and defective. As more parts of the production process fail, you get more types of damaged hair piling up.';
                                 } else if (FFAppState()
                                         .quizProfile
                                         .qaPairs
@@ -1350,7 +1350,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             'problemDescription_keep-changing'
                                           ],
                                         ))) {
-                                  return 'your scalp environment is hostile to healthy follicle function. Unchecked inflammation pushes your follicles to overproduce oils and skin (flakes) while creating an increasingly toxic environment preventing your follicles to function.';
+                                  return 'Your scalp environment is hostile to healthy follicle function. Unchecked inflammation pushes your follicles to overproduce oils and skin (flakes) while creating an increasingly toxic environment preventing your follicles to function.';
                                 } else if (FFAppState()
                                         .quizProfile
                                         .qaPairs
@@ -1384,7 +1384,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             'problemDescription_multiply'
                                           ],
                                         ))) {
-                                  return 'your scalp environment is hostile to healthy follicle function. As inflammation spreads across your scalp, your hair follicles produce always more oils and flakes, creating an increasingly toxic environment preventing your follicles to function.';
+                                  return 'Your scalp environment is hostile to healthy follicle function. As inflammation spreads across your scalp, your hair follicles produce always more oils and flakes, creating an increasingly toxic environment preventing your follicles to function.';
                                 } else if (FFAppState()
                                         .quizProfile
                                         .qaPairs
@@ -1401,7 +1401,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             'problemDescription_1consistent'
                                           ],
                                         ))) {
-                                  return 'your follicles are handling too many problems at once. They\'re spreading their energy too thin, resulting in weak hair growth and/or existing hair prematurely falling out.';
+                                  return 'Your follicles are handling too many problems at once. They\'re spreading their energy too thin, resulting in weak hair growth and/or existing hair prematurely falling out.';
                                 } else if (FFAppState()
                                         .quizProfile
                                         .qaPairs
@@ -1418,7 +1418,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             'problemDescription_keep-changing'
                                           ],
                                         ))) {
-                                  return 'your follicles are trying to handle too many problems at once. As they get more exhausted, they start failing at everything - making all your problems worse simultaneously.';
+                                  return 'Your follicles are trying to handle too many problems at once. As they get more exhausted, they start failing at everything - making all your problems worse simultaneously.';
                                 } else if (FFAppState()
                                         .quizProfile
                                         .qaPairs
@@ -1435,7 +1435,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             'problemDescription_come&go'
                                           ],
                                         ))) {
-                                  return 'your follicles are handing too many problems at once and never get a break. They\'re spreading their energy so thin, resulting in weak hair growth and/or existing hair prematurely falling out.';
+                                  return 'Your follicles are handing too many problems at once and never get a break. They\'re spreading their energy so thin, resulting in weak hair growth and/or existing hair prematurely falling out.';
                                 } else if (FFAppState()
                                         .quizProfile
                                         .qaPairs
@@ -1452,7 +1452,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             'problemDescription_multiply'
                                           ],
                                         ))) {
-                                  return 'your follicles handle too many problems at once. As they get more exhausted, they let more hair fall, grow weaker strands, causing new problems to pile on top of existing ones.';
+                                  return 'Your follicles handle too many problems at once. As they get more exhausted, they let more hair fall, grow weaker strands, causing new problems to pile on top of existing ones.';
                                 } else if (FFAppState()
                                         .quizProfile
                                         .qaPairs
@@ -1486,7 +1486,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             'problemDescription_keep-changing'
                                           ],
                                         ))) {
-                                  return 'your follicles are like a factory with broken machinery - they\'re still producing hair, but it\'s coming out fragile and defective. Each new strand is weaker than the last because the follicle can\'t build proper hair structure anymore.';
+                                  return 'Your follicles are like a factory with broken machinery - they\'re still producing hair, but it\'s coming out fragile and defective. Each new strand is weaker than the last because the follicle can\'t build proper hair structure anymore.';
                                 } else if (FFAppState()
                                         .quizProfile
                                         .qaPairs
@@ -1503,7 +1503,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             'problemDescription_come&go'
                                           ],
                                         ))) {
-                                  return 'your follicles are like a factory with broken machinery - they\'re still producing hair, but it\'s coming out fragile and defective. Sometimes the machinery works better than others, giving you good hair days mixed with bad ones.';
+                                  return 'Your follicles are like a factory with broken machinery - they\'re still producing hair, but it\'s coming out fragile and defective. Sometimes the machinery works better than others, giving you good hair days mixed with bad ones.';
                                 } else if (FFAppState()
                                         .quizProfile
                                         .qaPairs
@@ -1520,9 +1520,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             'problemDescription_multiply'
                                           ],
                                         ))) {
-                                  return 'your follicles are like a factory with broken machinery - they\'re still producing hair, but it\'s coming out fragile and defective. As more parts of the production process fail, you get more types of damaged hair piling up.';
+                                  return 'Your follicles are like a factory with broken machinery - they\'re still producing hair, but it\'s coming out fragile and defective. As more parts of the production process fail, you get more types of damaged hair piling up.';
                                 } else {
-                                  return 'your follicles are handing too many problems at once and never get a break. They\'re spreading their energy so thin, resulting in weak hair growth and/or existing hair prematurely falling out.';
+                                  return 'Your follicles are handing too many problems at once and never get a break. They\'re spreading their energy so thin, resulting in weak hair growth and/or existing hair prematurely falling out.';
                                 }
                               }(),
                               'Your follicles are trying to handle too many problems at once. They\'re spreading their energy too thin across multiple issues, so they can\'t fully resolve any single problem. ',
@@ -1800,6 +1800,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               'k5vkwbbc' /* test */,
                             ),
                             startDate: getCurrentTimestamp,
+                            subHeading: FFLocalizations.of(context).getText(
+                              'iid43xdb' /* You are a perfect fit for the ... */,
+                            ),
                             startMyChallengeAction: () async {
                               FFAppState().showResultPageredirectLoader = true;
                               safeSetState(() {});
