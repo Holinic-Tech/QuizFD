@@ -121,17 +121,15 @@ Future<void> redirectToCheckout() async {
         // Sort by priority
         potentialTags.sort((a, b) => a['priority'].compareTo(b['priority']));
 
-        // Add condition-based tags (up to 2, leaving room for o_df if needed)
-        for (int i = 0;
-            i < potentialTags.length && aeroCoupons.length < 3;
-            i++) {
-          String tag = potentialTags[i]['tag'] as String;
+        // Add ONLY ONE condition-based tag (the highest priority one)
+        if (potentialTags.isNotEmpty) {
+          String tag = potentialTags[0]['tag'] as String;
           aeroCoupons.add(tag);
           print('Debug - Added condition tag: $tag');
         }
 
-        // If we have less than 3 tags total, add o_df to fill the remaining slot(s)
-        if (aeroCoupons.length < 3) {
+        // If we have less than 2 tags total (c_hl + 1), add o_df
+        if (aeroCoupons.length < 2) {
           aeroCoupons.add('o_df');
           print(
               'Debug - Added o_df to fill slot (total tags: ${aeroCoupons.length})');
@@ -140,9 +138,9 @@ Future<void> redirectToCheckout() async {
         print('Debug - Final hair loss tags: ${aeroCoupons.join(',')}');
       } else if (hasScalpConcern) {
         // Scalp Concern Path - Category B (mutually exclusive with hair loss)
+        // ONLY c_si, no other tags
         aeroCoupons.add('c_si');
-        aeroCoupons.add('o_df'); // Always add o_df with scalp concern
-        print('Debug - Scalp concern tags: c_si,o_df');
+        print('Debug - Scalp concern tag: c_si (only)');
       } else {
         // No hair or scalp concerns - just add default o_df
         aeroCoupons.add('o_df');
