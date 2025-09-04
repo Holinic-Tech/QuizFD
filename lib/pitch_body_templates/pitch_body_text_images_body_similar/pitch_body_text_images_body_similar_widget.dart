@@ -330,7 +330,7 @@ class _PitchBodyTextImagesBodySimilarWidgetState
                                                   questionId: 'hairConcern',
                                                   answerIds: ['concern_scalp'],
                                                 ))) {
-                                              return 'Scalp issues';
+                                              return 'Kopfhautprobleme';
                                             } else if (FFAppState()
                                                 .quizProfile
                                                 .qaPairs

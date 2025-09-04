@@ -17,7 +17,7 @@ class LoginComponentWidget extends StatefulWidget {
     required this.progressBarValue,
     String? concernResolutionChance,
   }) : this.concernResolutionChance =
-            concernResolutionChance ?? 'Probability to achieve your hair goal';
+            concernResolutionChance ?? 'Wahrscheinlichkeit, dein Haarziel zu erreichen';
 
   /// Submit button action
   final Future Function()? submitAction;
@@ -588,7 +588,7 @@ to unlock ... */
                                       FlutterFlowTheme.of(context).orange,
                                   buttonTextColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  buttonName: 'Submit',
+                                  buttonName: 'Absenden',
                                   buttonRadius: 100,
                                   borderColor:
                                       FlutterFlowTheme.of(context).transparent,
