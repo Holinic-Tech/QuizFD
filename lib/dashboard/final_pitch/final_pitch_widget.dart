@@ -570,7 +570,7 @@ Haircar... */
                                                               'concern_hairloss'
                                                             ],
                                                           ))) {
-                                                        return ' Hair loss';
+                                                        return ' Caída del cabello';
                                                       } else if (FFAppState()
                                                           .quizProfile
                                                           .qaPairs
@@ -582,7 +582,7 @@ Haircar... */
                                                               'concern_splitends'
                                                             ],
                                                           ))) {
-                                                        return ' Split ends / dryness';
+                                                        return ' Puntas abiertas / dryness';
                                                       } else if (FFAppState()
                                                           .quizProfile
                                                           .qaPairs
@@ -594,7 +594,7 @@ Haircar... */
                                                               'concern_scalp'
                                                             ],
                                                           ))) {
-                                                        return 'Scalp issues';
+                                                        return 'Problemas del cuero cabelludo';
                                                       } else if (FFAppState()
                                                           .quizProfile
                                                           .qaPairs
@@ -766,7 +766,7 @@ Haircar... */
                                                               'concern_hairloss'
                                                             ],
                                                           ))) {
-                                                        return ' Hair loss';
+                                                        return ' Caída del cabello';
                                                       } else if (FFAppState()
                                                           .quizProfile
                                                           .qaPairs
@@ -778,7 +778,7 @@ Haircar... */
                                                               'concern_splitends'
                                                             ],
                                                           ))) {
-                                                        return ' Split ends / dryness';
+                                                        return ' Puntas abiertas / dryness';
                                                       } else if (FFAppState()
                                                           .quizProfile
                                                           .qaPairs
@@ -790,7 +790,7 @@ Haircar... */
                                                               'concern_scalp'
                                                             ],
                                                           ))) {
-                                                        return 'Scalp issues';
+                                                        return 'Problemas del cuero cabelludo';
                                                       } else if (FFAppState()
                                                           .quizProfile
                                                           .qaPairs
@@ -1099,7 +1099,7 @@ Haircar... */
                                         children: [
                                           Text(
                                             FFLocalizations.of(context).getText(
-                                              'ekwd1cyb' /* Main trigger:  */,
+                                              'ekwd1cyb' /* Desencadenante principal:  */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -1225,7 +1225,7 @@ Haircar... */
                                                         'concern_hairloss'
                                                       ],
                                                     ))) {
-                                                  return 'Hair loss';
+                                                  return 'Caída del cabello';
                                                 } else if (FFAppState()
                                                     .quizProfile
                                                     .qaPairs
@@ -1236,7 +1236,7 @@ Haircar... */
                                                         'concern_splitends'
                                                       ],
                                                     ))) {
-                                                  return 'Split ends';
+                                                  return 'Puntas abiertas';
                                                 } else if (FFAppState()
                                                     .quizProfile
                                                     .qaPairs
@@ -1247,7 +1247,7 @@ Haircar... */
                                                         'concern_scalp'
                                                       ],
                                                     ))) {
-                                                  return 'Scalp issues';
+                                                  return 'Problemas del cuero cabelludo';
                                                 } else if (FFAppState()
                                                     .quizProfile
                                                     .qaPairs
@@ -1544,7 +1544,7 @@ Haircar... */
                                                                                   'concern_hairloss'
                                                                                 ],
                                                                               ))) {
-                                                                            return 'Focus: Hair loss';
+                                                                            return 'Enfoque: Caída del cabello';
                                                                           } else if (FFAppState()
                                                                               .quizProfile
                                                                               .qaPairs
@@ -1555,7 +1555,7 @@ Haircar... */
                                                                                   'concern_splitends'
                                                                                 ],
                                                                               ))) {
-                                                                            return 'Focus: Split ends';
+                                                                            return 'Enfoque: Puntas abiertas';
                                                                           } else if (FFAppState()
                                                                               .quizProfile
                                                                               .qaPairs
@@ -1566,7 +1566,7 @@ Haircar... */
                                                                                   'concern_scalp'
                                                                                 ],
                                                                               ))) {
-                                                                            return 'Focus: Scalp healing';
+                                                                            return 'Enfoque: Scalp healing';
                                                                           } else if (FFAppState()
                                                                               .quizProfile
                                                                               .qaPairs
@@ -1576,12 +1576,12 @@ Haircar... */
                                                                                   'concern_damage'
                                                                                 ],
                                                                               ))) {
-                                                                            return 'Focus: Damage';
+                                                                            return 'Enfoque: Damage';
                                                                           } else {
-                                                                            return 'Focus: Hair health';
+                                                                            return 'Enfoque: Hair health';
                                                                           }
                                                                         }(),
-                                                                        'Focus: Hair health',
+                                                                        'Enfoque: Hair health',
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
