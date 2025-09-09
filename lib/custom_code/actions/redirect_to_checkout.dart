@@ -75,8 +75,10 @@ Future<void> redirectToCheckout() async {
       // Check hair concern first (for mutual exclusion)
       bool hasHairLoss = hasAnswer('hairConcern', ['concern_hairloss']);
       bool hasScalpConcern = hasAnswer('hairConcern', ['concern_scalp']);
+      bool hasHairDamage = hasAnswer('hairConcern', ['concern_damage']);
 
-      print('Debug - Hair Loss: $hasHairLoss, Scalp Concern: $hasScalpConcern');
+      print(
+          'Debug - Hair Loss: $hasHairLoss, Scalp Concern: $hasScalpConcern, Hair Damage: $hasHairDamage');
 
       if (hasHairLoss) {
         // Hair Loss Path - Category A
@@ -136,6 +138,59 @@ Future<void> redirectToCheckout() async {
         }
 
         print('Debug - Final hair loss tags: ${aeroCoupons.join(',')}');
+      } else if (hasHairDamage) {
+        // Hair Damage Path - NEW
+        aeroCoupons.add('c_dh'); // Mandatory tag
+
+        // Check hairDamageActivity for specific damage types
+        List<Map<String, dynamic>> damageTags = [];
+
+        // Check each damage activity type
+        if (hasAnswer('hairDamageActivity', ['damageAction_swimming'])) {
+          damageTags.add({'tag': 'dp_s', 'priority': 1});
+          print('Debug - Swimming damage condition met');
+        }
+
+        // Both dye and heat use dp_dht tag but need to check separately
+        if (hasAnswer('hairDamageActivity', ['damageAction_dye'])) {
+          damageTags.add({'tag': 'dp_dht', 'priority': 2});
+          print('Debug - Dye damage condition met');
+        }
+
+        if (hasAnswer('hairDamageActivity', ['damageAction_heat'])) {
+          // Also uses dp_dht, but we check if it's already added
+          bool alreadyHasDht = damageTags.any((tag) => tag['tag'] == 'dp_dht');
+          if (!alreadyHasDht) {
+            damageTags.add({'tag': 'dp_dht', 'priority': 3});
+          }
+          print('Debug - Heat damage condition met');
+        }
+
+        if (hasAnswer('hairDamageActivity', ['damageAction_sun'])) {
+          damageTags.add({'tag': 'dp_uv', 'priority': 4});
+          print('Debug - Sun damage condition met');
+        }
+
+        if (hasAnswer('hairDamageActivity', ['damageAction_hairstyles'])) {
+          damageTags.add({'tag': 'dp_hs', 'priority': 5});
+          print('Debug - Hairstyles damage condition met');
+        }
+
+        print('Debug - Found ${damageTags.length} damage-based tags');
+
+        // Sort by priority and add only the highest priority one
+        if (damageTags.isNotEmpty) {
+          damageTags.sort((a, b) => a['priority'].compareTo(b['priority']));
+          String tag = damageTags[0]['tag'] as String;
+          aeroCoupons.add(tag);
+          print('Debug - Added damage tag: $tag');
+        } else {
+          // No specific damage activities found, add o_df as default
+          aeroCoupons.add('o_df');
+          print('Debug - No damage activities found, added o_df as default');
+        }
+
+        print('Debug - Final hair damage tags: ${aeroCoupons.join(',')}');
       } else if (hasScalpConcern) {
         // Scalp Concern Path - Category B (mutually exclusive with hair loss)
         // ONLY c_si, no other tags
