@@ -1098,7 +1098,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 30.0, 0.0, 20.0),
                         child: Text(
-                          'You deserve this, ${FFAppState().submittedContactDetails.name}!',
+                          'Te mereces esto, ${FFAppState().submittedContactDetails.name}!',
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1126,7 +1126,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                         child: Text(
-                          'Join the 14-Day Haircare Challenge  and  say goodbye to your ${valueOrDefault<String>(
+                          'Únete al Reto de Cuidado Capilar de 14 Días  and  say goodbye to your ${valueOrDefault<String>(
                             () {
                               if (FFAppState()
                                   .quizProfile
@@ -1916,7 +1916,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                           await widget.reserveMySeatAction?.call();
                         },
                         text: FFLocalizations.of(context).getText(
-                          'phsineyb' /* START MY CHALLENGE */,
+                          'phsineyb' /* EMPEZAR MI RETO */,
                         ),
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.7,
@@ -2796,7 +2796,7 @@ Hassle */
                                     await widget.reserveMySeatAction?.call();
                                   },
                                   text: FFLocalizations.of(context).getText(
-                                    '8p79eqjq' /* START MY CHALLENGE */,
+                                    '8p79eqjq' /* EMPEZAR MI RETO */,
                                   ),
                                   options: FFButtonOptions(
                                     height: 50.0,
