@@ -576,7 +576,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                       questionId: 'age',
                                                       answerIds: ['age_30to39'],
                                                     ))) {
-                                                  return 'In my 30s';
+                                                  return 'In meinen 30ern';
                                                 } else if (FFAppState()
                                                     .quizProfile
                                                     .qaPairs
@@ -585,7 +585,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                       questionId: 'age',
                                                       answerIds: ['age_40to49'],
                                                     ))) {
-                                                  return 'In my 40s';
+                                                  return 'In meinen 40ern';
                                                 } else if (FFAppState()
                                                     .quizProfile
                                                     .qaPairs
@@ -1098,7 +1098,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 30.0, 0.0, 20.0),
                         child: Text(
-                          'You deserve this, ${FFAppState().submittedContactDetails.name}!',
+                          'Du hast das verdient, ${FFAppState().submittedContactDetails.name}!',
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1126,7 +1126,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                         child: Text(
-                          'Join the 14-Day Haircare Challenge  and  say goodbye to your ${valueOrDefault<String>(
+                          'Nimm an der 14-Tage Haarpflege-Challenge teil  and  say goodbye to your ${valueOrDefault<String>(
                             () {
                               if (FFAppState()
                                   .quizProfile
@@ -1135,7 +1135,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                     questionId: 'hairConcern',
                                     answerIds: ['concern_hairloss'],
                                   ))) {
-                                return 'hair loss';
+                                return 'Haarausfall';
                               } else if (FFAppState()
                                   .quizProfile
                                   .qaPairs
@@ -1151,7 +1151,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                     questionId: 'hairConcern',
                                     answerIds: ['concern_scalp'],
                                   ))) {
-                                return 'scalp issues';
+                                return 'Kopfhautprobleme';
                               } else if (FFAppState()
                                   .quizProfile
                                   .qaPairs
@@ -1159,7 +1159,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                     questionId: 'hairConcern',
                                     answerIds: ['concern_damage'],
                                   ))) {
-                                return 'damaged hair';
+                                return 'geschädigtes Haar';
                               } else {
                                 return 'chronic hair problems';
                               }
@@ -1916,7 +1916,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                           await widget.reserveMySeatAction?.call();
                         },
                         text: FFLocalizations.of(context).getText(
-                          'phsineyb' /* START MY CHALLENGE */,
+                          'phsineyb' /* MEINE CHALLENGE STARTEN */,
                         ),
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.7,
@@ -2796,7 +2796,7 @@ Hassle */
                                     await widget.reserveMySeatAction?.call();
                                   },
                                   text: FFLocalizations.of(context).getText(
-                                    '8p79eqjq' /* START MY CHALLENGE */,
+                                    '8p79eqjq' /* MEINE CHALLENGE STARTEN */,
                                   ),
                                   options: FFButtonOptions(
                                     height: 50.0,
