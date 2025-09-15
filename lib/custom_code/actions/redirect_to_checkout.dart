@@ -18,9 +18,8 @@ external set windowLocationHref(String href);
 
 Future<void> redirectToCheckout() async {
   try {
-    // Base URL for checkout
-    String baseUrl =
-        "https://checkout.hairqare.co/buy/hairqare-challenge-save-85-5-37/";
+    // Track which concern type for URL selection
+    String concernType = ''; // Will be 'hl', 'dh', 'si', or empty
 
     // Get values from app state
     final contactDetails = FFAppState().submittedContactDetails;
@@ -82,6 +81,7 @@ Future<void> redirectToCheckout() async {
 
       if (hasHairLoss) {
         // Hair Loss Path - Category A
+        concernType = 'hl'; // Set concern type for URL
         aeroCoupons.add('c_hl'); // Mandatory tag
 
         // Create list of potential additional tags with priorities (WITHOUT o_df initially)
@@ -140,6 +140,7 @@ Future<void> redirectToCheckout() async {
         print('Debug - Final hair loss tags: ${aeroCoupons.join(',')}');
       } else if (hasHairDamage) {
         // Hair Damage Path - NEW
+        concernType = 'dh'; // Set concern type for URL
         aeroCoupons.add('c_dh'); // Mandatory tag
 
         // Check hairDamageActivity for specific damage types
@@ -193,6 +194,7 @@ Future<void> redirectToCheckout() async {
         print('Debug - Final hair damage tags: ${aeroCoupons.join(',')}');
       } else if (hasScalpConcern) {
         // Scalp Concern Path - Category B (mutually exclusive with hair loss)
+        concernType = 'si'; // Set concern type for URL
         // ONLY c_si, no other tags
         aeroCoupons.add('c_si');
         print('Debug - Scalp concern tag: c_si (only)');
@@ -250,12 +252,29 @@ Future<void> redirectToCheckout() async {
       queryParams.add(cvgParam);
     }
 
+    // Select the appropriate base URL based on concern type
+    String baseUrl;
+    if (concernType == 'hl') {
+      baseUrl =
+          "https://checkout.hairqare.co/buy/hairqare-challenge-save-85-5-37-hl/";
+    } else if (concernType == 'dh') {
+      baseUrl =
+          "https://checkout.hairqare.co/buy/hairqare-challenge-save-85-5-37-dh/";
+    } else if (concernType == 'si') {
+      baseUrl =
+          "https://checkout.hairqare.co/buy/hairqare-challenge-save-85-5-37-si/";
+    } else {
+      baseUrl =
+          "https://checkout.hairqare.co/buy/hairqare-challenge-save-85-5-37/";
+    }
+
     // Construct final URL with all parameters
     if (queryParams.isNotEmpty) {
       baseUrl = baseUrl + '?' + queryParams.join('&');
     }
 
     // Log for debugging
+    print('Debug - Concern type: $concernType');
     print('Redirecting to checkout: $baseUrl');
 
     // Redirect to the checkout URL
@@ -263,8 +282,8 @@ Future<void> redirectToCheckout() async {
   } catch (e) {
     print('Error redirecting to checkout: $e');
 
-    // Fallback to base URL with default o_df tag if something goes wrong
+    // Fallback to base URL without any coupons in case of errors
     windowLocationHref =
-        "https://checkout.hairqare.co/buy/hairqare-challenge-save-85-5-37/?aero-coupons=o_df";
+        "https://checkout.hairqare.co/buy/hairqare-challenge-save-85-5-37/";
   }
 }
