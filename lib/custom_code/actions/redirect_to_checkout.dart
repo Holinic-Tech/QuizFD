@@ -74,10 +74,12 @@ Future<void> redirectToCheckout() async {
       // Check hair concern first (for mutual exclusion)
       bool hasHairLoss = hasAnswer('hairConcern', ['concern_hairloss']);
       bool hasScalpConcern = hasAnswer('hairConcern', ['concern_scalp']);
-      bool hasHairDamage = hasAnswer('hairConcern', ['concern_damage']);
+      // Check for both damage and split ends - treat them the same
+      bool hasHairDamage = hasAnswer('hairConcern', ['concern_damage']) ||
+          hasAnswer('hairConcern', ['concern_splitends']);
 
       print(
-          'Debug - Hair Loss: $hasHairLoss, Scalp Concern: $hasScalpConcern, Hair Damage: $hasHairDamage');
+          'Debug - Hair Loss: $hasHairLoss, Scalp Concern: $hasScalpConcern, Hair Damage/Split Ends: $hasHairDamage');
 
       if (hasHairLoss) {
         // Hair Loss Path - Category A
@@ -139,7 +141,7 @@ Future<void> redirectToCheckout() async {
 
         print('Debug - Final hair loss tags: ${aeroCoupons.join(',')}');
       } else if (hasHairDamage) {
-        // Hair Damage Path - NEW
+        // Hair Damage Path - Applies to both concern_damage and concern_splitends
         concernType = 'dh'; // Set concern type for URL
         aeroCoupons.add('c_dh'); // Mandatory tag
 
