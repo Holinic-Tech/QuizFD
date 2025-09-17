@@ -19,7 +19,7 @@ class ContactDetailsStruct extends BaseStruct {
 
   bool hasName() => _name != null;
 
-  // "Email" field.
+  // "E-Mail" field.
   String? _email;
   String get email => _email ?? '';
   set email(String? val) => _email = val;
@@ -29,7 +29,7 @@ class ContactDetailsStruct extends BaseStruct {
   static ContactDetailsStruct fromMap(Map<String, dynamic> data) =>
       ContactDetailsStruct(
         name: data['Name'] as String?,
-        email: data['Email'] as String?,
+        email: data['E-Mail'] as String?,
       );
 
   static ContactDetailsStruct? maybeFromMap(dynamic data) => data is Map
@@ -38,7 +38,7 @@ class ContactDetailsStruct extends BaseStruct {
 
   Map<String, dynamic> toMap() => {
         'Name': _name,
-        'Email': _email,
+        'E-Mail': _email,
       }.withoutNulls;
 
   @override
@@ -47,7 +47,7 @@ class ContactDetailsStruct extends BaseStruct {
           _name,
           ParamType.String,
         ),
-        'Email': serializeParam(
+        'E-Mail': serializeParam(
           _email,
           ParamType.String,
         ),
@@ -61,7 +61,7 @@ class ContactDetailsStruct extends BaseStruct {
           false,
         ),
         email: deserializeParam(
-          data['Email'],
+          data['E-Mail'],
           ParamType.String,
           false,
         ),

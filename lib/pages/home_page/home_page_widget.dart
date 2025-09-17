@@ -57,7 +57,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       _model.isWebview = await actions.isFacebookWebView();
       FFAppState().isWebview = _model.isWebview!;
       safeSetState(() {});
-      setAppLanguage(context, 'en');
+      setAppLanguage(context, 'de');
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -144,7 +144,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             updateCallback: () => safeSetState(() {}),
                             child: ImageBackgroundQuesBodyWidget(
                               question:
-                                  'See if the Challenge is a fit for you and your hair profile ',
+                                  'Finde heraus, ob die Challenge zu dir und deinem Haarprofil passt ',
                               answer1: FFLocalizations.of(context).getText(
                                 'x8ai5u31' /*  */,
                               ),
@@ -1005,7 +1005,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             'problemDescription_keep-changing'
                                           ],
                                         ))) {
-                                  return 'This escalating mixed hair issues shows your hair follicles are getting more overwhelmed over time.';
+                                  return 'This escalating gemischte Haarprobleme shows your hair follicles are getting more overwhelmed over time.';
                                 } else if (FFAppState()
                                         .quizProfile
                                         .qaPairs
@@ -1727,7 +1727,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         questionId: 'hairConcern',
                                         answerIds: ['concern_hairloss'],
                                       ))) {
-                                    return 'hair loss';
+                                    return 'Haarausfall';
                                   } else if (FFAppState()
                                       .quizProfile
                                       .qaPairs
@@ -1743,7 +1743,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         questionId: 'hairConcern',
                                         answerIds: ['concern_scalp'],
                                       ))) {
-                                    return 'scalp issues';
+                                    return 'Kopfhautprobleme';
                                   } else if (FFAppState()
                                       .quizProfile
                                       .qaPairs
@@ -1751,14 +1751,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         questionId: 'hairConcern',
                                         answerIds: ['concern_damage'],
                                       ))) {
-                                    return 'damaged hair';
+                                    return 'geschädigtes Haar';
                                   } else {
-                                    return 'hair problems';
+                                    return 'Haarprobleme';
                                   }
                                 }(),
-                                'hair problems',
+                                'Haarprobleme',
                               )} in 14 days:',
-                              'Probability to reduce your hair problems in 14 days',
+                              'Wahrscheinlichkeit, deine Haarprobleme in 14 Tagen zu reduzieren',
                             ),
                             submitAction: () async {
                               _model.capitalisedName =
@@ -1866,7 +1866,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           updateCallback: () => safeSetState(() {}),
                           child: QuestionAnswerAdditionlInfoWidget(
                             question:
-                                'Do you believe your hair problems could be influenced by factors beyond just products?',
+                                'Glaubst du, dass deine Haarprobleme von Faktoren beeinflusst werden könnten, die über reine Produkte hinausgehen?',
                             answerList: FFAppState().mindsetState,
                             answerAction: () async {
                               await actions.trackGAEvent(
@@ -1908,7 +1908,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             updateCallback: () => safeSetState(() {}),
                             child: ImageBackgroundQuesBodyV3Widget(
                               question:
-                                  'See if the Challenge is a fit for you and your hair profile',
+                                  'Finde heraus, ob die Challenge zu dir und deinem Haarprofil passt',
                               answer1: '',
                               answer2: '',
                               logoShow: true,

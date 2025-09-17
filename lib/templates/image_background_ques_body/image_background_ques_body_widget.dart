@@ -456,7 +456,7 @@ class _ImageBackgroundQuesBodyWidgetState
                                                   .diagnosisFD
                                                   .elementAtOrNull(0)
                                                   ?.answer,
-                                              'Yes',
+                                              'Ja',
                                             ),
                                             textAlign: TextAlign.center,
                                             minFontSize: 10.0,
@@ -590,7 +590,7 @@ class _ImageBackgroundQuesBodyWidgetState
                                                   .diagnosisFD
                                                   .elementAtOrNull(1)
                                                   ?.answer,
-                                              'No',
+                                              'Nein',
                                             ),
                                             textAlign: TextAlign.center,
                                             minFontSize: 10.0,
