@@ -8,53 +8,81 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import '/custom_code/actions/index.dart';
+import '/flutter_flow/custom_functions.dart';
+
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'dart:io';
 
 Future<void> webhookCallQuizProfile() async {
+  final loggingWebhook =
+      'https://hook.us1.make.com/12ojmstexumn6knualpsn9hkex9qy8b3';
+  final makeWebhook =
+      'https://hook.us1.make.com/3d6vksxwtqukhrx465bjymy4y6sfdkr6';
+
+  Future<void> logEvent(String eventType, Map<String, dynamic> data) async {
+    try {
+      await http
+          .post(
+            Uri.parse(loggingWebhook),
+            headers: {'Content-Type': 'application/json'},
+            body: jsonEncode({
+              'event': eventType,
+              'timestamp': DateTime.now().toIso8601String(),
+              'data': data,
+              'userAgent': js.context['navigator']['userAgent'].toString(),
+              'url': js.context['location']['href'].toString(),
+            }),
+          )
+          .timeout(Duration(seconds: 2));
+    } catch (e) {
+      print('[LOG ERROR] $e');
+    }
+  }
+
   try {
-    // Get the app state values
+    await logEvent('webhook_quiz_profile_start', {});
+
     final quizProfile = FFAppState().quizProfile;
     final cdpMapping = FFAppState().cdpMapping;
     final contactDetails = FFAppState().submittedContactDetails;
 
-    // Create webhook URL
-    var url =
-        Uri.parse('https://hook.us1.make.com/3d6vksxwtqukhrx465bjymy4y6sfdkr6');
+    if (quizProfile == null || contactDetails == null) {
+      await logEvent('webhook_quiz_profile_null_state', {
+        'quizProfile_null': quizProfile == null,
+        'contactDetails_null': contactDetails == null,
+      });
+      print('[ERROR] Missing state');
+      return;
+    }
 
-    // Prepare ActiveCampaign fields mapping
+    await logEvent('webhook_quiz_profile_state_ok', {
+      'qaPairs_count': quizProfile.qaPairs?.length ?? 0,
+      'has_email': contactDetails.email?.isNotEmpty ?? false,
+    });
+
     var acFields = <String, dynamic>{};
-    // Prepare Mixpanel fields mapping
     var mpFields = <String, dynamic>{};
 
-    // Process each answer in the quiz profile
     if (quizProfile.qaPairs != null) {
       for (var qaPair in quizProfile.qaPairs) {
-        // Find the mapping for this questionId
         var mappings = cdpMapping
             .where((mapping) => mapping.questionId == qaPair.questionId)
             .toList();
 
         if (mappings.isNotEmpty) {
-          // Get the first mapping that matches (should be only one)
           var mapping = mappings.first;
 
-          // Add to ActiveCampaign fields if acField is defined
           if (mapping.acField != null && mapping.acField > 0) {
-            // For AC, always join multiple values with commas
             String answer = qaPair.answerIds.join(', ');
-            acFields['field_' + mapping.acField.toString()] = answer;
+            acFields['field_${mapping.acField}'] = answer;
           }
 
-          // Add to Mixpanel fields if mpField is defined
           if (mapping.mpField != null && mapping.mpField.isNotEmpty) {
-            // For Mixpanel, keep as array for multiple answers, string for single
             if (qaPair.answerIds.length > 1) {
-              // Multiple answers - keep as array for Mixpanel
               mpFields[mapping.mpField] = qaPair.answerIds;
             } else {
-              // Single answer - send as string
               mpFields[mapping.mpField] =
                   qaPair.answerIds.isNotEmpty ? qaPair.answerIds.first : '';
             }
@@ -63,44 +91,26 @@ Future<void> webhookCallQuizProfile() async {
       }
     }
 
-    // Parse name into first name and last name
     String fullName = contactDetails.name ?? '';
     String firstName = fullName;
     String lastName = '';
 
     if (fullName.isNotEmpty) {
-      // Split the name by space
       List<String> nameParts = fullName.trim().split(' ');
-
-      // If there are multiple parts, assume first part is first name and rest is last name
       if (nameParts.length > 1) {
         firstName = nameParts[0];
-        lastName = nameParts
-            .sublist(1)
-            .join(' '); // Join all remaining parts as last name
+        lastName = nameParts.sublist(1).join(' ');
       }
     }
 
-    // Add the required Mixpanel fields (with properly escaped dollar signs)
     mpFields[r'$name'] = fullName;
-    mpFields[r'$email'] = contactDetails.email;
+    mpFields[r'$email'] = contactDetails.email ?? '';
 
-    // Try to get IP address and only add if available
-    try {
-      final result = await InternetAddress.lookup('google.com');
-      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-        mpFields['ip'] = result[0].address;
-      }
-    } catch (e) {
-      print("Failed to get IP address: $e");
-    }
-
-    // Prepare the payload
     var payload = {
-      'name': fullName, // Keep the original full name
+      'name': fullName,
       'firstName': firstName,
       'lastName': lastName,
-      'email': contactDetails.email,
+      'email': contactDetails.email ?? '',
       'quizData': {
         'rawAnswers': quizProfile.qaPairs
             .map((qaPair) => {
@@ -113,54 +123,61 @@ Future<void> webhookCallQuizProfile() async {
       'mixpanel': mpFields,
     };
 
-    // Convert the payload to JSON
     var jsonPayload = jsonEncode(payload);
+    print('[WEBHOOK] Sending to Make.com');
 
-    // Log the payload for debugging
-    print("Sending quiz profile to webhook:");
-    print(jsonPayload);
-
-    // Send the POST request without awaiting the response
-    // This will allow the custom action to complete without waiting for the webhook response
-    http
-        .post(
-      url,
-      headers: {'Content-Type': 'application/json'},
-      body: jsonPayload,
-    )
-        .then((response) {
-      // This will run asynchronously after the response is received
-      print("Webhook response: Status Code: ${response.statusCode}");
-      print("Response body: ${response.body}");
-
-      // Retry once if the first attempt fails
-      if (response.statusCode != 200) {
-        print("First attempt failed, trying again...");
-        http
-            .post(
-          url,
-          headers: {'Content-Type': 'application/json'},
-          body: jsonPayload,
-        )
-            .then((retryResponse) {
-          print(
-              "Second attempt response: Status Code: ${retryResponse.statusCode}");
-          print("Response body: ${retryResponse.body}");
-        }).catchError((e) {
-          print("Error in retry request: $e");
-        });
-      }
-    }).catchError((e) {
-      // Handle errors gracefully
-      print("Exception caught in webhook call:");
-      print("Error message: $e");
+    await logEvent('webhook_quiz_profile_sending', {
+      'payload_size': jsonPayload.length,
+      'email': contactDetails.email ?? '',
     });
 
-    // The function returns immediately without waiting for the HTTP response
+    // CRITICAL: Actually await the response
+    try {
+      final response = await http
+          .post(
+            Uri.parse(makeWebhook),
+            headers: {'Content-Type': 'application/json'},
+            body: jsonPayload,
+          )
+          .timeout(Duration(seconds: 10));
+
+      await logEvent('webhook_quiz_profile_response', {
+        'status_code': response.statusCode,
+        'success': response.statusCode == 200,
+      });
+
+      print('[WEBHOOK] Response: ${response.statusCode}');
+
+      if (response.statusCode != 200) {
+        // Retry once
+        await logEvent('webhook_quiz_profile_retry', {});
+
+        final retryResponse = await http
+            .post(
+              Uri.parse(makeWebhook),
+              headers: {'Content-Type': 'application/json'},
+              body: jsonPayload,
+            )
+            .timeout(Duration(seconds: 10));
+
+        await logEvent('webhook_quiz_profile_retry_response', {
+          'status_code': retryResponse.statusCode,
+        });
+      }
+    } catch (httpError) {
+      await logEvent('webhook_quiz_profile_http_error', {
+        'error': httpError.toString(),
+      });
+      print('[ERROR] HTTP call failed: $httpError');
+    }
+
+    await logEvent('webhook_quiz_profile_complete', {});
+    print('[WEBHOOK] Complete');
   } catch (e, stackTrace) {
-    // Handle errors gracefully
-    print("Exception caught in webhookCallQuizProfile:");
-    print("Error message: $e");
-    print("Stack trace: $stackTrace");
+    await logEvent('webhook_quiz_profile_error', {
+      'error': e.toString(),
+      'stack': stackTrace.toString().substring(0, 500),
+    });
+    print('[ERROR] $e');
   }
 }
