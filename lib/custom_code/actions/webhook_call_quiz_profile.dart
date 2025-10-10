@@ -11,6 +11,9 @@ import 'package:flutter/material.dart';
 import '/custom_code/actions/index.dart';
 import '/flutter_flow/custom_functions.dart';
 
+import '/custom_code/actions/index.dart';
+import '/flutter_flow/custom_functions.dart';
+
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'dart:js' as js;
@@ -21,9 +24,10 @@ Future<void> webhookCallQuizProfile() async {
   final makeWebhook =
       'https://hook.us1.make.com/3d6vksxwtqukhrx465bjymy4y6sfdkr6';
 
-  Future<void> logEvent(String eventType, Map<String, dynamic> data) async {
+  // ✨ UPDATED: Fire-and-forget logging (never blocks)
+  void logEvent(String eventType, Map<String, dynamic> data) {
     try {
-      await http
+      http
           .post(
             Uri.parse(loggingWebhook),
             headers: {'Content-Type': 'application/json'},
@@ -35,21 +39,24 @@ Future<void> webhookCallQuizProfile() async {
               'url': js.context['location']['href'].toString(),
             }),
           )
-          .timeout(Duration(seconds: 2));
+          .timeout(Duration(seconds: 2))
+          .catchError((e) {
+        print('[LOG ERROR] $e');
+      });
     } catch (e) {
       print('[LOG ERROR] $e');
     }
   }
 
   try {
-    await logEvent('webhook_quiz_profile_start', {});
+    logEvent('webhook_quiz_profile_start', {}); // ✨ No await!
 
     final quizProfile = FFAppState().quizProfile;
     final cdpMapping = FFAppState().cdpMapping;
     final contactDetails = FFAppState().submittedContactDetails;
 
     if (quizProfile == null || contactDetails == null) {
-      await logEvent('webhook_quiz_profile_null_state', {
+      logEvent('webhook_quiz_profile_null_state', {
         'quizProfile_null': quizProfile == null,
         'contactDetails_null': contactDetails == null,
       });
@@ -57,7 +64,7 @@ Future<void> webhookCallQuizProfile() async {
       return;
     }
 
-    await logEvent('webhook_quiz_profile_state_ok', {
+    logEvent('webhook_quiz_profile_state_ok', {
       'qaPairs_count': quizProfile.qaPairs?.length ?? 0,
       'has_email': contactDetails.email?.isNotEmpty ?? false,
     });
@@ -126,55 +133,59 @@ Future<void> webhookCallQuizProfile() async {
     var jsonPayload = jsonEncode(payload);
     print('[WEBHOOK] Sending to Make.com');
 
-    await logEvent('webhook_quiz_profile_sending', {
+    logEvent('webhook_quiz_profile_sending', {
       'payload_size': jsonPayload.length,
       'email': contactDetails.email ?? '',
     });
 
-    // CRITICAL: Actually await the response
-    try {
-      final response = await http
-          .post(
-            Uri.parse(makeWebhook),
-            headers: {'Content-Type': 'application/json'},
-            body: jsonPayload,
-          )
-          .timeout(Duration(seconds: 10));
+    // Fire and forget - don't wait for response
+    http
+        .post(
+          Uri.parse(makeWebhook),
+          headers: {'Content-Type': 'application/json'},
+          body: jsonPayload,
+        )
+        .timeout(Duration(seconds: 10))
+        .then((response) {
+      print('[WEBHOOK] Response: ${response.statusCode}');
 
-      await logEvent('webhook_quiz_profile_response', {
+      logEvent('webhook_quiz_profile_response', {
         'status_code': response.statusCode,
         'success': response.statusCode == 200,
       });
 
-      print('[WEBHOOK] Response: ${response.statusCode}');
-
+      // Retry if failed
       if (response.statusCode != 200) {
-        // Retry once
-        await logEvent('webhook_quiz_profile_retry', {});
+        print('[WEBHOOK] Retrying...');
+        logEvent('webhook_quiz_profile_retry', {});
 
-        final retryResponse = await http
+        http
             .post(
               Uri.parse(makeWebhook),
               headers: {'Content-Type': 'application/json'},
               body: jsonPayload,
             )
-            .timeout(Duration(seconds: 10));
-
-        await logEvent('webhook_quiz_profile_retry_response', {
-          'status_code': retryResponse.statusCode,
+            .timeout(Duration(seconds: 10))
+            .then((retryResponse) {
+          print('[WEBHOOK] Retry response: ${retryResponse.statusCode}');
+          logEvent('webhook_quiz_profile_retry_response', {
+            'status_code': retryResponse.statusCode,
+          });
+        }).catchError((retryError) {
+          print('[ERROR] Retry failed: $retryError');
         });
       }
-    } catch (httpError) {
-      await logEvent('webhook_quiz_profile_http_error', {
-        'error': httpError.toString(),
+    }).catchError((error) {
+      print('[ERROR] HTTP call failed: $error');
+      logEvent('webhook_quiz_profile_http_error', {
+        'error': error.toString(),
       });
-      print('[ERROR] HTTP call failed: $httpError');
-    }
+    });
 
-    await logEvent('webhook_quiz_profile_complete', {});
-    print('[WEBHOOK] Complete');
+    print('[WEBHOOK] Sent in background - continuing...');
+    logEvent('webhook_quiz_profile_complete', {});
   } catch (e, stackTrace) {
-    await logEvent('webhook_quiz_profile_error', {
+    logEvent('webhook_quiz_profile_error', {
       'error': e.toString(),
       'stack': stackTrace.toString().substring(0, 500),
     });

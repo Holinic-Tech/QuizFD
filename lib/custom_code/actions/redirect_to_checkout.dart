@@ -8,6 +8,9 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import '/custom_code/actions/index.dart';
+import '/flutter_flow/custom_functions.dart';
+
 import 'dart:js_interop';
 
 @JS('eval')
@@ -16,13 +19,14 @@ external JSAny jsEval(String code);
 @JS('window.location.href')
 external set windowLocationHref(String href);
 
+@JS('window.sessionId') // ✨ ADDED
+external JSString? get sessionId; // ✨ ADDED
+
 Future<void> redirectToCheckout() async {
   try {
-    // Base URL for checkout (single URL for all cases)
     String baseUrl =
         "https://checkout.hairqare.co/buy/hairqare-challenge-save-85-5-37/";
 
-    // Get values from app state
     final contactDetails = FFAppState().submittedContactDetails;
     String? email = contactDetails.email;
 
@@ -34,7 +38,6 @@ Future<void> redirectToCheckout() async {
       lastName = nameParts.length > 1 ? nameParts.sublist(1).join(' ') : null;
     }
 
-    // Build URL parameters - explicitly typed as List<String>
     List<String> queryParams = <String>[];
 
     // Add contact details parameters
@@ -55,12 +58,11 @@ Future<void> redirectToCheckout() async {
       queryParams.add(lastNameParam);
     }
 
-    // === SIMPLIFIED COUPON LOGIC ===
+    // === SIMPLIFIED COUPON LOGIC === (unchanged)
     try {
       final quizProfile = FFAppState().quizProfile;
       String couponTag = '';
 
-      // Helper function to check if a question contains specific answer(s)
       bool hasAnswer(String questionId, List<String> checkAnswers) {
         var questionPair = quizProfile.qaPairs
             .where((pair) => pair.questionId == questionId)
@@ -72,36 +74,24 @@ Future<void> redirectToCheckout() async {
         return false;
       }
 
-      // Check hair concerns in priority order
-
-      // 1. Check for hair loss
       if (hasAnswer('hairConcern', ['concern_hairloss'])) {
         couponTag = 'c_hl';
         print('Debug - Hair loss concern found, using c_hl');
-      }
-      // 2. Check for damaged hair or split ends
-      else if (hasAnswer('hairConcern', ['concern_damage']) ||
+      } else if (hasAnswer('hairConcern', ['concern_damage']) ||
           hasAnswer('hairConcern', ['concern_splitends'])) {
         couponTag = 'c_dh';
         print('Debug - Damage/split ends concern found, using c_dh');
-      }
-      // 3. Check for scalp issues
-      else if (hasAnswer('hairConcern', ['concern_scalp'])) {
+      } else if (hasAnswer('hairConcern', ['concern_scalp'])) {
         couponTag = 'c_si';
         print('Debug - Scalp concern found, using c_si');
-      }
-      // 4. Check for diet condition (only if no hair concerns above)
-      else if (hasAnswer('diet', ['diet_custom', 'diet_balanced'])) {
+      } else if (hasAnswer('diet', ['diet_custom', 'diet_balanced'])) {
         couponTag = 'd_bc';
         print('Debug - Diet condition found (no hair concerns), using d_bc');
-      }
-      // 5. Default fallback
-      else {
+      } else {
         couponTag = 'o_df';
         print('Debug - No conditions met, using default o_df');
       }
 
-      // Add the single coupon tag as parameter
       if (couponTag.isNotEmpty) {
         String aeroCouponsParam = 'aero-coupons=${couponTag}';
         queryParams.add(aeroCouponsParam);
@@ -109,16 +99,14 @@ Future<void> redirectToCheckout() async {
       }
     } catch (quizError) {
       print('Error processing quiz parameters: $quizError');
-      // On error, add default o_df tag
       String defaultParam = 'aero-coupons=o_df';
       queryParams.add(defaultParam);
     }
     // === END SIMPLIFIED COUPON LOGIC ===
 
-    // Get CVG cookie value
+    // Get CVG cookie value (unchanged)
     String cvgUid = '';
     try {
-      // Get cookie value using JavaScript
       final cookieResult = jsEval('''
         (function() {
           const name = "__cvg_uid=";
@@ -136,17 +124,33 @@ Future<void> redirectToCheckout() async {
       ''');
 
       cvgUid = (cookieResult as JSString).toDart;
-
       print('Retrieved CVG cookie: $cvgUid');
     } catch (cookieError) {
       print('Error getting cookie: $cookieError');
-      // Continue without the cookie if there's an error
     }
 
-    // Add the CVG UID if it exists
     if (cvgUid.isNotEmpty) {
       String cvgParam = '__cvg_uid=${Uri.encodeComponent(cvgUid)}';
       queryParams.add(cvgParam);
+    }
+
+    // ✨ NEW: Get session ID from JavaScript
+    String sessionIdValue = '';
+    try {
+      final jsSessionId = sessionId;
+      if (jsSessionId != null) {
+        sessionIdValue = jsSessionId.toDart;
+      }
+      print('✅ Retrieved session ID: $sessionIdValue');
+    } catch (e) {
+      print('❌ Error getting session ID: $e');
+    }
+
+    // ✨ NEW: Add the session ID if it exists
+    if (sessionIdValue.isNotEmpty) {
+      String sessionParam = 'session_id=${Uri.encodeComponent(sessionIdValue)}';
+      queryParams.add(sessionParam);
+      print('✅ Added session_id to params');
     }
 
     // Construct final URL with all parameters
@@ -154,7 +158,6 @@ Future<void> redirectToCheckout() async {
       baseUrl = baseUrl + '?' + queryParams.join('&');
     }
 
-    // Log for debugging
     print('Redirecting to checkout: $baseUrl');
 
     // Redirect to the checkout URL
@@ -162,7 +165,6 @@ Future<void> redirectToCheckout() async {
   } catch (e) {
     print('Error redirecting to checkout: $e');
 
-    // Fallback to base URL without any coupons in case of errors
     windowLocationHref =
         "https://checkout.hairqare.co/buy/hairqare-challenge-save-85-5-37/";
   }
