@@ -19,9 +19,6 @@ external JSAny jsEval(String code);
 @JS('window.location.href')
 external set windowLocationHref(String href);
 
-@JS('window.sessionId') // ✨ ADDED
-external JSString? get sessionId; // ✨ ADDED
-
 Future<void> redirectToCheckout() async {
   try {
     String baseUrl =
@@ -58,7 +55,7 @@ Future<void> redirectToCheckout() async {
       queryParams.add(lastNameParam);
     }
 
-    // === SIMPLIFIED COUPON LOGIC === (unchanged)
+    // Coupon logic
     try {
       final quizProfile = FFAppState().quizProfile;
       String couponTag = '';
@@ -76,39 +73,32 @@ Future<void> redirectToCheckout() async {
 
       if (hasAnswer('hairConcern', ['concern_hairloss'])) {
         couponTag = 'c_hl';
-        print('Debug - Hair loss concern found, using c_hl');
       } else if (hasAnswer('hairConcern', ['concern_damage']) ||
           hasAnswer('hairConcern', ['concern_splitends'])) {
         couponTag = 'c_dh';
-        print('Debug - Damage/split ends concern found, using c_dh');
       } else if (hasAnswer('hairConcern', ['concern_scalp'])) {
         couponTag = 'c_si';
-        print('Debug - Scalp concern found, using c_si');
       } else if (hasAnswer('diet', ['diet_custom', 'diet_balanced'])) {
         couponTag = 'd_bc';
-        print('Debug - Diet condition found (no hair concerns), using d_bc');
       } else {
         couponTag = 'o_df';
-        print('Debug - No conditions met, using default o_df');
       }
 
       if (couponTag.isNotEmpty) {
         String aeroCouponsParam = 'aero-coupons=${couponTag}';
         queryParams.add(aeroCouponsParam);
-        print('Debug - Final coupon: $couponTag');
       }
     } catch (quizError) {
-      print('Error processing quiz parameters: $quizError');
       String defaultParam = 'aero-coupons=o_df';
       queryParams.add(defaultParam);
     }
-    // === END SIMPLIFIED COUPON LOGIC ===
 
-    // Get CVG cookie value (unchanged)
+    // Get CVG UID - try cookie first, then URL
     String cvgUid = '';
     try {
       final cookieResult = jsEval('''
         (function() {
+          // Try cookie first
           const name = "__cvg_uid=";
           const decodedCookie = decodeURIComponent(document.cookie);
           const cookieArray = decodedCookie.split(';');
@@ -119,14 +109,16 @@ Future<void> redirectToCheckout() async {
               return cookie.substring(name.length, cookie.length);
             }
           }
-          return "";
+          
+          // Fallback: try URL parameter
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get('__cvg_uid') || "";
         })()
       ''');
 
       cvgUid = (cookieResult as JSString).toDart;
-      print('Retrieved CVG cookie: $cvgUid');
     } catch (cookieError) {
-      print('Error getting cookie: $cookieError');
+      // Silently fail
     }
 
     if (cvgUid.isNotEmpty) {
@@ -134,23 +126,37 @@ Future<void> redirectToCheckout() async {
       queryParams.add(cvgParam);
     }
 
-    // ✨ NEW: Get session ID from JavaScript
-    String sessionIdValue = '';
+    // Get CVG SID - try cookie first, then URL
+    String cvgSid = '';
     try {
-      final jsSessionId = sessionId;
-      if (jsSessionId != null) {
-        sessionIdValue = jsSessionId.toDart;
-      }
-      print('✅ Retrieved session ID: $sessionIdValue');
-    } catch (e) {
-      print('❌ Error getting session ID: $e');
+      final cookieResult = jsEval('''
+        (function() {
+          // Try cookie first
+          const name = "__cvg_sid=";
+          const decodedCookie = decodeURIComponent(document.cookie);
+          const cookieArray = decodedCookie.split(';');
+          
+          for (let i = 0; i < cookieArray.length; i++) {
+            let cookie = cookieArray[i].trim();
+            if (cookie.indexOf(name) === 0) {
+              return cookie.substring(name.length, cookie.length);
+            }
+          }
+          
+          // Fallback: try URL parameter
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get('__cvg_sid') || "";
+        })()
+      ''');
+
+      cvgSid = (cookieResult as JSString).toDart;
+    } catch (cookieError) {
+      // Silently fail
     }
 
-    // ✨ NEW: Add the session ID if it exists
-    if (sessionIdValue.isNotEmpty) {
-      String sessionParam = 'session_id=${Uri.encodeComponent(sessionIdValue)}';
-      queryParams.add(sessionParam);
-      print('✅ Added session_id to params');
+    if (cvgSid.isNotEmpty) {
+      String cvgSidParam = '__cvg_sid=${Uri.encodeComponent(cvgSid)}';
+      queryParams.add(cvgSidParam);
     }
 
     // Construct final URL with all parameters
@@ -158,13 +164,9 @@ Future<void> redirectToCheckout() async {
       baseUrl = baseUrl + '?' + queryParams.join('&');
     }
 
-    print('Redirecting to checkout: $baseUrl');
-
     // Redirect to the checkout URL
     windowLocationHref = baseUrl;
   } catch (e) {
-    print('Error redirecting to checkout: $e');
-
     windowLocationHref =
         "https://checkout.hairqare.co/buy/hairqare-challenge-save-85-5-37/";
   }

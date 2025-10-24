@@ -11,63 +11,21 @@ import 'package:flutter/material.dart';
 import '/custom_code/actions/index.dart';
 import '/flutter_flow/custom_functions.dart';
 
-import '/custom_code/actions/index.dart';
-import '/flutter_flow/custom_functions.dart';
-
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'dart:js' as js;
 
 Future<void> webhookCallQuizProfile() async {
-  final loggingWebhook =
-      'https://hook.us1.make.com/12ojmstexumn6knualpsn9hkex9qy8b3';
   final makeWebhook =
       'https://hook.us1.make.com/3d6vksxwtqukhrx465bjymy4y6sfdkr6';
 
-  // ✨ UPDATED: Fire-and-forget logging (never blocks)
-  void logEvent(String eventType, Map<String, dynamic> data) {
-    try {
-      http
-          .post(
-            Uri.parse(loggingWebhook),
-            headers: {'Content-Type': 'application/json'},
-            body: jsonEncode({
-              'event': eventType,
-              'timestamp': DateTime.now().toIso8601String(),
-              'data': data,
-              'userAgent': js.context['navigator']['userAgent'].toString(),
-              'url': js.context['location']['href'].toString(),
-            }),
-          )
-          .timeout(Duration(seconds: 2))
-          .catchError((e) {
-        print('[LOG ERROR] $e');
-      });
-    } catch (e) {
-      print('[LOG ERROR] $e');
-    }
-  }
-
   try {
-    logEvent('webhook_quiz_profile_start', {}); // ✨ No await!
-
     final quizProfile = FFAppState().quizProfile;
     final cdpMapping = FFAppState().cdpMapping;
     final contactDetails = FFAppState().submittedContactDetails;
 
     if (quizProfile == null || contactDetails == null) {
-      logEvent('webhook_quiz_profile_null_state', {
-        'quizProfile_null': quizProfile == null,
-        'contactDetails_null': contactDetails == null,
-      });
-      print('[ERROR] Missing state');
       return;
     }
-
-    logEvent('webhook_quiz_profile_state_ok', {
-      'qaPairs_count': quizProfile.qaPairs?.length ?? 0,
-      'has_email': contactDetails.email?.isNotEmpty ?? false,
-    });
 
     var acFields = <String, dynamic>{};
     var mpFields = <String, dynamic>{};
@@ -130,65 +88,13 @@ Future<void> webhookCallQuizProfile() async {
       'mixpanel': mpFields,
     };
 
-    var jsonPayload = jsonEncode(payload);
-    print('[WEBHOOK] Sending to Make.com');
-
-    logEvent('webhook_quiz_profile_sending', {
-      'payload_size': jsonPayload.length,
-      'email': contactDetails.email ?? '',
-    });
-
-    // Fire and forget - don't wait for response
-    http
-        .post(
-          Uri.parse(makeWebhook),
-          headers: {'Content-Type': 'application/json'},
-          body: jsonPayload,
-        )
-        .timeout(Duration(seconds: 10))
-        .then((response) {
-      print('[WEBHOOK] Response: ${response.statusCode}');
-
-      logEvent('webhook_quiz_profile_response', {
-        'status_code': response.statusCode,
-        'success': response.statusCode == 200,
-      });
-
-      // Retry if failed
-      if (response.statusCode != 200) {
-        print('[WEBHOOK] Retrying...');
-        logEvent('webhook_quiz_profile_retry', {});
-
-        http
-            .post(
-              Uri.parse(makeWebhook),
-              headers: {'Content-Type': 'application/json'},
-              body: jsonPayload,
-            )
-            .timeout(Duration(seconds: 10))
-            .then((retryResponse) {
-          print('[WEBHOOK] Retry response: ${retryResponse.statusCode}');
-          logEvent('webhook_quiz_profile_retry_response', {
-            'status_code': retryResponse.statusCode,
-          });
-        }).catchError((retryError) {
-          print('[ERROR] Retry failed: $retryError');
-        });
-      }
-    }).catchError((error) {
-      print('[ERROR] HTTP call failed: $error');
-      logEvent('webhook_quiz_profile_http_error', {
-        'error': error.toString(),
-      });
-    });
-
-    print('[WEBHOOK] Sent in background - continuing...');
-    logEvent('webhook_quiz_profile_complete', {});
-  } catch (e, stackTrace) {
-    logEvent('webhook_quiz_profile_error', {
-      'error': e.toString(),
-      'stack': stackTrace.toString().substring(0, 500),
-    });
-    print('[ERROR] $e');
+    // Fire and forget - no await, no timeout, no response handling
+    http.post(
+      Uri.parse(makeWebhook),
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode(payload),
+    );
+  } catch (e) {
+    // Silently fail
   }
 }
