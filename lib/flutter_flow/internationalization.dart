@@ -167,7 +167,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     'g2q0w5rd': {
-      'en': 'Which hair type do you have?',
+      'en': 'Welchen Haartyp hast du?',
       'de': 'Welchen Haartyp haben Sie?',
       'es': '¿Qué tipo de cabello tienes?',
       'fr': 'Quel type de cheveux avez-vous ?',
@@ -179,7 +179,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     'uaeia9o3': {
-      'en': 'How old are you?',
+      'en': 'Wie alt bist du?',
       'de': 'Wie alt bist du?',
       'es': '¿Cuántos años tiene?',
       'fr': 'Quel âge as-tu?',
@@ -282,7 +282,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Cliniquement prouvé pour guérir vos cheveux rapidement et durablement.',
     },
     's3viwwxq': {
-      'en': 'Proven Results for:',
+      'en': 'Bewährte Ergebnisse für:',
       'de': 'Nachgewiesene Ergebnisse für:',
       'es': 'Resultados comprobados para:',
       'fr': 'Résultats prouvés pour :',
@@ -294,25 +294,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Tout problème de cheveux',
     },
     'vyzhveff': {
-      'en': 'Any age',
+      'en': 'Jedes Alter',
       'de': 'Jedes Alter',
       'es': 'Cualquier edad',
       'fr': 'Tout âge',
     },
     't05pit2o': {
-      'en': 'Any hair type',
+      'en': 'Jeden Haartyp',
       'de': 'Jeder Haartyp',
       'es': 'Cualquier tipo de cabello',
       'fr': 'Tout type de cheveux',
     },
     'kuvd0wnn': {
-      'en': 'Any hair goal',
+      'en': 'Jedes Haarziel',
       'de': 'Jedes Haarziel',
       'es': 'Cualquier objetivo capilar',
       'fr': 'N\'importe quel objectif capillaire',
     },
     'khaadglv': {
-      'en': 'What best describes your diet?',
+      'en': 'Was beschreibt deine Ernährung am besten?',
       'de': 'Was beschreibt Ihre Ernährung am besten?',
       'es': '¿Qué describe mejor tu dieta?',
       'fr': 'Qu’est-ce qui décrit le mieux votre régime alimentaire ?',
@@ -327,13 +327,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Ce que nous mangeons affecte la croissance et la qualité de nos cheveux.',
     },
     '25wr54y6': {
-      'en': 'How much do you spend on a bottle of shampoo?',
+      'en': 'Wie viel gibst du für eine Flasche Shampoo aus?',
       'de': 'Wie viel geben Sie für eine Flasche Shampoo aus?',
       'es': '¿Cuánto gastas en una botella de champú?',
       'fr': 'Combien dépensez-vous pour une bouteille de shampoing ?',
     },
     'rihaqphi': {
-      'en': 'Which of these hair care myths do you believe?',
+      'en': 'An welche dieser Haarpflege-Mythen glaubst du?',
       'de': 'Welchen dieser Haarpflegemythen glauben Sie?',
       'es': '¿En cuál de estos mitos sobre el cuidado del cabello crees?',
       'fr': 'Auquel de ces mythes sur les soins capillaires croyez-vous ?',
@@ -432,7 +432,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Dans quelle mesure vous identifiez-vous à l’affirmation suivante ?',
     },
     'hoc1sdcs': {
-      'en': 'Did a professional refer you to us?',
+      'en': 'Hat dich ein Profi an uns verwiesen?',
       'de': 'Wurden Sie von einem Fachmann an uns verwiesen?',
       'es': '¿Algún profesional le recomendó contactarnos?',
       'fr': 'Un professionnel vous a-t-il recommandé chez nous ?',
@@ -534,7 +534,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '|',
     },
     'oy280vcm': {
-      'en': 'Start by selecting your goal:',
+      'en': 'Beginne mit der Auswahl deines Ziels:',
       'de': 'Beginnen Sie mit der Auswahl Ihres Ziels:',
       'es': 'Comience seleccionando su objetivo:',
       'fr': 'Commencez par sélectionner votre objectif :',
@@ -604,7 +604,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '(Sélectionnez tout ce qui s\'applique)',
     },
     'vzfmsa5z': {
-      'en': 'None of the above',
+      'en': 'Nichts davon',
       'de': 'Nichts des oben Genannten',
       'es': 'Ninguna de las anteriores',
       'fr': 'Aucune des réponses ci-dessus',
@@ -636,7 +636,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Commencez par sélectionner votre objectif :',
     },
     'r3fmpz9h': {
-      'en': 'Skip the Quiz',
+      'en': 'Quiz überspringen',
       'de': 'Überspringen Sie das Quiz',
       'es': 'Saltar el cuestionario',
       'fr': 'Passer le quiz',
@@ -673,7 +673,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // LoginComponent
   {
     '1e5gv14v': {
-      'en': 'Your results are ready!',
+      'en': 'Deine Ergebnisse sind fertig!',
       'de': 'Ihre Ergebnisse sind da!',
       'es': '¡Tus resultados están listos!',
       'fr': 'Vos résultats sont prêts !',
@@ -691,7 +691,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Nom',
     },
     '76eyp598': {
-      'en': 'Email',
+      'en': 'E-Mail',
       'de': 'E-Mail',
       'es': 'Correo electrónico',
       'fr': 'E-mail',
@@ -949,7 +949,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Sélectionnez tout ce qui s\'applique',
     },
     '7tkotzl5': {
-      'en': 'None of the above',
+      'en': 'Nichts davon',
       'de': 'Nichts des oben Genannten',
       'es': 'Ninguna de las anteriores',
       'fr': 'Aucune des réponses ci-dessus',
@@ -964,7 +964,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '(Sélectionnez tout ce qui s\'applique)',
     },
     'ig7rz0ud': {
-      'en': 'None of the above',
+      'en': 'Nichts davon',
       'de': 'Nichts des oben Genannten',
       'es': 'Ninguna de las anteriores',
       'fr': 'Aucune des réponses ci-dessus',
@@ -1065,7 +1065,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           '92 % des personnes ayant terminé le programme ont déclaré : « Cela a changé leur vie ».',
     },
     'phsineyb': {
-      'en': 'START MY CHALLENGE',
+      'en': 'MEINE CHALLENGE STARTEN',
       'de': 'MEINE HERAUSFORDERUNG STARTEN',
       'es': 'COMIENZA MI RETO',
       'fr': 'COMMENCEZ MON DÉFI',
@@ -1149,7 +1149,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'sur les produits et soins de salon dont vous n\'aurez plus besoin.',
     },
     '8p79eqjq': {
-      'en': 'START MY CHALLENGE',
+      'en': 'MEINE CHALLENGE STARTEN',
       'de': 'MEINE HERAUSFORDERUNG STARTEN',
       'es': 'COMIENZA MI RETO',
       'fr': 'COMMENCEZ MON DÉFI',
@@ -1303,19 +1303,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // ImageBackground_QuesBodyV2
   {
     'rvqxeq7r': {
-      'en': 'Start by selecting your goal:',
+      'en': 'Beginne mit der Auswahl deines Ziels:',
       'de': 'Beginnen Sie mit der Auswahl Ihres Ziels:',
       'es': 'Comience seleccionando su objetivo:',
       'fr': 'Commencez par sélectionner votre objectif :',
     },
     'fi8xv3qb': {
-      'en': 'I want BOTH',
+      'en': 'Ich will BEIDES',
       'de': 'Ich will BEIDES',
       'es': 'Quiero AMBOS',
       'fr': 'Je veux les DEUX',
     },
     '6laxeb4h': {
-      'en': 'Skip',
+      'en': 'Überspringen',
       'de': 'Überspringen',
       'es': 'Saltar',
       'fr': 'Sauter',
