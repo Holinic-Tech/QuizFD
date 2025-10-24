@@ -57,7 +57,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       _model.isWebview = await actions.isFacebookWebView();
       FFAppState().isWebview = _model.isWebview!;
       safeSetState(() {});
-      setAppLanguage(context, 'en');
+      setAppLanguage(context, 'es');
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -144,7 +144,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             updateCallback: () => safeSetState(() {}),
                             child: ImageBackgroundQuesBodyWidget(
                               question:
-                                  'See if the Challenge is a fit for you and your hair profile ',
+                                  'Descubre si el Reto es adecuado para ti y tu perfil capilar ',
                               answer1: FFLocalizations.of(context).getText(
                                 'x8ai5u31' /*  */,
                               ),
@@ -1005,7 +1005,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             'problemDescription_keep-changing'
                                           ],
                                         ))) {
-                                  return 'This escalating mixed hair issues shows your hair follicles are getting more overwhelmed over time.';
+                                  return 'This escalating problemas capilares mixtos shows your hair follicles are getting more overwhelmed over time.';
                                 } else if (FFAppState()
                                         .quizProfile
                                         .qaPairs
@@ -1866,7 +1866,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           updateCallback: () => safeSetState(() {}),
                           child: QuestionAnswerAdditionlInfoWidget(
                             question:
-                                'Do you believe your hair problems could be influenced by factors beyond just products?',
+                                '¿Crees que tus problemas capilares podrían estar influenciados por factores más allá de solo productos?',
                             answerList: FFAppState().mindsetState,
                             answerAction: () async {
                               await actions.trackGAEvent(
@@ -1908,7 +1908,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             updateCallback: () => safeSetState(() {}),
                             child: ImageBackgroundQuesBodyV3Widget(
                               question:
-                                  'See if the Challenge is a fit for you and your hair profile',
+                                  'Descubre si el Reto es adecuado para ti y tu perfil capilar',
                               answer1: '',
                               answer2: '',
                               logoShow: true,
